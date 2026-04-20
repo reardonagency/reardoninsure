@@ -160,7 +160,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Reardon Agency Logo" style="height:48px;width:auto;">
+      <img src="logo.png" alt="Reardon Agency" style="height:52px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
       <div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div>
     </a>
     <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
@@ -273,10 +273,15 @@
     <div class="newsletter-section">
       <h2>Get Straight-Talk Insurance Advice</h2>
       <p>No spam. No sales pitches. Just monthly tips that help you make smarter decisions about your coverage.</p>
-      <form onsubmit="subscribeNewsletter(event)">
+      <form action="https://formspree.io/f/meevzzyr" method="POST" onsubmit="handleNewsletterSubmit(event)">
+        <input type="hidden" name="_subject" value="Newsletter Signup - Reardon Agency Blog">
+        <input type="hidden" name="Type" value="Newsletter Signup">
         <div class="newsletter-form">
-          <input type="email" placeholder="your@email.com" required id="newsletterEmail">
-          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <input type="email" name="email" placeholder="your@email.com" required id="newsletterEmail">
+          <button type="submit" class="btn btn-primary" id="newsletterBtn">Subscribe</button>
+        </div>
+        <div id="newsletterSuccess" style="display:none;color:#e8b923;margin-top:16px;font-size:0.9rem;font-weight:600;">
+          ✅ You're subscribed! Ryan will be in touch.
         </div>
       </form>
       <div class="newsletter-disclaimer">
@@ -291,7 +296,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div style="margin-bottom:14px;"><img src="logo.png" alt="Reardon Agency" style="height:52px;width:auto;opacity:0.9;"></div>
+        <div style="margin-bottom:16px;text-align:center;"><img src="logo.png" alt="Reardon Agency" style="height:90px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.4));"></div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">INSURANCE</span> AGENCY</div>
         <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
       </div>
