@@ -198,27 +198,27 @@
             <p style="font-size:0.88rem;color:var(--mid-gray);margin-bottom:16px;">Select all that apply.</p>
             <div class="insurance-types">
               <label class="insurance-type-option">
-                <input type="checkbox" name="coverage" value="Auto"> 🚗 Auto Insurance
+                <input type="checkbox" name="Coverage - Auto" value="Auto"> 🚗 Auto Insurance
               </label>
               <label class="insurance-type-option">
-                <input type="checkbox" name="coverage" value="Home"> 🏠 Home Insurance
+                <input type="checkbox" name="Coverage - Home" value="Home"> 🏠 Home Insurance
               </label>
               <label class="insurance-type-option">
-                <input type="checkbox" name="coverage" value="Life"> ❤️ Life Insurance
+                <input type="checkbox" name="Coverage - Life" value="Life"> ❤️ Life Insurance
               </label>
               <label class="insurance-type-option">
-                <input type="checkbox" name="coverage" value="Commercial"> 🏢 Commercial
+                <input type="checkbox" name="Coverage - Commercial" value="Commercial"> 🏢 Commercial
               </label>
               <label class="insurance-type-option">
-                <input type="checkbox" name="coverage" value="Umbrella"> ☂️ Umbrella Policy
+                <input type="checkbox" name="Coverage - Umbrella" value="Umbrella"> ☂️ Umbrella Policy
               </label>
               <label class="insurance-type-option">
-                <input type="checkbox" name="coverage" value="Specialty"> ⚡ Specialty / Other
+                <input type="checkbox" name="Coverage - Specialty" value="Specialty"> ⚡ Specialty / Other
               </label>
             </div>
             <div class="form-group" style="margin-top:16px;">
               <label>Tell Us More (Optional)</label>
-              <textarea placeholder="Any additional details about what you're looking for, current provider, or specific questions..."></textarea>
+              <textarea name="Additional Details" placeholder="Any additional details about what you're looking for, current provider, or specific questions..."></textarea>
             </div>
 
             <!-- PERSONAL INFO -->
@@ -226,30 +226,30 @@
             <div class="form-grid">
               <div class="form-group">
                 <label>First Name *</label>
-                <input type="text" placeholder="Ryan" required>
+                <input type="text" name="First Name" placeholder="Ryan" required>
               </div>
               <div class="form-group">
                 <label>Last Name *</label>
-                <input type="text" placeholder="Reardon" required>
+                <input type="text" name="Last Name" placeholder="Reardon" required>
               </div>
             </div>
             <div class="form-grid">
               <div class="form-group">
                 <label>Date of Birth *</label>
-                <input type="date" required>
+                <input type="date" name="Date of Birth" required>
               </div>
               <div class="form-group">
                 <label>Phone Number *</label>
-                <input type="tel" placeholder="(719) 555-0000" required>
+                <input type="tel" name="Phone" placeholder="(719) 555-0000" required>
               </div>
             </div>
             <div class="form-group">
               <label>Email Address *</label>
-              <input type="email" placeholder="you@email.com" required>
+              <input type="email" name="email" placeholder="you@email.com" required>
             </div>
             <div class="form-group">
               <label>Best Time to Reach You</label>
-              <select>
+              <select name="Best Time to Reach">
                 <option>Morning (8am–12pm)</option>
                 <option>Afternoon (12pm–5pm)</option>
                 <option>Evening (5pm–7pm)</option>
@@ -261,21 +261,21 @@
             <div class="form-section-title">🏠 Property / Risk Address</div>
             <div class="form-group">
               <label>Property Address (if applicable)</label>
-              <input type="text" placeholder="123 Main St, Colorado Springs, CO 80903">
+              <input type="text" name="Property Address" placeholder="123 Main St, Colorado Springs, CO 80903">
             </div>
             <div class="form-grid">
               <div class="form-group">
                 <label>City</label>
-                <input type="text" placeholder="Colorado Springs">
+                <input type="text" name="City" placeholder="Colorado Springs">
               </div>
               <div class="form-group">
                 <label>ZIP Code</label>
-                <input type="text" placeholder="80903">
+                <input type="text" name="ZIP Code" placeholder="80903">
               </div>
             </div>
             <div class="form-group">
               <label>Mailing Address (if different from above)</label>
-              <input type="text" placeholder="PO Box or alternate address">
+              <input type="text" name="Mailing Address" placeholder="PO Box or alternate address">
             </div>
 
             <!-- COMPLIANCE -->
