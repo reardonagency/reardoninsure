@@ -111,5 +111,40 @@
     <div class="footer-bottom"><p>© 2025 Reardon Agency LLC. All rights reserved.</p><p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p></div>
   </div>
 </footer>
+
+<!-- Privacy & Terms Modals -->
+<style>
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,22,40,0.8);z-index:99999;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;border-radius:16px;padding:40px;max-width:560px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-height:80vh;overflow-y:auto;}
+.modal-box h4{color:#00063b;font-size:1.2rem;margin-bottom:16px;padding-right:32px;font-family:'Cormorant Garamond',serif;}
+.modal-box p{font-size:0.88rem;color:#2c3551;line-height:1.7;margin:0;}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.6rem;cursor:pointer;color:#989ea5;line-height:1;}
+.modal-close:hover{color:#00063b;}
+.modal-trigger{color:var(--navy-mid,#042a88);text-decoration:underline;cursor:pointer;background:none;border:none;font-size:inherit;padding:0;font-family:inherit;display:inline;}
+.modal-trigger:hover{color:#e8b923;}
+</style>
+
+<div class="modal-overlay" id="termsModal" onclick="if(event.target===this)closeModal('termsModal')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+    <h4>Terms &amp; Conditions</h4>
+    <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="privacyModal" onclick="if(event.target===this)closeModal('privacyModal')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+    <h4>Privacy Policy</h4>
+    <p>We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(function(m){closeModal(m.id);});}});
+</script>
 </body>
 </html>
