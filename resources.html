@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trusted Resources | Reardon Agency | Colorado Springs</title>
+  <meta name="description" content="Ryan Reardon's personally vetted network of trusted professionals in Colorado Springs — contractors, financial advisors, real estate agents, and more.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .resources-intro {
+      max-width: 700px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .resource-category {
+      margin-bottom: 64px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--light-gray);
+    }
+
+    .category-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .category-header h2 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .category-header p {
+      font-size: 0.88rem;
+      color: var(--mid-gray);
+      margin: 4px 0 0;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-gray);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: all var(--transition);
+    }
+
+    .resource-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .resource-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .resource-type-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(232,185,35,0.1);
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .resource-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .resource-card p {
+      font-size: 0.88rem;
+      color: var(--mid-gray);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .resource-how-we-met {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--light-gray);
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      font-style: italic;
+    }
+
+    .disclaimer-box {
+      background: var(--off-white);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-top: 64px;
+    }
+
+    .disclaimer-box h5 {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 10px;
+    }
+
+    .disclaimer-box p {
+      font-size: 0.85rem;
+      color: var(--mid-gray);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .refer-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px;
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .refer-cta h2 { color: var(--white); margin-bottom: 12px; }
+    .refer-cta p { color: rgba(255,255,255,0.65); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    @media (max-width: 900px) {
+      .resource-grid { grid-template-columns: 1fr 1fr; }
+      .refer-cta { padding: 36px 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .resource-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Reardon Agency Logo" style="height:48px;width:auto;">
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-label">Personally Vetted · Colorado Springs</span>
+    <h1>Trusted Resources</h1>
+    <p class="section-subtitle">Good insurance is only part of protecting what matters. These are professionals I know personally and trust — people I'd refer to my own family.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="resources-intro">
+      <p>Over the years of building my agency and being active in the Colorado Springs business community through BNI and other networks, I've met a lot of professionals. The ones listed here are people I've worked with directly, observed in action, or know well enough to vouch for personally. I don't list anyone I wouldn't refer to a family member.</p>
+      <p style="margin:0;">If you're looking for a referral in a category not listed here, <a href="contact.html" style="color:var(--navy-mid);font-weight:600;">reach out directly</a> — I may know someone.</p>
+    </div>
+
+    <!-- HOME SERVICES -->
+    <div class="resource-category">
+      <div class="category-header">
+        <div class="category-icon">🏠</div>
+        <div>
+          <h2>Home Services & Contractors</h2>
+          <p>Trusted trades and home service professionals in the Colorado Springs area</p>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Roofing</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Reliable local roofer with a track record of quality work and honest assessments — especially important after hail season. Ask me for a specific referral.</p>
+          <div class="resource-how-we-met">Referred through BNI network</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>General Contractor</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Full-service general contractor for remodels, additions, and home improvements. Licensed, insured, and known for clear communication and honest bids.</p>
+          <div class="resource-how-we-met">Met through local networking</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Home Inspector</h4>
+            <span class="resource-type-badge">Pikes Peak Region</span>
+          </div>
+          <p>Thorough, honest home inspectors who will tell you what they actually find — not what you want to hear. Essential for any home purchase.</p>
+          <div class="resource-how-we-met">Referred through real estate contacts</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINANCIAL & LEGAL -->
+    <div class="resource-category">
+      <div class="category-header">
+        <div class="category-icon">💼</div>
+        <div>
+          <h2>Financial & Legal Professionals</h2>
+          <p>Advisors and attorneys who complement good insurance with sound financial planning</p>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Financial Advisor / Planner</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Fee-based financial planning for families and small business owners. Good insurance is only one piece — a solid financial plan is the foundation everything else sits on.</p>
+          <div class="resource-how-we-met">BNI connection</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Estate Planning Attorney</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Wills, trusts, and estate planning for individuals and families. If you have life insurance and no estate plan, you have an incomplete strategy.</p>
+          <div class="resource-how-we-met">Professional referral network</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>CPA / Tax Professional</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Small business and personal tax preparation and planning. Works well with self-employed individuals, S-corps, and growing businesses.</p>
+          <div class="resource-how-we-met">Shared client referrals</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL ESTATE -->
+    <div class="resource-category">
+      <div class="category-header">
+        <div class="category-icon">🏡</div>
+        <div>
+          <h2>Real Estate</h2>
+          <p>Agents and mortgage professionals who know the Colorado Springs market</p>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Buyer's Agent</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Local real estate agent who specializes in helping buyers navigate the Colorado Springs market — military relocation, first-time buyers, and move-up buyers.</p>
+          <div class="resource-how-we-met">BNI network</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Mortgage Lender</h4>
+            <span class="resource-type-badge">Colorado / National</span>
+          </div>
+          <p>Responsive, transparent mortgage professional who explains what you're signing and delivers on promised timelines. Specializes in VA loans and conventional financing.</p>
+          <div class="resource-how-we-met">Professional referral</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Property Manager</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Rental property management for landlords who don't want to handle tenant calls themselves. Important: make sure your landlord policy is in place before tenants move in.</p>
+          <div class="resource-how-we-met">Shared client referrals</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEALTH & WELLNESS -->
+    <div class="resource-category">
+      <div class="category-header">
+        <div class="category-icon">❤️</div>
+        <div>
+          <h2>Health & Wellness</h2>
+          <p>Professionals in the Colorado Springs community who take a whole-person approach</p>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Chiropractor</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Highly recommended chiropractor for accident recovery and general care. If you've been in an auto accident, getting evaluated quickly is important for both your health and any claim.</p>
+          <div class="resource-how-we-met">BNI connection</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Mental Health Counselor</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Licensed counselor serving individuals and families. Colorado Springs has a strong military community and the mental health needs that come with it. Good resource to have.</p>
+          <div class="resource-how-we-met">Community referral</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Personal Trainer / Fitness</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Colorado Springs is an active community. These fitness professionals understand the lifestyle and work with people at all levels — from post-injury recovery to performance training.</p>
+          <div class="resource-how-we-met">Local community connection</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSINESS SERVICES -->
+    <div class="resource-category">
+      <div class="category-header">
+        <div class="category-icon">🚀</div>
+        <div>
+          <h2>Business Services</h2>
+          <p>Marketing, tech, and operational professionals who help businesses grow</p>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Marketing / Social Media</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Local marketing professionals who understand small business budgets and actually deliver results — not just impressions. Content, social, and local SEO.</p>
+          <div class="resource-how-we-met">BNI network</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>Business Coach</h4>
+            <span class="resource-type-badge">Colorado / Remote</span>
+          </div>
+          <p>Experienced business coaches who work with entrepreneurs and small business owners on systems, growth, and accountability. Invaluable at every stage of building a business.</p>
+          <div class="resource-how-we-met">Professional development network</div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <h4>IT / Tech Support</h4>
+            <span class="resource-type-badge">Colorado Springs</span>
+          </div>
+          <p>Small business IT support and cybersecurity. Given the rise in cyber threats targeting small businesses, having a trusted tech resource on call is worth its weight.</p>
+          <div class="resource-how-we-met">Shared BNI chapter</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer-box">
+      <h5>A Note on These Referrals</h5>
+      <p>The professionals listed here are people I know personally through my work in the Colorado Springs business community — primarily through BNI and other professional networks. I'm not paid for referrals, and I don't list anyone I haven't personally observed or worked with. That said, every professional relationship is different. I always encourage you to do your own due diligence, get multiple quotes where appropriate, and make the decision that's right for your specific situation. If you'd like a specific introduction or more details about any of these contacts, reach out directly and I'm happy to make a personal introduction.</p>
+    </div>
+
+    <!-- REFER CTA -->
+    <div class="refer-cta">
+      <h2>Know Someone Great?</h2>
+      <p>If you're a trusted professional in the Colorado Springs area and think you'd be a good fit for this list, reach out. I'm always looking to grow my network with people who take their work seriously.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+        <a href="https://calendly.com/reardoninsure/30min" target="_blank" class="btn btn-outline">Book a Call</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">AGENCY</span> LLC</div>
+        <p>Protecting Colorado Springs families and businesses with personalized insurance coverage.</p>
+        <p style="margin-top:12px;font-size:0.82rem;">
+          📍 3225 Templeton Gap Rd, Ste 110, Colorado Springs, CO 80917<br>
+          📞 <a href="tel:+17192048190" style="color:#e8b923">(719) 204-8190</a><br>
+          ✉ <a href="mailto:proposal@reardoninsure.com" style="color:#e8b923">proposal@reardoninsure.com</a>
+        </p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Auto</a></li><li><a href="products.html">Home</a></li><li><a href="products.html">Life</a></li><li><a href="products.html">Commercial</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="resources.html">Resources</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Connect</h5><ul><li><a href="https://www.facebook.com/ReardonAgency/" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/reardonagency/" target="_blank">Instagram</a></li><li><a href="https://www.linkedin.com/in/ryanjreardon" target="_blank">LinkedIn</a></li><li><a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank">Google Reviews</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Reardon Agency LLC. All rights reserved.</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
