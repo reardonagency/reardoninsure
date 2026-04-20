@@ -657,41 +657,15 @@
     <div style="text-align:center;margin-bottom:48px;">
       <span class="section-label">Client Reviews</span>
       <h2>What Colorado Springs Families Say</h2>
+      <p style="color:var(--mid-gray);margin-top:8px;">Real reviews from real clients.</p>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Ryan made switching our auto and home insurance effortless. Saved us money and actually explained what we were getting. Couldn't recommend him more."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JM</div>
-          <div>
-            <div class="testimonial-name">Jennifer M.</div>
-            <div class="testimonial-location">Colorado Springs, CO</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"As a small business owner, I needed someone who understood my risks. Ryan took the time to walk through everything and now I feel actually protected."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">DK</div>
-          <div>
-            <div class="testimonial-name">David K.</div>
-            <div class="testimonial-location">Colorado Springs, CO</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Called Ryan on a Saturday with a question about my policy. He answered and walked me through it. That kind of service is rare. Loyal customer for life."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SR</div>
-          <div>
-            <div class="testimonial-name">Sarah R.</div>
-            <div class="testimonial-location">Fountain, CO</div>
-          </div>
-        </div>
-      </div>
+    <!-- Elfsight Google Reviews -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-b5f6085d-d467-4a43-b20c-46adcfbb5586" data-elfsight-app-lazy></div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank" class="btn btn-navy">
+        Read All Google Reviews →
+      </a>
     </div>
   </div>
 </section>
@@ -760,7 +734,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
-      <p>CO License # [CO License # - Add Yours]</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
     </div>
   </div>
 </footer>
@@ -771,5 +745,49 @@ function handleQuickQuote(e) {
   window.location.href = 'quote.html';
 }
 </script>
+
+<!-- TERMS MODAL -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+    <h4>Terms &amp; Conditions</h4>
+    <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy.</p>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+    <h4>Privacy Policy</h4>
+    <p>We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeModal(m.id);
+    });
+  }
+});
+</script>
+
 </body>
 </html>

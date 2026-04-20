@@ -190,7 +190,8 @@
           <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="margin-left:auto;white-space:nowrap;">Quote Online via Farmers →</a>
         </div>
 
-          <form onsubmit="submitQuote(event)">
+          <form action="https://formspree.io/f/meevzzyr" method="POST" onsubmit="handleQuoteSubmit(event)">
+            <input type="hidden" name="_subject" value="New Quote Request - Reardon Agency Website">
 
             <!-- INSURANCE TYPE -->
             <div class="form-section-title">📋 What Would You Like to Quote?</div>
@@ -411,24 +412,45 @@
       <div class="footer-col">
         <h5>Legal</h5>
         <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><button class="modal-trigger" onclick="openModal(\'privacyModal\')">Privacy Policy</button></li>
+          <li><button class="modal-trigger" onclick="openModal(\'termsModal\')">Terms &amp; Conditions</button></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
-      <p>CO License # [CO License # - Add Yours]</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
     </div>
   </div>
 </footer>
 
 <script>
-function submitQuote(e) {
+async function handleQuoteSubmit(e) {
   e.preventDefault();
-  document.getElementById('quoteForm').style.display = 'none';
-  document.getElementById('successMessage').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.textContent = 'Submit My Quote Request →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+    }
+  } catch(err) {
+    btn.textContent = 'Submit My Quote Request →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+  }
 }
 </script>
 </body>

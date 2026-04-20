@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorado Hail Season: What to Watch For on Your Home & Auto | Reardon Agency</title>
+  <meta name="description" content="Colorado is one of the top hail-damage states in the country. Ryan Reardon explains what to watch for on your home and auto coverage before storm season hits.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .article-body h2 {
+      font-size: 1.6rem;
+      margin: 40px 0 16px;
+      padding-top: 32px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .article-body h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .article-body p {
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .article-body ul {
+      margin: 0 0 20px 0;
+      padding-left: 20px;
+    }
+
+    .article-body ul li {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .article-body ul li strong {
+      color: var(--navy);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--light-gray);
+      flex-wrap: wrap;
+    }
+
+    .article-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 2px solid rgba(232,185,35,0.3);
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--navy);
+    }
+
+    .author-title {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+    }
+
+    .article-date {
+      font-size: 0.82rem;
+      color: var(--mid-gray);
+      margin-left: auto;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(232,185,35,0.12);
+      color: var(--gold-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .article-headline {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .article-deck {
+      font-size: 1.1rem;
+      color: var(--mid-gray);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .article-hero-image {
+      width: 100%;
+      aspect-ratio: 16/7;
+      background: linear-gradient(135deg, #0a1628 0%, #042a88 50%, #1a3a8f 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(10,22,40,0.6) 100%);
+    }
+
+    .article-hero-label {
+      position: absolute;
+      bottom: 20px;
+      left: 24px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    .callout-box {
+      background: rgba(232,185,35,0.08);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+
+    .callout-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    .callout-box strong {
+      color: var(--navy);
+      font-style: normal;
+    }
+
+    .warning-box {
+      background: rgba(239,68,68,0.06);
+      border-left: 4px solid #ef4444;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+
+    .warning-box p { margin: 0; font-size: 0.95rem; color: #7f1d1d; }
+    .warning-box strong { color: #991b1b; }
+
+    /* Sidebar */
+    .sidebar-sticky {
+      position: sticky;
+      top: 96px;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, #042a88 100%);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-cta h4 { color: var(--white); margin-bottom: 10px; }
+    .sidebar-cta p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 20px; }
+
+    .related-posts { background: var(--off-white); border-radius: var(--radius-md); padding: 24px; }
+    .related-posts h5 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+    }
+
+    .related-post-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--light-gray);
+      text-decoration: none;
+    }
+
+    .related-post-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .related-post-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .related-post-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .related-post-date { font-size: 0.75rem; color: var(--mid-gray); margin-top: 4px; }
+
+    .article-footer {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .article-footer-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      border: 3px solid rgba(232,185,35,0.3);
+    }
+
+    .article-footer h4 { margin-bottom: 4px; }
+    .article-footer p { font-size: 0.88rem; color: var(--mid-gray); margin: 0; }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar-sticky { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      .article-footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Reardon Agency Logo" style="height:48px;width:auto;">
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section style="padding-top:72px;background:var(--off-white);border-bottom:1px solid var(--light-gray);">
+  <div class="container" style="padding:24px 24px 0;">
+    <nav style="font-size:0.82rem;color:var(--mid-gray);">
+      <a href="index.html" style="color:var(--mid-gray);">Home</a>
+      <span style="margin:0 8px;">›</span>
+      <a href="blog.html" style="color:var(--mid-gray);">Blog</a>
+      <span style="margin:0 8px;">›</span>
+      <span style="color:var(--navy);">Colorado Hail Season</span>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- ARTICLE -->
+      <article class="article-body">
+
+        <span class="article-category">Home &amp; Auto</span>
+        <h1 class="article-headline">Colorado Hail Season: What to Watch For on Your Home and Auto Before the First Storm Hits</h1>
+        <p class="article-deck">Colorado is one of the top hail-damage states in the country — and most homeowners and drivers in Colorado Springs are underinsured when the storm rolls in. Here's what to know before it's too late.</p>
+
+        <div class="article-meta">
+          <div class="article-author">
+            <img src="ryan-headshot.jpg" alt="Ryan Reardon" class="author-avatar">
+            <div>
+              <div class="author-name">Ryan Reardon</div>
+              <div class="author-title">Farmers Insurance Agent · Colorado Springs</div>
+            </div>
+          </div>
+          <div class="article-date">April 2025 · 6 min read</div>
+        </div>
+
+        <div class="article-hero-image">
+          🌩️
+          <div class="article-hero-label">Colorado averages over 50 hail days per year in some regions</div>
+        </div>
+
+        <h2>Colorado and Hail: A Dangerous Combination</h2>
+        <p>If you've lived in Colorado Springs for more than one summer, you already know the drill. A clear blue morning turns into a dark, churning sky by 2 p.m. — and by 3 p.m., golf-ball-sized hail is pounding your car and shredding your roof.</p>
+        <p>What most people don't know is just how significant the risk actually is. Colorado consistently ranks among the top five states in the country for hail damage claims. The Front Range — which includes Colorado Springs — sits in what storm experts call "Hail Alley," a corridor stretching from Texas through Nebraska where warm Gulf air collides with cold Rocky Mountain downdrafts to create the perfect conditions for severe hailstorms.</p>
+        <p>According to industry data, Colorado sees hundreds of millions of dollars in hail-related property damage every single year. And the vast majority of claims come from two sources: roofs and vehicles.</p>
+
+        <div class="callout-box">
+          <p><strong>The key thing most people miss:</strong> You don't need a catastrophic storm to suffer serious damage. A storm dropping quarter-sized hail for 10 minutes can destroy a roof, shatter windows, and total a car — and your coverage may not be what you think it is.</p>
+        </div>
+
+        <h2>What to Watch For on Your Home</h2>
+
+        <p>Hail damage to a home is often less obvious than people expect. The roof absorbs the brunt of a storm but the damage can be subtle enough that homeowners don't notice it until months later — when a leak shows up, or until an adjuster tells them their claim is denied because the damage is "pre-existing."</p>
+
+        <p>Here's what to inspect after any significant storm:</p>
+
+        <ul>
+          <li><strong>Roof shingles:</strong> Look for dark circular bruising or dimpling on asphalt shingles. This is where hail has fractured the granule layer — the protective coating that keeps your roof waterproof. Once that layer is compromised, your roof starts aging at 3–4x the normal rate.</li>
+          <li><strong>Gutters and downspouts:</strong> Dented gutters are one of the easiest signs of hail damage to spot from the ground. If your gutters look like a golf ball ran through them, your roof likely took a beating too.</li>
+          <li><strong>Vents, flashing, and skylights:</strong> Metal components dent visibly and are often the fastest way to document the size and impact of a storm. Adjusters look at these closely.</li>
+          <li><strong>Window screens and trim:</strong> Torn or dented screens and chipped paint around window frames are classic indicators of a significant storm event.</li>
+          <li><strong>AC unit:</strong> The exterior fins on your air conditioner are highly vulnerable to hail. A damaged condenser coil isn't always covered under a standard home policy — check your coverage.</li>
+          <li><strong>Siding:</strong> Vinyl siding cracks and dents in a specific pattern under hail impact. Wood siding shows split marks and dings.</li>
+        </ul>
+
+        <div class="warning-box">
+          <p><strong>Don't wait to file.</strong> Most homeowners insurance policies have a claim window — often 12 months from the date of loss. If you wait too long, your claim may be denied regardless of how clear the damage is. When in doubt, call your agent the same week as the storm.</p>
+        </div>
+
+        <h2>Is Your Home Actually Covered? The Coverage Gap Most People Don't Know About</h2>
+
+        <p>Here's where things get important — and where I see the most painful surprises at claim time.</p>
+
+        <p>There are two ways home insurance policies pay for damage: <strong>Replacement Cost Value (RCV)</strong> and <strong>Actual Cash Value (ACV)</strong>. The difference matters enormously when hail destroys your roof.</p>
+
+        <ul>
+          <li><strong>Replacement Cost Value (RCV)</strong> pays what it actually costs to replace your roof with a new one. If a new roof costs $18,000, you get $18,000 (minus your deductible).</li>
+          <li><strong>Actual Cash Value (ACV)</strong> pays the depreciated value of your roof. If your roof is 12 years old and a new one costs $18,000, you might receive $6,000 — and you're paying the other $12,000 out of pocket.</li>
+        </ul>
+
+        <p>Many homeowners don't know which type they have until they file a claim. If you're not sure, call your agent today and ask specifically: <em>"Do I have RCV or ACV coverage on my dwelling?"</em></p>
+
+        <p>Also worth checking: your <strong>hail deductible</strong>. In Colorado, many policies have a separate deductible for wind and hail — sometimes expressed as a percentage of your home's insured value rather than a flat dollar amount. On a $400,000 home with a 1% hail deductible, you're on the hook for the first $4,000 of every claim. That's significantly different from a standard $1,000 deductible.</p>
+
+        <h2>What to Watch For on Your Vehicle</h2>
+
+        <p>Auto hail damage is more straightforward to see but equally important to address quickly. Colorado sees a surge in total-loss vehicle declarations after major hail events because the cost to repair extensive panel damage often exceeds the vehicle's value.</p>
+
+        <p>After a hailstorm, inspect your vehicle for:</p>
+
+        <ul>
+          <li><strong>Hood, roof, and trunk lid:</strong> These horizontal surfaces take the most direct impact and show dimpling and denting most clearly. Walk around your vehicle in daylight and look across each surface at a low angle to catch subtle dents.</li>
+          <li><strong>Windshield and windows:</strong> Even small cracks spread quickly with temperature changes. A cracked windshield from hail should be reported and replaced promptly.</li>
+          <li><strong>Side mirrors and trim:</strong> Plastic mirror housings crack, and chrome trim dents and chips under direct hail impact.</li>
+          <li><strong>Painted surfaces:</strong> Hail can chip paint down to bare metal, which begins rusting quickly in Colorado's climate swings.</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>The coverage you need for hail on your vehicle is comprehensive — not collision.</strong> Comprehensive coverage specifically covers weather events including hail, wind, and falling objects. If you dropped comprehensive to save money, you are not covered for hail damage. Period.</p>
+        </div>
+
+        <p>The good news: filing a comprehensive claim for hail damage typically does <em>not</em> raise your auto insurance rates the same way an at-fault accident would. Hail is an act of nature — it's what comprehensive coverage is designed for. Don't avoid filing out of fear of a rate increase.</p>
+
+        <h2>What to Do Immediately After a Hailstorm</h2>
+
+        <ul>
+          <li><strong>Document everything before cleanup.</strong> Take photos and video of your property, roof (if safely accessible), vehicles, and any obvious damage. Timestamp matters — document the date.</li>
+          <li><strong>Don't let contractors pressure you.</strong> After major storms, out-of-state roofing contractors flood Colorado Springs offering to "work with your insurance." Many are storm chasers who do substandard work. Always verify a contractor's Colorado license and get multiple bids.</li>
+          <li><strong>Contact your insurance agent first.</strong> Before accepting any repair estimate or signing any contracts with a contractor, call your agent. They can walk you through the claims process, help you understand your coverage, and make sure you don't accidentally waive rights by signing something you shouldn't.</li>
+          <li><strong>File promptly.</strong> Don't assume the damage is minor. Let a professional assessment determine that. The cost of a claim inspection is zero.</li>
+        </ul>
+
+        <h2>The Bottom Line: Review Your Coverage Before Storm Season</h2>
+
+        <p>The best time to review your home and auto coverage is <em>before</em> a storm — not after. Once hail is falling, it's too late to add coverage or change deductibles.</p>
+
+        <p>If you haven't reviewed your home policy in the last two years, or if you're not sure whether you have RCV or ACV, or if you dropped comprehensive on your vehicle to save money — now is the time to have that conversation.</p>
+
+        <p>As your local Farmers Insurance agent in Colorado Springs, I offer free policy reviews with no obligation. We'll look at exactly what you have, what the gaps are, and whether there's a smarter way to protect what you've built — without necessarily paying more.</p>
+
+        <p>Give me a call, send a text, or book a time on my calendar below. Storm season waits for no one.</p>
+
+        <!-- CTA -->
+        <div style="background:linear-gradient(135deg,var(--navy),#042a88);border-radius:var(--radius-lg);padding:40px;text-align:center;margin-top:48px;">
+          <h3 style="color:var(--white);margin-bottom:10px;">Ready to Review Your Coverage?</h3>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:28px;">Free, no-obligation policy review. Takes about 20 minutes.</p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="https://calendly.com/reardoninsure/30min" target="_blank" class="btn btn-primary">Book a Free Review →</a>
+            <a href="contact.html" class="btn btn-outline">Send Us a Message</a>
+          </div>
+        </div>
+
+        <!-- Author bio -->
+        <div class="article-footer">
+          <img src="ryan-headshot.jpg" alt="Ryan Reardon" class="article-footer-avatar">
+          <div>
+            <h4>Ryan Reardon</h4>
+            <p>Ryan is a Farmers Insurance agent based in Colorado Springs, CO, serving clients across all of Colorado. He specializes in helping families and small businesses find coverage that actually fits their lives — not just the cheapest option. Agency License #920206 · NPN: 21766210</p>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar-sticky">
+        <div class="sidebar-cta">
+          <h4>Is Your Coverage Ready for Hail Season?</h4>
+          <p>Free policy review — no obligation, no pressure. Just honest answers.</p>
+          <a href="https://calendly.com/reardoninsure/30min" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Book Free Review →</a>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;">Contact Ryan</a>
+        </div>
+
+        <div class="related-posts">
+          <h5>More from the Blog</h5>
+          <a href="blog.html" class="related-post-item">
+            <div class="related-post-icon">🚗</div>
+            <div>
+              <div class="related-post-title">The Colorado Uninsured Driver Problem</div>
+              <div class="related-post-date">March 2025</div>
+            </div>
+          </a>
+          <a href="blog.html" class="related-post-item">
+            <div class="related-post-icon">☂️</div>
+            <div>
+              <div class="related-post-title">The $300/Year Policy That Could Save Your Net Worth</div>
+              <div class="related-post-date">January 2025</div>
+            </div>
+          </a>
+          <a href="blog.html" class="related-post-item">
+            <div class="related-post-icon">🏠</div>
+            <div>
+              <div class="related-post-title">What "Replacement Cost" Actually Means</div>
+              <div class="related-post-date">November 2024</div>
+            </div>
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">AGENCY</span> LLC</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+        <p style="margin-top:12px;font-size:0.82rem;">
+          📍 3225 Templeton Gap Rd, Ste 110, Colorado Springs, CO 80917<br>
+          📞 <a href="tel:+17192048190" style="color:#e8b923">(719) 204-8190</a><br>
+          ✉ <a href="mailto:proposal@reardoninsure.com" style="color:#e8b923">proposal@reardoninsure.com</a>
+        </p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Auto</a></li><li><a href="products.html">Home</a></li><li><a href="products.html">Life</a></li><li><a href="products.html">Commercial</a></li><li><a href="products.html">Umbrella</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank">Get a Quote</a></li></ul></div>
+      <div class="footer-col"><h5>Connect</h5><ul><li><a href="https://www.facebook.com/ReardonAgency/" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/reardonagency/" target="_blank">Instagram</a></li><li><a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank">Google Reviews</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

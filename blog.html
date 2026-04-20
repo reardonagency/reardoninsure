@@ -188,18 +188,30 @@
 
     <!-- FEATURED -->
     <div class="featured-post">
-      <div class="featured-image">🏔️</div>
+      <div class="featured-image">🌩️</div>
       <div class="featured-body">
         <span class="section-label">Featured Post</span>
-        <h2>Why Colorado Hail Season Should Make You Review Your Home Coverage Today</h2>
-        <p>Colorado is one of the top hail-damage states in the country — and most homeowners in Colorado Springs are underinsured when the storm hits. Here's what to check before it's too late.</p>
-        <div style="font-size:0.8rem;color:var(--mid-gray);margin-bottom:20px;">April 2025 · 5 min read</div>
-        <a href="#" class="btn btn-navy">Read the Article →</a>
+        <h2>Colorado Hail Season: What to Watch For on Your Home and Auto</h2>
+        <p>Colorado is one of the top hail-damage states in the country — and most homeowners and drivers in Colorado Springs are underinsured when the storm rolls in. Here's what to know before it's too late.</p>
+        <div style="font-size:0.8rem;color:var(--mid-gray);margin-bottom:20px;">April 2025 · 6 min read</div>
+        <a href="blog-hail-season-colorado.html" class="btn btn-navy">Read the Full Article →</a>
       </div>
     </div>
 
     <!-- BLOG GRID -->
     <div class="blog-grid">
+      <a href="blog-hail-season-colorado.html" class="blog-card" style="text-decoration:none;display:block;">
+        <div class="blog-card-image" style="background:linear-gradient(135deg,#00063b,#042a88);">
+          🌩️
+          <div class="blog-category">Home &amp; Auto</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">April 2025 · 6 min read</div>
+          <h3>Colorado Hail Season: What to Watch For on Your Home and Auto</h3>
+          <p>Colorado ranks in the top 5 states for hail damage. Here's what to inspect, what coverage you actually need, and what to do immediately after a storm.</p>
+          <span class="blog-read-more">Read Article</span>
+        </div>
+      </a>
       <div class="blog-card">
         <div class="blog-card-image">
           🚗
@@ -290,7 +302,7 @@
         </div>
       </form>
       <div class="newsletter-disclaimer">
-        By subscribing, you agree to receive email communications from Reardon Insurance Agency. You may unsubscribe at any time. Message &amp; data rates may apply if you provide a phone number. View our <a href="privacy.html" style="color:rgba(255,255,255,0.5)">Privacy Policy</a>.
+        By subscribing, you agree to receive email communications from Reardon Insurance Agency. You may unsubscribe at any time. Message &amp; data rates may apply if you provide a phone number. View our <button class="modal-trigger" onclick="openModal(\'privacyModal\')">Privacy Policy</button>.
       </div>
     </div>
 
@@ -310,7 +322,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
-      <p>CO License # [CO License # - Add Yours]</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
     </div>
   </div>
 </footer>
@@ -323,5 +335,49 @@ function subscribeNewsletter(e) {
   document.getElementById('newsletterEmail').value = '';
 }
 </script>
+
+<!-- TERMS MODAL -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+    <h4>Terms &amp; Conditions</h4>
+    <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy.</p>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+    <h4>Privacy Policy</h4>
+    <p>We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeModal(m.id);
+    });
+  }
+});
+</script>
+
 </body>
 </html>
