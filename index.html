@@ -418,19 +418,8 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <svg width="36" height="42" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19 2L35 9V22C35 31.5 28 39.5 19 42C10 39.5 3 31.5 3 22V9L19 2Z" fill="#1a3a8f" stroke="#e8b923" stroke-width="1.5"/>
-        <polygon points="8,27 13,18 18,27" fill="rgba(255,255,255,0.9)"/>
-        <polygon points="14,27 20,15 26,27" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="19" cy="11" r="1.5" fill="#e8b923"/>
-        <ellipse cx="19" cy="8" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9"/>
-        <ellipse cx="22" cy="9.5" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9" transform="rotate(72 22 9.5)"/>
-        <ellipse cx="21" cy="13" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9" transform="rotate(144 21 13)"/>
-        <ellipse cx="17" cy="13" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9" transform="rotate(216 17 13)"/>
-        <ellipse cx="16" cy="9.5" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9" transform="rotate(288 16 9.5)"/>
-        <text x="19" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="#e8b923">R</text>
-      </svg>
-      <div class="nav-logo-text">REARDON <span style="color:#e8b923">INSURANCE</span></div>
+      <img src="logo.png" alt="Reardon Agency Logo" style="height:48px;width:auto;">
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div>
     </a>
     <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -457,6 +446,7 @@
         <span>Farmers Insurance · Colorado Springs</span>
       </div>
       <h1>Protection You Can<br><em>Count On,</em> From<br>Someone You Know</h1>
+      <p class="hero-tagline" style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#e8b923;font-style:italic;margin-bottom:8px;font-weight:500;">Smart Coverage, Clear Answers.</p>
       <p class="hero-sub">Ryan Reardon is your local Farmers Insurance agent — born and built in Colorado Springs. Personal service, local knowledge, and coverage tailored to your life.</p>
       <div class="hero-actions">
         <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary">Get Your Free Quote →</a>
@@ -503,9 +493,14 @@
             <option>Multiple / Bundle</option>
           </select>
         </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:14px;margin:12px 0;">
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.6);line-height:1.5;margin-bottom:8px;">By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.6);line-height:1.5;margin-bottom:8px;"><strong style="color:rgba(255,255,255,0.8);">Terms and Conditions:</strong> By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with "STOP" to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with "HELP" to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy below.</p>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.6);line-height:1.5;"><strong style="color:rgba(255,255,255,0.8);">Privacy Policy:</strong> We do not pass any individual's consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+        </div>
         <div class="checkbox-group" style="margin-top:8px;">
           <input type="checkbox" id="sms-consent-hero" required>
-          <label for="sms-consent-hero">By checking this box, you agree that Reardon Insurance Agency may send you text messages related to your quote request. Message & data rates may apply. Reply STOP to opt out. View our <a href="privacy.html" style="color:#e8b923">Privacy Policy</a>.</label>
+          <label for="sms-consent-hero" style="font-size:0.75rem;color:rgba(255,255,255,0.65);">I agree to the Terms and Conditions and Privacy Policy above. *</label>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px;">
           Request My Quote →
@@ -600,8 +595,8 @@
       <div class="about-image-wrap">
         <div class="about-image-placeholder">👤</div>
         <div class="about-badge">
-          <span class="about-badge-num">1</span>
-          <span class="about-badge-text">Year Serving<br>Colorado Springs</span>
+          <span class="about-badge-num">CO</span>
+          <span class="about-badge-text">Based in Colorado Springs<br>Serving All of Colorado</span>
         </div>
       </div>
       <div class="about-text">
@@ -635,6 +630,23 @@
           <a href="about.html" class="btn btn-primary">Meet Ryan →</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GOOGLE REVIEWS -->
+<section class="section" style="background:var(--off-white);padding:48px 0;">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">Google Reviews</span>
+    <h2 style="margin-bottom:8px;">See What Clients Are Saying</h2>
+    <p style="color:var(--mid-gray);margin-bottom:32px;">Read real reviews from real Colorado Springs clients.</p>
+    <a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">
+      ⭐ Read Our Google Reviews →
+    </a>
+    <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-top:20px;">
+      <span style="font-size:1.5rem;color:#e8b923;">★★★★★</span>
+      <span style="font-weight:600;color:var(--navy);font-size:1rem;">5.0 on Google</span>
     </div>
   </div>
 </section>
@@ -736,10 +748,10 @@
       <div class="footer-col">
         <h5>Connect</h5>
         <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Google Reviews</a></li>
+          <li><a href="https://www.facebook.com/ReardonAgency/" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/reardonagency/" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">LinkedIn</a></li>
+          <li><a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank">Google Reviews</a></li>
         </ul>
         <div style="margin-top:20px;">
           <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Free Quote</a>

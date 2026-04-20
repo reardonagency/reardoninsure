@@ -6,16 +6,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --navy: #0f2557;
-  --navy-mid: #1a3a8f;
-  --navy-light: #1e4db7;
+  --navy: #00063b;
+  --navy-mid: #042a88;
+  --navy-light: #042a88;
   --gold: #e8b923;
   --gold-dark: #c49a10;
   --gold-light: #f5d060;
   --white: #ffffff;
-  --off-white: #f7f8fc;
-  --light-gray: #e8eaf0;
-  --mid-gray: #9099b0;
+  --off-white: #f7f8fa;
+  --light-gray: #cdd1da;
+  --mid-gray: #989ea5;
   --dark: #0a1628;
   --text: #2c3551;
   --success: #22c55e;
