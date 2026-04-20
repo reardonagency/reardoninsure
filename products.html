@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Products | Reardon Insurance Agency | Colorado Springs</title>
+  <meta name="description" content="Auto, home, life, commercial, umbrella, and specialty insurance from Ryan Reardon — your local Farmers Insurance agent in Colorado Springs, CO.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .products-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .product-detail-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1.5px solid var(--light-gray);
+      transition: all var(--transition);
+    }
+
+    .product-detail-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px);
+    }
+
+    .product-card-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .product-card-emoji { font-size: 3rem; display: block; margin-bottom: 12px; }
+    .product-card-header h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 6px; }
+    .product-card-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+    .product-card-body { padding: 28px; }
+    .product-card-body p { font-size: 0.9rem; color: var(--text); margin-bottom: 20px; line-height: 1.7; }
+
+    .coverage-list { list-style: none; margin-bottom: 24px; }
+    .coverage-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .coverage-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .bundle-section {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px;
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .bundle-section h2 { color: var(--navy); font-size: 2rem; margin-bottom: 12px; }
+    .bundle-section p { color: rgba(15,37,87,0.75); margin-bottom: 32px; }
+
+    @media (max-width: 1024px) {
+      .products-hero-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .products-hero-grid { grid-template-columns: 1fr; }
+      .bundle-section { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="36" height="42" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 2L35 9V22C35 31.5 28 39.5 19 42C10 39.5 3 31.5 3 22V9L19 2Z" fill="#1a3a8f" stroke="#e8b923" stroke-width="1.5"/>
+        <polygon points="8,27 13,18 18,27" fill="rgba(255,255,255,0.9)"/>
+        <polygon points="14,27 20,15 26,27" fill="rgba(255,255,255,0.7)"/>
+        <circle cx="19" cy="11" r="1.5" fill="#e8b923"/>
+        <ellipse cx="19" cy="8" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9"/>
+        <text x="19" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="#e8b923">R</text>
+      </svg>
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">INSURANCE</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-label">Farmers Insurance · Colorado Springs</span>
+    <h1>Insurance Products</h1>
+    <p class="section-subtitle">Comprehensive coverage options for every stage of life — personal, family, and business. All backed by Farmers Insurance.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="products-hero-grid">
+
+      <!-- AUTO -->
+      <div class="product-detail-card">
+        <div class="product-card-header">
+          <span class="product-card-emoji">🚗</span>
+          <h3>Auto Insurance</h3>
+          <div class="product-card-tagline">Protecting Colorado drivers</div>
+        </div>
+        <div class="product-card-body">
+          <p>Colorado law requires minimum liability coverage, but minimum often isn't enough. Ryan helps you find the right balance of protection and value for your vehicle and budget.</p>
+          <ul class="coverage-list">
+            <li>Liability (bodily injury & property damage)</li>
+            <li>Collision coverage</li>
+            <li>Comprehensive coverage</li>
+            <li>Uninsured / underinsured motorist</li>
+            <li>Medical payments (MedPay)</li>
+            <li>Rental reimbursement</li>
+            <li>Roadside assistance</li>
+          </ul>
+          <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Auto Quote →</a>
+        </div>
+      </div>
+
+      <!-- HOME -->
+      <div class="product-detail-card">
+        <div class="product-card-header">
+          <span class="product-card-emoji">🏠</span>
+          <h3>Home Insurance</h3>
+          <div class="product-card-tagline">Protect your biggest investment</div>
+        </div>
+        <div class="product-card-body">
+          <p>Your home is likely your largest asset. From hailstorms to liability, Ryan makes sure your coverage reflects what your home is actually worth — not a guess from 5 years ago.</p>
+          <ul class="coverage-list">
+            <li>Dwelling coverage (structure)</li>
+            <li>Personal property coverage</li>
+            <li>Liability protection</li>
+            <li>Loss of use / additional living expenses</li>
+            <li>Other structures (fences, sheds, detached garages)</li>
+            <li>Water backup coverage</li>
+            <li>Extended replacement cost available</li>
+          </ul>
+          <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Home Quote →</a>
+        </div>
+      </div>
+
+      <!-- LIFE -->
+      <div class="product-detail-card">
+        <div class="product-card-header">
+          <span class="product-card-emoji">❤️</span>
+          <h3>Life Insurance</h3>
+          <div class="product-card-tagline">Protect those who depend on you</div>
+        </div>
+        <div class="product-card-body">
+          <p>Life insurance is one of the most important financial decisions you'll make. Ryan walks you through term vs. permanent options without the sales pressure — just honest advice.</p>
+          <ul class="coverage-list">
+            <li>Term life (10, 20, 30-year options)</li>
+            <li>Whole life insurance</li>
+            <li>Universal life insurance</li>
+            <li>Final expense coverage</li>
+            <li>Mortgage protection</li>
+            <li>Business key-person life insurance</li>
+            <li>Family income replacement planning</li>
+          </ul>
+          <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Life Quote →</a>
+        </div>
+      </div>
+
+      <!-- COMMERCIAL -->
+      <div class="product-detail-card">
+        <div class="product-card-header" style="background:linear-gradient(135deg,#0a1628 0%,#0f2557 100%);">
+          <span class="product-card-emoji">🏢</span>
+          <h3>Commercial Insurance</h3>
+          <div class="product-card-tagline">For Colorado Springs businesses</div>
+        </div>
+        <div class="product-card-body">
+          <p>Your business has unique risks. Ryan works with small and mid-size Colorado Springs businesses to find commercial coverage that actually protects your livelihood — without overpaying.</p>
+          <ul class="coverage-list">
+            <li>Business Owner Policy (BOP)</li>
+            <li>General liability</li>
+            <li>Commercial property</li>
+            <li>Commercial auto</li>
+            <li>Workers' compensation</li>
+            <li>Professional liability (E&O)</li>
+            <li>Cyber liability coverage</li>
+          </ul>
+          <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Business Quote →</a>
+        </div>
+      </div>
+
+      <!-- UMBRELLA -->
+      <div class="product-detail-card">
+        <div class="product-card-header" style="background:linear-gradient(135deg,#1e4db7 0%,#1a3a8f 100%);">
+          <span class="product-card-emoji">☂️</span>
+          <h3>Umbrella Policy</h3>
+          <div class="product-card-tagline">Extra protection above your limits</div>
+        </div>
+        <div class="product-card-body">
+          <p>An umbrella policy provides an extra layer of liability coverage that kicks in when your auto or home policy limits are exhausted. It's one of the best values in insurance — and most people skip it.</p>
+          <ul class="coverage-list">
+            <li>$1M–$5M+ in additional liability coverage</li>
+            <li>Covers auto and home liability above policy limits</li>
+            <li>Protects assets in lawsuits</li>
+            <li>Covers incidents your other policies may miss</li>
+            <li>Affordable — often $150–$300/year</li>
+            <li>Ideal for homeowners, business owners, and parents</li>
+          </ul>
+          <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Umbrella Quote →</a>
+        </div>
+      </div>
+
+      <!-- SPECIALTY -->
+      <div class="product-detail-card">
+        <div class="product-card-header" style="background:linear-gradient(135deg,#c49a10 0%,#e8b923 100%);">
+          <span class="product-card-emoji">⚡</span>
+          <h3>Specialty Coverage</h3>
+          <div class="product-card-tagline">Coverage for life's extras</div>
+        </div>
+        <div class="product-card-body">
+          <p>From motorcycles to RVs to rental properties, life doesn't fit neatly into auto and home buckets. Reardon Insurance covers the things that make Colorado living worth it.</p>
+          <ul class="coverage-list">
+            <li>Motorcycle insurance</li>
+            <li>RV / motorhome coverage</li>
+            <li>Boat and watercraft</li>
+            <li>Renters insurance</li>
+            <li>Condo insurance</li>
+            <li>Landlord / rental property</li>
+            <li>ATV and off-road vehicle</li>
+          </ul>
+          <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Get Specialty Quote →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BUNDLE -->
+    <div class="bundle-section">
+      <h2>Bundle and Save</h2>
+      <p style="max-width:560px;margin:0 auto 32px;">Combining your auto and home — or adding an umbrella — can save you 10–25% on your total premium. Ryan will always show you the bundle options so you can decide what makes sense.</p>
+      <a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="btn btn-navy" style="font-size:1rem;padding:16px 36px;">Get a Bundle Quote →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">INSURANCE</span> AGENCY</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Auto Insurance</a></li><li><a href="products.html">Home Insurance</a></li><li><a href="products.html">Life Insurance</a></li><li><a href="products.html">Commercial</a></li><li><a href="products.html">Umbrella</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div>
+      <div class="footer-col"><h5>Connect</h5><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Google Reviews</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>CO License # [CO License # - Add Yours]</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

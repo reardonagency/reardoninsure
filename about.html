@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ryan Reardon | Reardon Insurance Agency | Colorado Springs</title>
+  <meta name="description" content="Meet Ryan Reardon, your local Farmers Insurance agent in Colorado Springs, CO. Personal service, local expertise, real protection.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      border: 2px solid rgba(232,185,35,0.25);
+      position: relative;
+    }
+
+    .about-photo-badge {
+      position: absolute;
+      bottom: 24px;
+      left: -20px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .about-photo-badge-icon { font-size: 2rem; }
+    .about-photo-badge h5 { font-size: 0.85rem; color: var(--navy); font-family: var(--font-body); }
+    .about-photo-badge p { font-size: 0.75rem; color: var(--mid-gray); margin: 0; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-gray);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .value-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .value-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .value-card h4 { margin-bottom: 10px; font-size: 1rem; }
+    .value-card p { font-size: 0.88rem; color: var(--mid-gray); margin: 0; }
+
+    .credentials-section { background: var(--navy); }
+    .credentials-section h2 { color: var(--white); }
+    .credentials-section .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .credential-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .credential-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .credential-card h4 { color: var(--gold); font-size: 0.95rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 8px; }
+    .credential-card p { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin: 0; }
+
+    @media (max-width: 900px) {
+      .about-hero-grid { grid-template-columns: 1fr; }
+      .about-photo { display: none; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .credentials-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .credentials-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="36" height="42" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 2L35 9V22C35 31.5 28 39.5 19 42C10 39.5 3 31.5 3 22V9L19 2Z" fill="#1a3a8f" stroke="#e8b923" stroke-width="1.5"/>
+        <polygon points="8,27 13,18 18,27" fill="rgba(255,255,255,0.9)"/>
+        <polygon points="14,27 20,15 26,27" fill="rgba(255,255,255,0.7)"/>
+        <circle cx="19" cy="11" r="1.5" fill="#e8b923"/>
+        <ellipse cx="19" cy="8" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9"/>
+        <text x="19" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="#e8b923">R</text>
+      </svg>
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">INSURANCE</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-label">Your Local Agent</span>
+    <h1>Meet Ryan Reardon</h1>
+    <p class="section-subtitle">A Colorado Springs native who believes insurance should come with a real relationship, not a 1-800 number.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-hero-grid">
+      <div class="about-photo">
+        👤
+        <div class="about-photo-badge">
+          <div class="about-photo-badge-icon">🏆</div>
+          <div>
+            <h5>Farmers Insurance Agent</h5>
+            <p>Colorado Springs, CO</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">My Story</span>
+        <h2 class="section-title">Built on Community, Driven by Purpose</h2>
+        <p>Ryan Reardon opened Reardon Insurance Agency because he saw a gap between what people needed from an insurance agent and what they were getting — generic policies, call centers, and agents who disappeared after the sale.</p>
+        <p style="margin-top:16px;">As a Farmers Insurance agent in Colorado Springs, Ryan brings a different approach: real conversations, honest advice, and coverage that actually fits your life. Whether you're a first-time homeowner, a small business owner, or a family looking to protect what matters most — Ryan takes the time to get it right.</p>
+        <p style="margin-top:16px;">Ryan is also an active member of BNI (Business Network International), committed to building the kind of local relationships that serve Colorado Springs for the long haul. When you work with Reardon Insurance, you're not a policy number — you're a neighbor.</p>
+        <div style="display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;">
+          <a href="quote.html" class="btn btn-primary">Get a Free Quote →</a>
+          <a href="contact.html" class="btn btn-navy">Schedule a Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--off-white);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:16px;">
+      <span class="section-label">Core Values</span>
+      <h2>What We Stand For</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Relationships First</h4>
+        <p>Insurance is personal. Ryan builds real relationships with every client — not just policies.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔍</div>
+        <h4>Honest Advice</h4>
+        <p>You'll never be oversold or undersold. Ryan recommends what you actually need, nothing more.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h4>Fast Response</h4>
+        <p>Questions get answered. Calls get returned. You'll never wonder where your agent is.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📍</div>
+        <h4>Local Knowledge</h4>
+        <p>Colorado risks, Colorado weather, Colorado living. Ryan knows this market inside and out.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💪</div>
+        <h4>Community Driven</h4>
+        <p>Reardon Insurance gives back to Colorado Springs. Your business here helps this community thrive.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
+        <h4>Real Protection</h4>
+        <p>No fine-print surprises. Ryan makes sure your coverage actually covers what you think it does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section credentials-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:16px;">
+      <span class="section-label">Credentials & Affiliations</span>
+      <h2>Backed by Experience</h2>
+      <p class="section-subtitle" style="margin:16px auto 0;">Every policy is backed by the strength of Farmers Insurance — one of the nation's largest insurers.</p>
+    </div>
+    <div class="credentials-grid">
+      <div class="credential-card">
+        <div class="credential-icon">🏆</div>
+        <h4>Farmers Insurance</h4>
+        <p>Independent contractor agency backed by one of the largest U.S. insurers</p>
+      </div>
+      <div class="credential-card">
+        <div class="credential-icon">📜</div>
+        <h4>Licensed in Colorado</h4>
+        <p>Property, casualty, life, and health licensed in the state of Colorado</p>
+      </div>
+      <div class="credential-card">
+        <div class="credential-icon">🤝</div>
+        <h4>BNI Member</h4>
+        <p>Active member of Business Network International — Colorado Springs chapter</p>
+      </div>
+      <div class="credential-card">
+        <div class="credential-icon">⭐</div>
+        <h4>5-Star Rated</h4>
+        <p>Consistently 5-star rated on Google by real Colorado Springs clients</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="text-align:center;">
+  <div class="container" style="max-width:640px;">
+    <span class="section-label">Work With Ryan</span>
+    <h2>Ready to Get Covered?</h2>
+    <p style="margin:16px 0 36px;">Whether you're shopping for new coverage or want to review what you have, Ryan is here to help. No pressure. Just honest advice.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="quote.html" class="btn btn-primary">Get a Free Quote →</a>
+      <a href="contact.html" class="btn btn-navy">Contact Ryan</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">INSURANCE</span> AGENCY</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="auto.html">Auto</a></li><li><a href="home.html">Home</a></li><li><a href="life.html">Life</a></li><li><a href="commercial.html">Commercial</a></li><li><a href="umbrella.html">Umbrella</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div>
+      <div class="footer-col"><h5>Connect</h5><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Google Reviews</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>CO License # [CO License # - Add Yours]</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

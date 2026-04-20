@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Join Reardon Insurance Agency | Colorado Springs</title>
+  <meta name="description" content="Join the Reardon Insurance Agency team in Colorado Springs. Producer and CSR/Sales Support positions available. Farmers Insurance agency with real growth opportunity.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .careers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .job-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1.5px solid var(--light-gray);
+      transition: all var(--transition);
+    }
+
+    .job-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .job-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .badge-open { background: rgba(34,197,94,0.1); color: #15803d; }
+    .badge-hiring { background: rgba(232,185,35,0.15); color: #92660a; }
+
+    .job-title { font-size: 1.5rem; margin-bottom: 12px; }
+    .job-type { font-size: 0.85rem; color: var(--mid-gray); margin-bottom: 20px; font-weight: 500; }
+
+    .job-card p { font-size: 0.92rem; color: var(--text); margin-bottom: 20px; }
+
+    .job-perks { margin: 20px 0; }
+    .perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+
+    .perk-item::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .perks-section { background: var(--navy); }
+    .perks-section h2 { color: var(--white); }
+
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .perk-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+    }
+
+    .perk-card-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .perk-card h4 { color: var(--gold); font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+    .perk-card p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; }
+
+    /* Application Form */
+    .apply-section { background: var(--off-white); }
+    .apply-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .position-selector {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .position-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border: 2px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .position-option:has(input:checked) {
+      border-color: var(--navy-mid);
+      background: rgba(26,58,143,0.05);
+      color: var(--navy);
+    }
+
+    .position-option input { accent-color: var(--navy-mid); }
+
+    .success-message { display: none; text-align: center; padding: 48px 0; }
+
+    @media (max-width: 768px) {
+      .careers-grid { grid-template-columns: 1fr; }
+      .perks-grid { grid-template-columns: 1fr 1fr; }
+      .position-selector { grid-template-columns: 1fr; }
+      .apply-form-wrap { padding: 24px; }
+    }
+
+    @media (max-width: 500px) {
+      .perks-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="36" height="42" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 2L35 9V22C35 31.5 28 39.5 19 42C10 39.5 3 31.5 3 22V9L19 2Z" fill="#1a3a8f" stroke="#e8b923" stroke-width="1.5"/>
+        <polygon points="8,27 13,18 18,27" fill="rgba(255,255,255,0.9)"/>
+        <polygon points="14,27 20,15 26,27" fill="rgba(255,255,255,0.7)"/>
+        <circle cx="19" cy="11" r="1.5" fill="#e8b923"/>
+        <ellipse cx="19" cy="8" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9"/>
+        <text x="19" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="#e8b923">R</text>
+      </svg>
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">INSURANCE</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-label">We're Growing · Colorado Springs</span>
+    <h1>Join the Team</h1>
+    <p class="section-subtitle">Reardon Insurance Agency is expanding. We're looking for driven, people-first professionals who want to build a career — not just hold a job.</p>
+  </div>
+</section>
+
+<!-- OPEN POSITIONS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-label">Open Positions</span>
+      <h2>Current Opportunities</h2>
+    </div>
+    <div class="careers-grid">
+      <div class="job-card">
+        <div class="job-badge badge-open">Now Hiring</div>
+        <h3 class="job-title">Insurance Sales Producer</h3>
+        <div class="job-type">📍 Colorado Springs, CO &nbsp;|&nbsp; Full-Time &nbsp;|&nbsp; Commission + Base</div>
+        <p>We're looking for a motivated sales professional to join our agency as a licensed insurance producer. You'll quote, sell, and service auto, home, life, and commercial policies for Colorado Springs families and businesses.</p>
+        <p>This role is built for someone who wants to earn well, grow fast, and be part of a team that invests in their development — not just throw you into a phone bank and hope for the best.</p>
+        <div class="job-perks">
+          <div class="perk-item">Commission-based with guaranteed base during training</div>
+          <div class="perk-item">Structured 90-day onboarding and call coaching program</div>
+          <div class="perk-item">AI-powered call simulator for skills development</div>
+          <div class="perk-item">Clear path to full independence and higher commissions</div>
+          <div class="perk-item">Must obtain or already hold CO P&C license (we'll help)</div>
+          <div class="perk-item">BNI and community networking opportunities</div>
+        </div>
+        <a href="#apply" class="btn btn-primary">Apply Now →</a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-badge badge-hiring">Accepting Applications</div>
+        <h3 class="job-title">Customer Service & Sales Rep</h3>
+        <div class="job-type">📍 Colorado Springs, CO &nbsp;|&nbsp; Full or Part-Time &nbsp;|&nbsp; Hourly + Bonus</div>
+        <p>This hybrid role handles inbound client service — renewals, policy changes, billing questions — while also supporting the sales team with lead follow-up, quoting assistance, and pipeline management in AgencyZoom.</p>
+        <p>Perfect for someone with strong phone presence and organizational skills who wants to grow in the insurance industry without jumping straight into full-time sales.</p>
+        <div class="job-perks">
+          <div class="perk-item">Hourly base pay with performance bonuses</div>
+          <div class="perk-item">Flexible scheduling considered for the right candidate</div>
+          <div class="perk-item">Training on AgencyZoom CRM and Dialpad phone system</div>
+          <div class="perk-item">Career growth path toward licensed producer role</div>
+          <div class="perk-item">CO license helpful but not required to start</div>
+          <div class="perk-item">Work directly with agency owner</div>
+        </div>
+        <a href="#apply" class="btn btn-navy">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="section perks-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-label">Why Join Us</span>
+      <h2>What Working Here Looks Like</h2>
+    </div>
+    <div class="perks-grid">
+      <div class="perk-card">
+        <div class="perk-card-icon">📈</div>
+        <h4>Real Earning Potential</h4>
+        <p>Insurance is one of the few industries where your income is truly tied to your effort. We build earners.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-card-icon">🎓</div>
+        <h4>Serious Training</h4>
+        <p>90-day structured onboarding, AI call coaching, live call review, and weekly 1-on-1 development.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-card-icon">🏔️</div>
+        <h4>Colorado Roots</h4>
+        <p>We're building something in Colorado Springs. You'll be part of a community, not a call center.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-card-icon">🤝</div>
+        <h4>Small Team Culture</h4>
+        <p>Direct access to agency ownership. Your voice matters and your growth is a personal priority.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-card-icon">🛠️</div>
+        <h4>Modern Tools</h4>
+        <p>AgencyZoom CRM, Dialpad AI, AI coaching simulator, and a full digital playbook from day one.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-card-icon">🚀</div>
+        <h4>Growth Path</h4>
+        <p>We're planning to grow to 4 producers by end of 2026. Ground-floor opportunity right now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="section apply-section" id="apply">
+  <div class="container">
+    <div class="apply-form-wrap">
+      <div id="applyForm">
+        <span class="section-label">Application</span>
+        <h2 style="margin-bottom:8px;">Apply to Join the Team</h2>
+        <p style="color:var(--mid-gray);margin-bottom:36px;">Ryan personally reviews every application. Tell us who you are and why you'd be a great fit.</p>
+
+        <form onsubmit="submitApp(event)">
+          <div class="form-group">
+            <label>Position Applying For *</label>
+            <div class="position-selector">
+              <label class="position-option">
+                <input type="radio" name="position" value="Producer" required> 💼 Sales Producer
+              </label>
+              <label class="position-option">
+                <input type="radio" name="position" value="CSR"> 📞 Customer Service & Sales Rep
+              </label>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" placeholder="First name" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" placeholder="(719) 555-0000" required>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>City / State</label>
+            <input type="text" placeholder="Colorado Springs, CO">
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Do you have a CO P&C License?</label>
+              <select>
+                <option>Yes, active license</option>
+                <option>Yes, but lapsed</option>
+                <option>No, but willing to obtain</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Years of Sales Experience</label>
+              <select>
+                <option>None / Entry Level</option>
+                <option>Less than 1 year</option>
+                <option>1–3 years</option>
+                <option>3–5 years</option>
+                <option>5+ years</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Insurance Experience (if any)</label>
+            <textarea placeholder="Previous agencies, carriers, products sold, years in insurance, etc. Leave blank if none."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Why Are You Interested in This Role? *</label>
+            <textarea placeholder="Tell us what draws you to this opportunity and what you'd bring to the team..." required style="min-height:140px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Desired Compensation / Schedule (Optional)</label>
+            <input type="text" placeholder="e.g., Looking for full-time, commission + base, open to discuss">
+          </div>
+
+          <div class="compliance-box">
+              <p><strong>Text Message Consent</strong></p>
+              <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with "STOP" to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with "HELP" to any text message you receive, or contact our customer support team at (719) 204-8190.</p>
+              <p><strong>Privacy Policy:</strong> We do not pass any individual's consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+              <p>For more information, please review our <a href="privacy.html" style="color:var(--navy-mid)">Privacy Policy</a> and <a href="terms.html" style="color:var(--navy-mid)">Terms &amp; Conditions</a>.</p>
+            </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="sms-app" required>
+            <label for="sms-app">I agree to receive text messages from Reardon Insurance Agency regarding my application. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="privacy-app" required>
+            <label for="privacy-app">I consent to Reardon Insurance Agency collecting and using my application information for employment consideration. *</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">
+            Submit Application →
+          </button>
+        </form>
+      </div>
+
+      <div class="success-message" id="successApp">
+        <div style="font-size:4rem;margin-bottom:16px;">🎉</div>
+        <h2>Application Received!</h2>
+        <p style="color:var(--mid-gray);margin-top:12px;max-width:400px;margin-left:auto;margin-right:auto;">Ryan personally reviews every application and will be in touch within 2–3 business days. We appreciate your interest in joining the team!</p>
+        <div style="margin-top:32px;">
+          <a href="index.html" class="btn btn-navy">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">INSURANCE</span> AGENCY</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="auto.html">Auto</a></li><li><a href="home.html">Home</a></li><li><a href="life.html">Life</a></li><li><a href="commercial.html">Commercial</a></li><li><a href="umbrella.html">Umbrella</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div>
+      <div class="footer-col"><h5>Connect</h5><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>CO License # [CO License # - Add Yours]</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitApp(e) {
+  e.preventDefault();
+  document.getElementById('applyForm').style.display = 'none';
+  document.getElementById('successApp').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

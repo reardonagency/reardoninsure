@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Reardon Insurance Agency | Colorado Springs</title>
+  <meta name="description" content="Contact Ryan Reardon at Reardon Insurance Agency in Colorado Springs. Call, text, or email for insurance help.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--light-gray);
+    }
+
+    .contact-info-card {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .contact-info-card h3 { color: var(--white); margin-bottom: 24px; }
+
+    .info-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(232,185,35,0.15);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(232,185,35,0.2);
+    }
+
+    .info-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .info-value { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+    .info-value a { color: var(--white); }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4px 16px;
+      margin-top: 8px;
+    }
+
+    .hours-day { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+    .hours-time { font-size: 0.88rem; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+    .success-message { display: none; text-align: center; padding: 48px 0; }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="36" height="42" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 2L35 9V22C35 31.5 28 39.5 19 42C10 39.5 3 31.5 3 22V9L19 2Z" fill="#1a3a8f" stroke="#e8b923" stroke-width="1.5"/>
+        <polygon points="8,27 13,18 18,27" fill="rgba(255,255,255,0.9)"/>
+        <polygon points="14,27 20,15 26,27" fill="rgba(255,255,255,0.7)"/>
+        <circle cx="19" cy="11" r="1.5" fill="#e8b923"/>
+        <ellipse cx="19" cy="8" rx="1.2" ry="2.5" fill="#e8b923" opacity="0.9"/>
+        <text x="19" y="35" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="#e8b923">R</text>
+      </svg>
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">INSURANCE</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-label">We're Here to Help</span>
+    <h1>Contact Reardon Insurance</h1>
+    <p class="section-subtitle">Have a question? Need to update your policy? Just want to talk through your options? Ryan is here.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-form-wrap">
+        <div id="contactForm">
+          <h3 style="margin-bottom:8px;">Send Us a Message</h3>
+          <p style="color:var(--mid-gray);margin-bottom:32px;font-size:0.9rem;">Ryan personally reads and responds to every message, typically within a few hours during business hours.</p>
+
+          <form onsubmit="submitContact(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" placeholder="First name" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" placeholder="Last name" required>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Phone *</label>
+                <input type="tel" placeholder="(719) 555-0000" required>
+              </div>
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" placeholder="you@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>What Can We Help With?</label>
+              <select>
+                <option>I need a new insurance quote</option>
+                <option>I'm a current client with a question</option>
+                <option>I need to update my policy</option>
+                <option>I want to file or discuss a claim</option>
+                <option>I'm interested in a career opportunity</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+
+            <div class="compliance-box">
+              <p><strong>Text Message Consent</strong></p>
+              <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with "STOP" to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with "HELP" to any text message you receive, or contact our customer support team at (719) 204-8190.</p>
+              <p><strong>Privacy Policy:</strong> We do not pass any individual's consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+              <p>For more information, please review our <a href="privacy.html" style="color:var(--navy-mid)">Privacy Policy</a> and <a href="terms.html" style="color:var(--navy-mid)">Terms &amp; Conditions</a>.</p>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="sms-contact" required>
+              <label for="sms-contact">I agree to receive text messages from Reardon Insurance Agency. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="privacy-contact" required>
+              <label for="privacy-contact">I consent to Reardon Insurance Agency using my information to respond to my inquiry. *</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;margin-top:8px;">
+              Send Message →
+            </button>
+          </form>
+        </div>
+
+        <div class="success-message" id="successMessage">
+          <div style="font-size:4rem;margin-bottom:16px;">✅</div>
+          <h2>Message Sent!</h2>
+          <p style="color:var(--mid-gray);margin-top:12px;">Ryan will get back to you within a few hours during business hours. Thank you for reaching out!</p>
+          <div style="margin-top:32px;">
+            <a href="index.html" class="btn btn-navy">Back to Home</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-info-card">
+          <h3>Get In Touch</h3>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div>
+              <div class="info-label">Phone / Text</div>
+              <div class="info-value"><a href="tel:+17192048190">(719) 204-8190</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">✉️</div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:proposal@reardoninsure.com">proposal@reardoninsure.com</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">Location</div>
+              <div class="info-value">3225 Templeton Gap Rd, Ste 110<br>
+          Colorado Springs, CO 80917<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.5);">Serving the greater Pikes Peak region</span></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div>
+              <div class="info-label">Office Hours</div>
+              <div class="hours-grid">
+                <span class="hours-day">Mon – Fri</span>
+                <span class="hours-time">9:00am – 5:00pm</span>
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">By Appointment</span>
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:28px;">
+          <h4 style="margin-bottom:16px;">Prefer to Quote Online?</h4>
+          <p style="font-size:0.88rem;color:var(--mid-gray);margin-bottom:20px;">Our full quote form captures everything Ryan needs to shop the best options for you.</p>
+          <a href="quote.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get a Free Quote →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">INSURANCE</span> AGENCY</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="auto.html">Auto</a></li><li><a href="home.html">Home</a></li><li><a href="life.html">Life</a></li><li><a href="commercial.html">Commercial</a></li><li><a href="umbrella.html">Umbrella</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>CO License # [CO License # - Add Yours]</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('successMessage').style.display = 'block';
+}
+</script>
+</body>
+</html>
