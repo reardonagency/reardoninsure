@@ -22,9 +22,6 @@
     .photos-intro { max-width: 680px; margin: 0 auto 40px; text-align: center; }
     .photos-intro p { font-size: 1rem; color: var(--text); line-height: 1.8; }
     .photos-feed-wrap { min-height: 0; }
-    .photos-placeholder { background: var(--off-white); border: 1.5px dashed var(--light-gray); border-radius: var(--radius-lg); padding: 56px 32px; text-align: center; }
-    .photos-placeholder .placeholder-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
-    .photos-placeholder p { color: var(--mid-gray); font-size: 0.92rem; line-height: 1.7; margin: 0; }
     .photos-follow { text-align: center; margin-top: 48px; }
     .photos-follow-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
@@ -96,7 +93,7 @@
   <div class="container">
 
     <div class="photos-intro">
-      <p>We post regularly on Instagram, Facebook, and LinkedIn. This page will show that feed live and update automatically — for now, follow along directly below.</p>
+      <p>We post regularly on Instagram, Facebook, and LinkedIn — the feed below pulls straight from Instagram and updates automatically.</p>
     </div>
 
     <div class="socials-layout">
@@ -113,20 +110,9 @@
       <div>
         <!-- SOCIAL FEED EMBED -->
         <div class="photos-feed-wrap">
-          <!--
-            Elfsight social feed embed goes here once Ryan creates the widget.
-            Steps: log into elfsight.com (same account used for the Google Reviews
-            widget on the homepage) > create a new "Instagram Feed" or "All-in-One
-            Social Feed" widget > connect the Instagram/Facebook business account >
-            copy the widget's embed snippet (script tag + a
-            <div class="elfsight-app-XXXXXXXX" data-elfsight-app-lazy></div>) and
-            send it over to drop in here. Once added, remove the .photos-placeholder
-            card below.
-          -->
-          <div class="photos-placeholder">
-            <span class="placeholder-icon">📸</span>
-            <p>The live feed is being connected. In the meantime, follow along on any of these to see it all in real time.</p>
-          </div>
+          <!-- Elfsight Social Feed | Untitled Social Feed -->
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-b8a32cae-f710-4f54-b758-4f862512b420" data-elfsight-app-lazy></div>
         </div>
 
         <div class="photos-follow">
