@@ -63,6 +63,39 @@
     .refer-cta p { color: rgba(255,255,255,0.65); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
     @media (max-width: 900px) { .resource-grid { grid-template-columns: 1fr 1fr; } .insurance-callout { flex-direction: column; text-align: center; padding: 28px 24px; } .bankliterate-callout { flex-direction: column; text-align: center; padding: 28px 24px; } .refer-cta { padding: 36px 24px; } }
     @media (max-width: 600px) { .resource-grid { grid-template-columns: 1fr; } }
+
+    html { scroll-padding-top: 216px; }
+
+    .resources-toolbar {
+      position: sticky; top: 72px; z-index: 500;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1.5px solid var(--light-gray);
+      padding: 16px 0;
+    }
+    .resources-toolbar-inner { display: flex; flex-direction: column; gap: 14px; }
+    .resources-search { position: relative; max-width: 480px; }
+    .resources-search input {
+      width: 100%; padding: 11px 44px 11px 16px; border: 1.5px solid var(--light-gray);
+      border-radius: 100px; font-family: var(--font-body); font-size: 0.9rem; color: var(--text);
+    }
+    .resources-search input:focus { border-color: var(--navy-mid); outline: none; box-shadow: 0 0 0 3px rgba(26,58,143,0.1); }
+    .resources-search-count {
+      position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      font-size: 0.76rem; color: var(--mid-gray); font-weight: 600; pointer-events: none;
+    }
+    .resources-nav-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+    .resources-nav-chip {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600;
+      color: var(--navy); background: var(--off-white); border: 1.5px solid var(--light-gray);
+      border-radius: 100px; padding: 7px 14px; text-decoration: none; white-space: nowrap;
+      transition: all var(--transition);
+    }
+    .resources-nav-chip:hover { border-color: var(--gold); background: rgba(232,185,35,0.1); }
+    .resources-no-results { text-align: center; padding: 48px 0; color: var(--mid-gray); font-size: 0.95rem; display: none; }
+
+    @media (max-width: 700px) {
+      .resources-nav-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+    }
   </style>
 </head>
 <body>
@@ -98,6 +131,24 @@
   </div>
 </section>
 
+<div class="resources-toolbar">
+  <div class="container resources-toolbar-inner">
+    <div class="resources-search">
+      <input type="text" id="resourceSearch" placeholder="Search by name, service, or keyword..." oninput="filterResources()">
+      <span class="resources-search-count" id="resourceSearchCount"></span>
+    </div>
+    <div class="resources-nav-chips">
+      <a href="#cat-financial" class="resources-nav-chip">🏡 Home &amp; Financial</a>
+      <a href="#cat-trades" class="resources-nav-chip">🔨 Home Services</a>
+      <a href="#cat-auto" class="resources-nav-chip">🚗 Auto</a>
+      <a href="#cat-legal" class="resources-nav-chip">⚖️ Legal</a>
+      <a href="#cat-marketing" class="resources-nav-chip">📈 Marketing</a>
+      <a href="#cat-health" class="resources-nav-chip">❤️ Health</a>
+      <a href="#cat-lifestyle" class="resources-nav-chip">🌟 Lifestyle</a>
+    </div>
+  </div>
+</div>
+
 <section class="section">
   <div class="container">
 
@@ -125,7 +176,7 @@
     </div>
 
     <!-- HOME BUYING & FINANCIAL -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-financial">
       <div class="category-header">
         <div class="category-icon">🏡</div>
         <div><h2>Home Buying &amp; Financial Services</h2><p>The professionals you need when buying, financing, or planning your financial future</p></div>
@@ -247,7 +298,7 @@
     </div>
 
     <!-- HOME SERVICES & TRADES -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-trades">
       <div class="category-header">
         <div class="category-icon">🔨</div>
         <div><h2>Home Services &amp; Skilled Trades</h2><p>Licensed, reliable contractors and home service professionals &mdash; among the most requested referrals I get</p></div>
@@ -396,7 +447,7 @@
     </div>
 
     <!-- AUTO SERVICES -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-auto">
       <div class="category-header">
         <div class="category-icon">🚗</div>
         <div><h2>Auto Services</h2><p>Vehicle purchasing, repair, and Colorado-specific auto specialties</p></div>
@@ -440,7 +491,7 @@
     </div>
 
     <!-- LEGAL & PROFESSIONAL -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-legal">
       <div class="category-header">
         <div class="category-icon">⚖️</div>
         <div><h2>Legal &amp; Professional Services</h2><p>Attorneys and business professionals who handle the serious stuff</p></div>
@@ -482,7 +533,7 @@
     </div>
 
     <!-- MARKETING & BUSINESS -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-marketing">
       <div class="category-header">
         <div class="category-icon">📈</div>
         <div><h2>Marketing &amp; Business Growth</h2><p>Professionals who help businesses get found, grow, and operate more effectively</p></div>
@@ -525,7 +576,7 @@
     </div>
 
     <!-- HEALTH & WELLNESS -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-health">
       <div class="category-header">
         <div class="category-icon">❤️</div>
         <div><h2>Health &amp; Wellness</h2><p>Healthcare and wellness professionals who take a whole-person approach</p></div>
@@ -622,7 +673,7 @@
     </div>
 
     <!-- PERSONAL & LIFESTYLE -->
-    <div class="resource-category">
+    <div class="resource-category" id="cat-lifestyle">
       <div class="category-header">
         <div class="category-icon">🌟</div>
         <div><h2>Personal &amp; Lifestyle Services</h2><p>Photographers, stylists, travel pros, and event specialists who make life better</p></div>
@@ -674,6 +725,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="resources-no-results" id="resourcesNoResults">
+      <p>No matches for that search. <a href="contact.html" style="color:var(--navy-mid);font-weight:600;">Reach out directly</a> — there's a good chance I know someone who can help.</p>
     </div>
 
     <div class="disclaimer-box">
@@ -760,6 +815,21 @@ function closeModal(id){
   var el=document.getElementById(id);
   el.style.display='none';
   document.body.style.overflow='';
+}
+function filterResources(){
+  var q = document.getElementById('resourceSearch').value.toLowerCase().trim();
+  var totalVisible = 0;
+  document.querySelectorAll('.resource-category').forEach(function(cat){
+    var visibleInCat = 0;
+    cat.querySelectorAll('.resource-card').forEach(function(card){
+      var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) { visibleInCat++; totalVisible++; }
+    });
+    cat.style.display = (q && visibleInCat === 0) ? 'none' : '';
+  });
+  document.getElementById('resourceSearchCount').textContent = q ? (totalVisible + (totalVisible === 1 ? ' match' : ' matches')) : '';
+  document.getElementById('resourcesNoResults').style.display = (q && totalVisible === 0) ? 'block' : 'none';
 }
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){
