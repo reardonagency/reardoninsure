@@ -21,10 +21,28 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://reardoninsure.com/personal-lines.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reardoninsure.com/life-insurance.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://reardoninsure.com/business-insurance.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reardoninsure.com/business-insurance-quote.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://reardoninsure.com/quote.html</loc>
@@ -66,6 +84,18 @@
   <!-- Blog Articles -->
   <url>
     <loc>https://reardoninsure.com/blog-business-insurance-explained.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reardoninsure.com/blog-personal-lines-explained.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reardoninsure.com/blog-life-insurance-explained.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
