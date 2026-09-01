@@ -13,11 +13,34 @@
     .photos-intro { max-width: 680px; margin: 0 auto 40px; text-align: center; }
     .photos-intro p { font-size: 1rem; color: var(--text); line-height: 1.8; }
     .photos-feed-wrap { min-height: 0; }
-    .photos-placeholder { background: var(--off-white); border: 1.5px dashed var(--light-gray); border-radius: var(--radius-lg); padding: 56px 32px; text-align: center; max-width: 560px; margin: 0 auto 40px; }
+    .photos-placeholder { background: var(--off-white); border: 1.5px dashed var(--light-gray); border-radius: var(--radius-lg); padding: 56px 32px; text-align: center; }
     .photos-placeholder .placeholder-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
     .photos-placeholder p { color: var(--mid-gray); font-size: 0.92rem; line-height: 1.7; margin: 0; }
-    .photos-follow { text-align: center; }
+    .photos-follow { text-align: center; margin-top: 48px; }
     .photos-follow-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .socials-layout { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 28px; align-items: start; }
+    .photo-wall { display: flex; flex-direction: column; gap: 22px; }
+    .photo-wall img {
+      width: 100%; display: block; border-radius: 6px; border: 6px solid var(--white);
+      box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 4/3;
+    }
+    .photo-wall.wall-left img:nth-child(1) { transform: rotate(-3deg); }
+    .photo-wall.wall-left img:nth-child(2) { transform: rotate(2deg); }
+    .photo-wall.wall-left img:nth-child(3) { transform: rotate(-2deg); }
+    .photo-wall.wall-left img:nth-child(4) { transform: rotate(3deg); }
+    .photo-wall.wall-right img:nth-child(1) { transform: rotate(3deg); }
+    .photo-wall.wall-right img:nth-child(2) { transform: rotate(-2deg); }
+    .photo-wall.wall-right img:nth-child(3) { transform: rotate(2deg); }
+
+    @media (max-width: 1000px) {
+      .socials-layout { grid-template-columns: 1fr; }
+      .photo-wall { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .photo-wall img { width: calc(50% - 11px); aspect-ratio: 4/3; }
+    }
+    @media (max-width: 500px) {
+      .photo-wall img { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -66,30 +89,52 @@
       <p>We post regularly on Instagram, Facebook, and LinkedIn. This page will show that feed live and update automatically — for now, follow along directly below.</p>
     </div>
 
-    <!-- SOCIAL FEED EMBED -->
-    <div class="photos-feed-wrap">
-      <!--
-        Elfsight social feed embed goes here once Ryan creates the widget.
-        Steps: log into elfsight.com (same account used for the Google Reviews
-        widget on the homepage) > create a new "Instagram Feed" or "All-in-One
-        Social Feed" widget > connect the Instagram/Facebook business account >
-        copy the widget's embed snippet (script tag + a
-        <div class="elfsight-app-XXXXXXXX" data-elfsight-app-lazy></div>) and
-        send it over to drop in here. Once added, remove the .photos-placeholder
-        card below.
-      -->
-      <div class="photos-placeholder">
-        <span class="placeholder-icon">📸</span>
-        <p>The live feed is being connected. In the meantime, follow along on any of these to see it all in real time.</p>
-      </div>
-    </div>
+    <div class="socials-layout">
 
-    <div class="photos-follow">
-      <div class="photos-follow-buttons">
-        <a href="https://www.instagram.com/reardonagency/" target="_blank" class="btn btn-primary">Follow on Instagram →</a>
-        <a href="https://www.facebook.com/ReardonAgency/" target="_blank" class="btn btn-navy">Follow on Facebook →</a>
-        <a href="https://www.linkedin.com/in/ryanjreardon" target="_blank" class="btn btn-navy">Follow on LinkedIn →</a>
+      <!-- LEFT PHOTO WALL -->
+      <div class="photo-wall wall-left">
+        <img src="social-1.jpg" alt="Reardon Agency team at a recognition event">
+        <img src="social-3.jpg" alt="Ryan Reardon at a community event">
+        <img src="social-5.jpg" alt="Ryan Reardon out with friends">
+        <img src="social-7.jpg" alt="Reardon Agency">
       </div>
+
+      <!-- CENTER: FEED -->
+      <div>
+        <!-- SOCIAL FEED EMBED -->
+        <div class="photos-feed-wrap">
+          <!--
+            Elfsight social feed embed goes here once Ryan creates the widget.
+            Steps: log into elfsight.com (same account used for the Google Reviews
+            widget on the homepage) > create a new "Instagram Feed" or "All-in-One
+            Social Feed" widget > connect the Instagram/Facebook business account >
+            copy the widget's embed snippet (script tag + a
+            <div class="elfsight-app-XXXXXXXX" data-elfsight-app-lazy></div>) and
+            send it over to drop in here. Once added, remove the .photos-placeholder
+            card below.
+          -->
+          <div class="photos-placeholder">
+            <span class="placeholder-icon">📸</span>
+            <p>The live feed is being connected. In the meantime, follow along on any of these to see it all in real time.</p>
+          </div>
+        </div>
+
+        <div class="photos-follow">
+          <div class="photos-follow-buttons">
+            <a href="https://www.instagram.com/reardonagency/" target="_blank" class="btn btn-primary">Follow on Instagram →</a>
+            <a href="https://www.facebook.com/ReardonAgency/" target="_blank" class="btn btn-navy">Follow on Facebook →</a>
+            <a href="https://www.linkedin.com/in/ryanjreardon" target="_blank" class="btn btn-navy">Follow on LinkedIn →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PHOTO WALL -->
+      <div class="photo-wall wall-right">
+        <img src="social-2.jpg" alt="Territory Days community event">
+        <img src="social-4.jpg" alt="Ryan Reardon out golfing">
+        <img src="social-6.jpg" alt="Ryan Reardon with friends">
+      </div>
+
     </div>
 
   </div>
