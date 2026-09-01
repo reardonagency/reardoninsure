@@ -293,6 +293,37 @@
     .spotlight-inner h2 { color: var(--white); margin-bottom: 12px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
     .spotlight-inner p { color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 28px; font-size: 1rem; }
 
+    .spotlight-stats {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 44px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .spotlight-stat { text-align: center; }
+    .spotlight-stat-num { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--gold); display: block; margin-bottom: 6px; }
+    .spotlight-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.45; }
+
+    .spotlight-myths { position: relative; z-index: 2; max-width: 900px; margin: 48px auto 0; }
+    .spotlight-myths h3 { color: var(--white); text-align: center; font-size: 1.25rem; margin-bottom: 24px; }
+    .myth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .myth-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-md); padding: 22px; }
+    .myth-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
+    .myth-tag.myth-tag-myth { background: rgba(239,68,68,0.15); color: #fca5a5; }
+    .myth-tag.myth-tag-fact { background: rgba(232,185,35,0.15); color: var(--gold); margin-top: 14px; }
+    .myth-card .myth-text { color: rgba(255,255,255,0.5); font-size: 0.87rem; line-height: 1.5; margin: 8px 0 0; text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.3); }
+    .myth-card .fact-text { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.6; margin: 8px 0 0; }
+    .spotlight-source { text-align: center; font-size: 0.74rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-top: 28px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    @media (max-width: 700px) {
+      .spotlight-stats { grid-template-columns: 1fr 1fr; }
+      .myth-grid { grid-template-columns: 1fr; }
+    }
+
     /* ---- PRODUCTS ---- */
     .products-grid {
       display: grid;
@@ -650,11 +681,67 @@
   <div class="spotlight-inner">
     <div class="spotlight-badge">❤️ September Spotlight</div>
     <h2>September Is Life Insurance Awareness Month</h2>
-    <p>Over 100 million Americans say they need more life insurance — or don't have any at all. Whether you're covered through work, weighing term vs. whole life, or just haven't gotten around to it, a five-minute conversation can tell you exactly where you stand.</p>
+    <p>74 million Americans say they need life insurance, and another 25 million say they need more of it. Whether you're covered through work, weighing term vs. whole life, or just haven't gotten around to it, a five-minute conversation can tell you exactly where you stand.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
       <button type="button" class="btn btn-primary" onclick="document.getElementById('spotlightForm').style.display='block';document.getElementById('spotlightSuccess').style.display='none';openModal('spotlightModal')">Get More Info →</button>
       <a href="tel:+17192048190" class="btn" style="border:2px solid rgba(255,255,255,0.4);color:var(--white);background:transparent;">📞 Call (719) 204-8190</a>
     </div>
+  </div>
+
+  <div class="spotlight-stats">
+    <div class="spotlight-stat">
+      <span class="spotlight-stat-num">74M</span>
+      <span class="spotlight-stat-label">Americans say they need life insurance</span>
+    </div>
+    <div class="spotlight-stat">
+      <span class="spotlight-stat-num">51%</span>
+      <span class="spotlight-stat-label">have some type of life insurance coverage</span>
+    </div>
+    <div class="spotlight-stat">
+      <span class="spotlight-stat-num">46%</span>
+      <span class="spotlight-stat-label">say cost is why they don't have more</span>
+    </div>
+    <div class="spotlight-stat">
+      <span class="spotlight-stat-num">43%</span>
+      <span class="spotlight-stat-label">of women say they need more coverage</span>
+    </div>
+  </div>
+
+  <div class="spotlight-myths">
+    <h3>Myth vs. Fact</h3>
+    <div class="myth-grid">
+      <div class="myth-card">
+        <span class="myth-tag myth-tag-myth">Myth</span>
+        <p class="myth-text">Life insurance costs more than most people can afford.</p>
+        <span class="myth-tag myth-tag-fact">Fact</span>
+        <p class="fact-text">A policy can cost about as much as a monthly streaming subscription — often far less than people expect.</p>
+      </div>
+      <div class="myth-card">
+        <span class="myth-tag myth-tag-myth">Myth</span>
+        <p class="myth-text">The life insurance I have through work is enough.</p>
+        <span class="myth-tag myth-tag-fact">Fact</span>
+        <p class="fact-text">Workplace coverage is often limited, tied to your job, and may not match what your family would actually need.</p>
+      </div>
+      <div class="myth-card">
+        <span class="myth-tag myth-tag-myth">Myth</span>
+        <p class="myth-text">Healthy people don't need life insurance.</p>
+        <span class="myth-tag myth-tag-fact">Fact</span>
+        <p class="fact-text">Premiums are generally lowest when you're healthy — locking in a policy now protects your family and your rate.</p>
+      </div>
+      <div class="myth-card">
+        <span class="myth-tag myth-tag-myth">Myth</span>
+        <p class="myth-text">I'm single with no dependents, so it wouldn't help me.</p>
+        <span class="myth-tag myth-tag-fact">Fact</span>
+        <p class="fact-text">Coverage can still cover personal debt, co-signed loans, or funeral costs so they don't fall on your family.</p>
+      </div>
+      <div class="myth-card" style="grid-column:1/-1;">
+        <span class="myth-tag myth-tag-myth">Myth</span>
+        <p class="myth-text">Life insurance only matters if the business owner passes away.</p>
+        <span class="myth-tag myth-tag-fact">Fact</span>
+        <p class="fact-text">It can also be a useful piece of business planning, including managing your company's tax picture — Ryan can walk through the details with you (not tax advice — always confirm specifics with your tax professional).</p>
+      </div>
+    </div>
+    <p class="spotlight-source">Source: 2025 Insurance Barometer Study, Life Happens and LIMRA.</p>
   </div>
 </section>
 
