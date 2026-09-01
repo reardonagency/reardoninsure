@@ -75,7 +75,7 @@
       <li><a href="photos.html">Socials</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+      <li><a href="get-a-quote.html" class="nav-cta">Get a Quote</a></li>
     </ul>
   </div>
 </nav>
@@ -306,10 +306,16 @@
           <div class="compliance-box">
             <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
             <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;margin-top:14px;">Quote Authorization</p>
+            <p>By submitting this request, you authorize Reardon Agency LLC and Ryan Reardon to use the information provided to prepare and obtain an insurance quote on behalf of the business named above — including contacting insurance carriers, requesting loss history or claims information, and verifying the details submitted. You confirm you are authorized to provide this information on behalf of the business.</p>
           </div>
           <div class="checkbox-group">
             <input type="checkbox" id="sms-artisan" required>
             <label for="sms-artisan">I agree to receive calls, texts, and emails from Reardon Agency LLC about this quote request. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="quote-auth-artisan" required>
+            <label for="quote-auth-artisan">I authorize Reardon Agency LLC to obtain a quote on behalf of this business using the information provided, and confirm I am authorized to do so. *</label>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">Submit Contractor Quote Request &rarr;</button>
@@ -415,10 +421,16 @@
           <div class="compliance-box">
             <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
             <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;margin-top:14px;">Quote Authorization</p>
+            <p>By submitting this request, you authorize Reardon Agency LLC and Ryan Reardon to use the information provided to prepare and obtain an insurance quote on behalf of the business named above — including contacting insurance carriers, requesting loss history or claims information, and verifying the details submitted. You confirm you are authorized to provide this information on behalf of the business.</p>
           </div>
           <div class="checkbox-group">
             <input type="checkbox" id="sms-retail" required>
             <label for="sms-retail">I agree to receive calls, texts, and emails from Reardon Agency LLC about this quote request. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="quote-auth-retail" required>
+            <label for="quote-auth-retail">I authorize Reardon Agency LLC to obtain a quote on behalf of this business using the information provided, and confirm I am authorized to do so. *</label>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">Submit Retail/Office/Service Quote Request &rarr;</button>
@@ -638,10 +650,16 @@
           <div class="compliance-box">
             <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
             <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;margin-top:14px;">Quote Authorization</p>
+            <p>By submitting this request, you authorize Reardon Agency LLC and Ryan Reardon to use the information provided to prepare and obtain an insurance quote on behalf of the business named above — including contacting insurance carriers, requesting loss history or claims information, and verifying the details submitted. You confirm you are authorized to provide this information on behalf of the business.</p>
           </div>
           <div class="checkbox-group">
             <input type="checkbox" id="sms-workcomp" required>
             <label for="sms-workcomp">I agree to receive calls, texts, and emails from Reardon Agency LLC about this quote request. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="quote-auth-workcomp" required>
+            <label for="quote-auth-workcomp">I authorize Reardon Agency LLC to obtain a quote on behalf of this business using the information provided, and confirm I am authorized to do so. *</label>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">Submit Workers' Comp Quote Request &rarr;</button>
@@ -765,10 +783,16 @@
           <div class="compliance-box">
             <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
             <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;margin-top:14px;">Quote Authorization</p>
+            <p>By submitting this request, you authorize Reardon Agency LLC and Ryan Reardon to use the information provided to prepare and obtain an insurance quote on behalf of the business named above — including contacting insurance carriers, requesting loss history or claims information, and verifying the details submitted. You confirm you are authorized to provide this information on behalf of the business.</p>
           </div>
           <div class="checkbox-group">
             <input type="checkbox" id="sms-other" required>
             <label for="sms-other">I agree to receive calls, texts, and emails from Reardon Agency LLC about this quote request. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="quote-auth-other" required>
+            <label for="quote-auth-other">I authorize Reardon Agency LLC to obtain a quote on behalf of this business using the information provided, and confirm I am authorized to do so. *</label>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">Submit Quote Request &rarr;</button>
@@ -832,6 +856,20 @@ function showQuoteForm(type) {
   document.getElementById('form-' + type).classList.add('active');
   document.getElementById('form-' + type).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// Auto-select a quote type from ?type= in the URL (e.g. linked from get-a-quote.html)
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  const validTypes = ['artisan', 'retail', 'workcomp', 'other'];
+  if (type && validTypes.includes(type)) {
+    const radio = document.querySelector('input[name="quoteType"][value="' + type + '"]');
+    if (radio) {
+      radio.checked = true;
+      showQuoteForm(type);
+    }
+  }
+})();
 
 async function handleQuoteSubmit(e, bodyId, successId) {
   e.preventDefault();
