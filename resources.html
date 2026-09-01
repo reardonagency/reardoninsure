@@ -27,6 +27,9 @@
     .resource-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
     .resource-card p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.65; margin: 0; }
     .resource-note { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--light-gray); font-size: 0.76rem; color: var(--mid-gray); font-style: italic; }
+    .resource-contact { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .resource-contact a { font-size: 0.78rem; font-weight: 600; color: var(--navy); background: var(--off-white); border: 1px solid var(--light-gray); border-radius: 100px; padding: 6px 14px; text-decoration: none; transition: all var(--transition); }
+    .resource-contact a:hover { border-color: var(--gold); background: rgba(232,185,35,0.1); color: var(--navy); }
     .insurance-callout { background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%); border-radius: var(--radius-lg); padding: 36px 48px; margin-bottom: 64px; display: flex; align-items: center; gap: 28px; }
     .insurance-callout-icon { font-size: 3rem; flex-shrink: 0; }
     .insurance-callout h3 { color: var(--white); margin-bottom: 6px; font-size: 1.3rem; }
@@ -93,23 +96,37 @@
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Financial Planning</div>
-          <h4>Financial Advisor</h4>
-          <p>My single top referral across any category. A great financial advisor ties everything together &mdash; insurance, investments, retirement, estate planning, and tax strategy. If you only use one resource from this entire page, start here. Ask me for a personal introduction.</p>
-          <div class="resource-note">Colorado Springs area &middot; Fee-based planning available</div>
+          <h4>Katie Randall</h4>
+          <p>Financial Advisor, Edward Jones. My single top referral across any category &mdash; insurance, investments, retirement, estate planning, and tax strategy, all working together. If you only use one resource from this entire page, start here.</p>
+          <div class="resource-note">1920 Vindicator Dr, Ste 112, Colorado Springs, CO 80919</div>
+          <div class="resource-contact">
+            <a href="tel:+17196226597" onclick="logReferral('Katie Randall','Financial Advisor','Phone')">📞 (719) 622-6597</a>
+            <a href="mailto:Katie.randall@edwardjones.com" onclick="logReferral('Katie Randall','Financial Advisor','Email')">✉ Email</a>
+          </div>
         </div>
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Home Financing</div>
-          <h4>Residential Mortgage</h4>
-          <p>Responsive mortgage professionals who explain what you&rsquo;re signing and deliver on promised timelines. Specializes in conventional, VA, and FHA financing across Colorado.</p>
-          <div class="resource-note">Colorado &middot; VA loans welcome</div>
+          <h4>Brenda Layton</h4>
+          <p>Residential Mortgage, CCM. A responsive mortgage professional who explains what you&rsquo;re signing and delivers on promised timelines. Handles conventional, VA, and FHA financing across Colorado.</p>
+          <div class="resource-note">12295 Oracle Blvd, Ste 200, Colorado Springs, CO 80921</div>
+          <div class="resource-contact">
+            <a href="tel:+17196617483" onclick="logReferral('Brenda Layton','Residential Mortgage','Phone')">📞 (719) 661-7483</a>
+            <a href="mailto:brenda.layton@ccm.com" onclick="logReferral('Brenda Layton','Residential Mortgage','Email')">✉ Email</a>
+            <a href="http://www.ccm.com/brenda-layton" target="_blank" onclick="logReferral('Brenda Layton','Residential Mortgage','Website')">🌐 Website</a>
+          </div>
         </div>
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Real Estate</div>
-          <h4>Real Estate Agent</h4>
-          <p>Local agents who know the Colorado Springs market inside and out &mdash; from first-time buyers and military relocations to investment properties and move-up buyers. Ask me who fits your situation.</p>
-          <div class="resource-note">Colorado Springs &amp; surrounding areas</div>
+          <h4>Michelle Bies</h4>
+          <p>Residential Real Estate Agent, Kenney &amp; Company &mdash; The Bies Group. Knows the Colorado Springs market inside and out, from first-time buyers and military relocations to investment properties and move-up buyers.</p>
+          <div class="resource-note">2120 N Academy Circle, Ste A, Colorado Springs, CO 80909</div>
+          <div class="resource-contact">
+            <a href="tel:+17195501515" onclick="logReferral('Michelle Bies','Real Estate Agent','Phone')">📞 (719) 550-1515</a>
+            <a href="mailto:michelle.bies@kenneyandcompany.com" onclick="logReferral('Michelle Bies','Real Estate Agent','Email')">✉ Email</a>
+            <a href="http://KenneyandCompany.com/TheBiesGroup" target="_blank" onclick="logReferral('Michelle Bies','Real Estate Agent','Website')">🌐 Website</a>
+          </div>
         </div>
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
@@ -121,9 +138,13 @@
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Banking</div>
-          <h4>Commercial Bank Services</h4>
-          <p>Local and regional banks with strong small business and commercial offerings &mdash; business checking, lines of credit, SBA loans, and relationship banking that means something beyond a 1-800 number.</p>
-          <div class="resource-note">Colorado &middot; Small business friendly</div>
+          <h4>Anjellah Schaefer</h4>
+          <p>Commercial Loan Officer. Strong small business and commercial offerings &mdash; business checking, lines of credit, SBA loans, and relationship banking that means something beyond a 1-800 number.</p>
+          <div class="resource-note">4790 North Academy Blvd, Colorado Springs, CO 80918</div>
+          <div class="resource-contact">
+            <a href="tel:+14143794087" onclick="logReferral('Anjellah Schaefer','Commercial Bank Services','Phone')">📞 (414) 379-4087</a>
+            <a href="mailto:anjellah@ppnb.com" onclick="logReferral('Anjellah Schaefer','Commercial Bank Services','Email')">✉ Email</a>
+          </div>
         </div>
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
@@ -141,16 +162,26 @@
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Health Coverage</div>
-          <h4>Health Insurance</h4>
-          <p>Individual, family, and small group health insurance specialists. Navigating health coverage options is genuinely complex &mdash; having someone in your corner who knows the market saves time and often money.</p>
-          <div class="resource-note">Colorado &middot; Individual &amp; group plans</div>
+          <h4>AdriAnn Bossie</h4>
+          <p>Health Insurance specialist, Vertex Health. Individual, family, and small group health insurance. Navigating health coverage options is genuinely complex &mdash; having someone in your corner who knows the market saves time and often money.</p>
+          <div class="resource-note">1271 Kelly Johnson Blvd, Ste 111, Colorado Springs, CO 80920</div>
+          <div class="resource-contact">
+            <a href="tel:+17194404242" onclick="logReferral('AdriAnn Bossie','Health Insurance','Phone')">📞 (719) 440-4242</a>
+            <a href="mailto:adriann@adriannbossie.com" onclick="logReferral('AdriAnn Bossie','Health Insurance','Email')">✉ Email</a>
+            <a href="https://vertex.health/" target="_blank" onclick="logReferral('AdriAnn Bossie','Health Insurance','Website')">🌐 Website</a>
+          </div>
         </div>
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Property</div>
-          <h4>Property Management</h4>
-          <p>Rental property management for landlords who don&rsquo;t want to field tenant calls themselves. One important note: make sure your landlord insurance policy is active before the first tenant moves in.</p>
-          <div class="resource-note">Colorado Springs area</div>
+          <h4>Bea Leichliter</h4>
+          <p>Property Management, Livingood. Rental property management for landlords who don&rsquo;t want to field tenant calls themselves. One important note: make sure your landlord insurance policy is active before the first tenant moves in.</p>
+          <div class="resource-note">1110 N Circle Dr, Ste 1 &amp; 100, Colorado Springs, CO 80909</div>
+          <div class="resource-contact">
+            <a href="tel:+17192031596" onclick="logReferral('Bea Leichliter','Property Management','Phone')">📞 (719) 203-1596</a>
+            <a href="mailto:Bea@livingoodcos.com" onclick="logReferral('Bea Leichliter','Property Management','Email')">✉ Email</a>
+            <a href="http://www.livingoodcos.com" target="_blank" onclick="logReferral('Bea Leichliter','Property Management','Website')">🌐 Website</a>
+          </div>
         </div>
       </div>
     </div>
@@ -298,9 +329,13 @@
         <div class="resource-card featured">
           <div class="featured-badge">⭐ Highly Recommended</div>
         <div class="resource-type">Personal Injury</div>
-          <h4>Personal Injury Attorney</h4>
-          <p>If you&rsquo;ve been in an accident and need legal representation, having a trusted attorney in your corner matters &mdash; especially when dealing with insurance companies on the other side. These attorneys work on contingency and fight for fair outcomes.</p>
-          <div class="resource-note">Colorado Springs &middot; Free consultations</div>
+          <h4>Ryan Malnar</h4>
+          <p>Personal Injury Attorney. If you&rsquo;ve been in an accident and need legal representation, having a trusted attorney in your corner matters &mdash; especially when dealing with insurance companies on the other side. Works on contingency and fights for fair outcomes.</p>
+          <div class="resource-note">6799 Bismark Road, Ste C, Colorado Springs, CO 80922</div>
+          <div class="resource-contact">
+            <a href="tel:+17198889529" onclick="logReferral('Ryan Malnar','Personal Injury Attorney','Phone')">📞 (719) 888-9529</a>
+            <a href="mailto:ryan@stubbornattorney.com" onclick="logReferral('Ryan Malnar','Personal Injury Attorney','Email')">✉ Email</a>
+          </div>
         </div>
         <div class="resource-card">
           <div class="resource-type">Family &amp; Business Law</div>
@@ -496,6 +531,19 @@
 </div>
 
 <script>
+function logReferral(name, category, method) {
+  fetch('https://formspree.io/f/meevzzyr', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'Referral Click - ' + category + ' - ' + name,
+      'Contact Name': name,
+      'Category': category,
+      'Contact Method': method,
+      'Page': 'Resources'
+    })
+  }).catch(function(){});
+}
 function openModal(id){
   var el=document.getElementById(id);
   el.style.display='flex';
