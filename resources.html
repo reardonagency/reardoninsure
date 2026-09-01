@@ -21,8 +21,6 @@
     .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .resource-card { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 24px; transition: all var(--transition); position: relative; }
     .resource-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .resource-card.featured { border-color: rgba(232,185,35,0.5); background: linear-gradient(135deg, #fff 0%, rgba(232,185,35,0.03) 100%); }
-    .featured-badge { position: absolute; top: -10px; right: 16px; background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
     .resource-type { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); background: rgba(232,185,35,0.1); padding: 3px 10px; border-radius: 100px; display: inline-block; margin-bottom: 10px; }
     .resource-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
     .resource-card p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.65; margin: 0; }
@@ -56,6 +54,7 @@
       <li><a href="resources.html">Resources</a></li>
       <li><a href="careers.html">Careers</a></li>
       <li><a href="blog.html">Blog</a></li>
+      <li><a href="photos.html">Photos</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
@@ -94,8 +93,7 @@
         <div><h2>Home Buying &amp; Financial Services</h2><p>The professionals you need when buying, financing, or planning your financial future</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Financial Planning</div>
           <h4>Katie Randall</h4>
           <p>Financial Advisor, Edward Jones. My single top referral across any category &mdash; insurance, investments, retirement, estate planning, and tax strategy, all working together. If you only use one resource from this entire page, start here.</p>
@@ -105,8 +103,7 @@
             <a href="mailto:Katie.randall@edwardjones.com" onclick="logReferral('Katie Randall','Financial Advisor','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Home Financing</div>
           <h4>Brenda Layton</h4>
           <p>Residential Mortgage, CCM. A responsive mortgage professional who explains what you&rsquo;re signing and delivers on promised timelines. Handles conventional, VA, and FHA financing across Colorado.</p>
@@ -117,8 +114,7 @@
             <a href="http://www.ccm.com/brenda-layton" target="_blank" onclick="logReferral('Brenda Layton','Residential Mortgage','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Real Estate</div>
           <h4>Michelle Bies</h4>
           <p>Residential Real Estate Agent, Kenney &amp; Company &mdash; The Bies Group. Knows the Colorado Springs market inside and out, from first-time buyers and military relocations to investment properties and move-up buyers.</p>
@@ -129,15 +125,13 @@
             <a href="http://KenneyandCompany.com/TheBiesGroup" target="_blank" onclick="logReferral('Michelle Bies','Real Estate Agent','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Title &amp; Closing</div>
           <h4>Title Services</h4>
           <p>Title companies I&rsquo;ve worked with who handle closings smoothly and catch issues before they become problems. Essential for any real estate transaction, residential or commercial.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Banking</div>
           <h4>Anjellah Schaefer</h4>
           <p>Commercial Loan Officer. Strong small business and commercial offerings &mdash; business checking, lines of credit, SBA loans, and relationship banking that means something beyond a 1-800 number.</p>
@@ -147,8 +141,7 @@
             <a href="mailto:anjellah@ppnb.com" onclick="logReferral('Anjellah Schaefer','Commercial Bank Services','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Estate &amp; Legal</div>
           <h4>Estate Planning Attorney</h4>
           <p>Consistently the most in-demand professional referral I get. If you have life insurance but no estate plan &mdash; wills, trusts, beneficiary designations &mdash; the picture isn&rsquo;t complete. These attorneys specialize in getting that right.</p>
@@ -160,8 +153,7 @@
           <p>Tax preparation and planning for individuals, families, and small businesses &mdash; S-corps, LLCs, self-employed professionals, and growing companies. Works well alongside a financial advisor.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Health Coverage</div>
           <h4>AdriAnn Bossie</h4>
           <p>Health Insurance specialist, Vertex Health. Individual, family, and small group health insurance. Navigating health coverage options is genuinely complex &mdash; having someone in your corner who knows the market saves time and often money.</p>
@@ -172,8 +164,7 @@
             <a href="https://vertex.health/" target="_blank" onclick="logReferral('AdriAnn Bossie','Health Insurance','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Property</div>
           <h4>Bea Leichliter</h4>
           <p>Property Management, Livingood. Rental property management for landlords who don&rsquo;t want to field tenant calls themselves. One important note: make sure your landlord insurance policy is active before the first tenant moves in.</p>
@@ -194,22 +185,19 @@
         <div><h2>Home Services &amp; Skilled Trades</h2><p>Licensed, reliable contractors and home service professionals &mdash; among the most requested referrals I get</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Roofing</div>
           <h4>Roofing &amp; Gutters</h4>
           <p>One of the most-requested trades in Colorado Springs &mdash; especially after hail season. These roofers give honest assessments and don&rsquo;t just chase whatever insurance will pay. Licensed, local, and accountable.</p>
           <div class="resource-note">Colorado Springs &middot; Hail damage specialists</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Electrical</div>
           <h4>Electrician</h4>
           <p>Licensed electricians for residential and light commercial work &mdash; panel upgrades, EV charger installs, new construction wiring, and service calls. Consistently one of the hardest trades to find a good one.</p>
           <div class="resource-note">Colorado Springs area &middot; Licensed &amp; insured</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">HVAC</div>
           <h4>HVAC Technician</h4>
           <p>Heating, cooling, and ventilation service, repair, and installation. Colorado&rsquo;s temperature swings make HVAC reliability critical &mdash; you don&rsquo;t want to be searching for someone in the middle of a January cold snap.</p>
@@ -227,29 +215,25 @@
           <p>Full-service contractors for remodels, additions, and new construction. Licensed, insured, and known for clear communication, honest bids, and actually finishing on schedule.</p>
           <div class="resource-note">Colorado Springs area &middot; Residential &amp; commercial</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Handyman</div>
           <h4>Handyman Services</h4>
           <p>Reliable handymen for the jobs that don&rsquo;t require a full contractor &mdash; repairs, installations, small projects, and punch-list items. A good handyman is harder to find than people expect.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Painting</div>
           <h4>Painter &amp; Decorator</h4>
           <p>Interior and exterior painting, finish work, and decorative services. Quality painters who prep properly, clean up completely, and stand behind the final product.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Landscaping</div>
           <h4>Landscape Services</h4>
           <p>Landscaping, lawn care, and tree services for residential and commercial properties. Colorado&rsquo;s altitude and climate require someone who actually knows what grows here and when.</p>
           <div class="resource-note">Colorado Springs area &middot; Seasonal services</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Cleaning</div>
           <h4>Cleaning Services</h4>
           <p>Residential and commercial cleaning &mdash; recurring service, move-in/move-out, and deep cleaning. Vetted, professional, and trustworthy enough to be in your home when you&rsquo;re not.</p>
@@ -267,8 +251,7 @@
           <p>Thorough inspectors who tell you exactly what they find &mdash; not just what you want to hear. Essential for any purchase, and worth it before listing a property as well.</p>
           <div class="resource-note">Pikes Peak region</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Moving</div>
           <h4>Moving Company</h4>
           <p>Local and long-distance movers who treat your belongings with care. Good movers are absolutely worth the cost &mdash; bad ones teach that lesson the hard way.</p>
@@ -284,22 +267,19 @@
         <div><h2>Auto Services</h2><p>Vehicle purchasing, repair, and Colorado-specific auto specialties</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Auto Purchasing</div>
           <h4>Auto Broker</h4>
           <p>An auto broker works for you &mdash; not the dealership. They find the right vehicle at a fair price without the pressure. Especially useful for specific makes, models, or hard-to-find vehicles.</p>
           <div class="resource-note">Colorado &middot; New &amp; used vehicles</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Auto Sales</div>
           <h4>Auto Sales</h4>
           <p>Honest car dealerships and sales professionals I&rsquo;ve personally worked with. Buying a car should feel straightforward &mdash; these folks make it that way.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Hail Repair</div>
           <h4>Auto Hail Repair</h4>
           <p>Paintless dent repair specialists for hail damage &mdash; one of the most relevant services in Colorado. After a major storm, shops book up fast. Having a trusted contact ready before hail season is worth it. Ask me for a referral.</p>
@@ -327,8 +307,7 @@
         <div><h2>Legal &amp; Professional Services</h2><p>Attorneys and business professionals who handle the serious stuff</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Personal Injury</div>
           <h4>Ryan Malnar</h4>
           <p>Personal Injury Attorney. If you&rsquo;ve been in an accident and need legal representation, having a trusted attorney in your corner matters &mdash; especially when dealing with insurance companies on the other side. Works on contingency and fights for fair outcomes.</p>
@@ -360,22 +339,19 @@
         <div><h2>Marketing &amp; Business Growth</h2><p>Professionals who help businesses get found, grow, and operate more effectively</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Digital Marketing &amp; SEO</div>
           <h4>Digital Marketing / SEO</h4>
           <p>Local digital marketing professionals who understand small business budgets and deliver measurable results &mdash; search rankings, Google Business Profile optimization, and local SEO that actually moves the needle.</p>
           <div class="resource-note">Colorado Springs &middot; Small business focus</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Social Media</div>
           <h4>Online Marketing &amp; Social Media</h4>
           <p>Content creation, social media management, and online advertising for businesses that don&rsquo;t have bandwidth to do it in-house. Specializes in authentic, locally-rooted content that builds real trust.</p>
           <div class="resource-note">Colorado Springs &middot; Facebook, Instagram, LinkedIn</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Advertising</div>
           <h4>Advertising &amp; Marketing</h4>
           <p>Broader advertising strategy &mdash; print, digital, radio, and creative services for businesses looking to extend reach beyond organic social media. Good creative shops think about ROI, not just impressions.</p>
@@ -391,29 +367,25 @@
         <div><h2>Health &amp; Wellness</h2><p>Healthcare and wellness professionals who take a whole-person approach</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Chiropractic</div>
           <h4>Chiropractor</h4>
           <p>Highly recommended for accident recovery, ongoing maintenance care, and general wellness. If you&rsquo;ve been in an auto accident, getting evaluated promptly is important for both your health and any insurance claim you may file.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Physical Therapy</div>
           <h4>Physical Therapist</h4>
           <p>Physical therapy for injury recovery, post-surgery rehab, and performance improvement. Colorado is an active state &mdash; these PTs understand active lifestyles and specialize in getting people back to doing what they love.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Massage Therapy</div>
           <h4>Massage Therapist</h4>
           <p>Licensed massage therapists for therapeutic and relaxation massage. Excellent for stress relief, injury recovery, and ongoing wellness maintenance. Colorado Springs has exceptional practitioners in this space.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Dental</div>
           <h4>Dentist</h4>
           <p>Family and general dentistry practices I trust &mdash; dentists who are thorough, honest about what work is actually needed, and good at making the experience as comfortable as possible.</p>
@@ -435,15 +407,13 @@
         <div><h2>Personal &amp; Lifestyle Services</h2><p>Photographers, stylists, travel pros, and event specialists who make life better</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Photography</div>
           <h4>Photographer</h4>
           <p>Professional photographers for headshots, family portraits, real estate, events, and commercial work. Colorado&rsquo;s scenery is unmatched &mdash; these photographers know how to use it and deliver images worth keeping.</p>
           <div class="resource-note">Colorado Springs area &middot; Multiple specialties</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Travel</div>
           <h4>Travel Agent</h4>
           <p>Travel agents who genuinely add value &mdash; vacation packages, international travel, cruises, and destination planning where professional connections and expertise save you real time and often real money.</p>
@@ -455,8 +425,7 @@
           <p>Event planning professionals for weddings, corporate events, and special occasions. The Pikes Peak region has incredible venues &mdash; these planners know them, know the vendors, and know how to execute without drama.</p>
           <div class="resource-note">Colorado Springs &amp; Pikes Peak region</div>
         </div>
-        <div class="resource-card featured">
-          <div class="featured-badge">⭐ Highly Recommended</div>
+        <div class="resource-card">
         <div class="resource-type">Hair &amp; Style</div>
           <h4>Hair Stylist</h4>
           <p>Talented stylists in the Colorado Springs area for cuts, color, and styling. A great stylist is one of those referrals people guard carefully &mdash; these ones I&rsquo;m comfortable sharing.</p>
@@ -473,7 +442,8 @@
 
     <div class="disclaimer-box">
       <h5>About These Referrals</h5>
-      <p>The professionals listed here are people I know through years of living and working in Colorado &mdash; through professional networks, shared clients, personal experience, and community involvement. I am not compensated for referrals. I don&rsquo;t list anyone I wouldn&rsquo;t refer to a family member. That said, every professional relationship is different, and I always encourage you to do your own due diligence and get multiple opinions where it makes sense. If you want a personal introduction to anyone in a specific category, reach out directly &mdash; I&rsquo;m happy to make that connection.</p>
+      <p>The professionals listed here are people I know through years of living and working in Colorado &mdash; through professional networks, shared clients, personal experience, and community involvement. I am not compensated for referrals, and I don&rsquo;t list anyone I wouldn&rsquo;t refer to a family member. That said, every professional relationship is different, and I always encourage you to do your own due diligence and get multiple opinions where it makes sense.</p>
+      <p style="margin-top:14px;">Each professional or business listed on this page operates independently of Reardon Agency LLC. We do not employ, supervise, or control their work, and we make no warranty or guarantee regarding their services, pricing, licensing, or performance. Any agreement you enter into is solely between you and that professional. Reardon Agency LLC is not responsible or liable for any loss, dispute, or damages arising from your engagement with a listed professional. If you want a personal introduction to anyone in a specific category, reach out directly &mdash; I&rsquo;m happy to make that connection.</p>
     </div>
 
     <div class="refer-cta">
