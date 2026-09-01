@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <meta name="theme-color" content="#00063b">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Insurance | Reardon Agency | Colorado Springs</title>
+  <meta name="description" content="Business insurance in Colorado Springs, CO with access to Farmers plus specialty markets including RPS, USLI, Hiscox, Progressive Commercial, and more. General liability, BOP, cyber, workers' comp, and more.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .biz-intro { max-width: 780px; margin: 0 auto 56px; text-align: center; }
+    .biz-intro p { font-size: 1.02rem; color: var(--text); line-height: 1.8; margin-bottom: 16px; }
+
+    .markets-section { background: var(--off-white); border-radius: var(--radius-lg); padding: 48px; margin-bottom: 64px; }
+    .markets-section h2 { text-align: center; margin-bottom: 8px; }
+    .markets-section .markets-sub { text-align: center; color: var(--mid-gray); font-size: 0.92rem; max-width: 620px; margin: 0 auto 32px; line-height: 1.7; }
+    .markets-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .market-badge { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: 100px; padding: 12px 24px; font-size: 0.92rem; font-weight: 600; color: var(--navy); }
+    .market-badge.primary { background: var(--navy); color: white; border-color: var(--navy); }
+
+    .coverage-grid-biz { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 64px; }
+    .coverage-card { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 26px; transition: all var(--transition); }
+    .coverage-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .coverage-card-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
+    .coverage-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
+    .coverage-card p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.65; margin: 0; }
+
+    .why-section { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 64px; }
+    .why-section h2 { margin-bottom: 20px; }
+    .why-list { list-style: none; }
+    .why-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .why-list li .why-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .why-list li h5 { font-size: 0.95rem; color: var(--navy); margin-bottom: 4px; font-family: var(--font-body); font-weight: 600; }
+    .why-list li p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.6; margin: 0; }
+    .why-visual { background: linear-gradient(160deg, var(--navy) 0%, var(--dark) 100%); border-radius: var(--radius-lg); padding: 48px; text-align: center; }
+    .why-visual .why-stat { font-family: var(--font-display); font-size: 3rem; color: var(--gold); font-weight: 700; }
+    .why-visual .why-stat-label { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 8px; }
+
+    .personal-note { background: var(--off-white); border: 1px solid var(--light-gray); border-radius: var(--radius-md); padding: 32px 36px; text-align: center; margin-bottom: 64px; }
+    .personal-note p { color: var(--mid-gray); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px; }
+
+    .biz-cta { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); border-radius: var(--radius-lg); padding: 56px; text-align: center; }
+    .biz-cta h2 { color: var(--navy); font-size: 2rem; margin-bottom: 12px; }
+    .biz-cta p { color: rgba(15,37,87,0.75); margin-bottom: 32px; }
+
+    @media (max-width: 900px) {
+      .why-section { grid-template-columns: 1fr; }
+      .coverage-grid-biz { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .coverage-grid-biz { grid-template-columns: 1fr; }
+      .markets-section { padding: 28px 20px; }
+      .biz-cta { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Reardon Agency" style="height:52px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+        <ul class="nav-links" id="navLinks">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="business-insurance.html">Business Insurance</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://agents.farmers.com/co/colorado-springs/ryan-reardon/" target="_blank" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-label">Farmers Insurance &middot; Specialty Markets &middot; Colorado Springs</span>
+    <h1>Business Insurance, Built to Actually Fit</h1>
+    <p class="section-subtitle">Most agents can offer you one carrier's rulebook. Reardon Agency works with Farmers plus a dozen specialty and wholesale markets &mdash; so your coverage fits your business, not the other way around.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="biz-intro">
+      <p>Business insurance is where a lot of agents fall short. If your business doesn't fit neatly into a single carrier's checkbox &mdash; a contractor with a tricky claims history, a growing company that's outgrown its old policy, a business in an industry most carriers avoid &mdash; a one-carrier agent can only tell you no, or quote you a rate that doesn't reflect your actual risk.</p>
+      <p>This is genuinely where we specialize. Alongside Farmers, Reardon Agency has direct access to national specialty and wholesale markets that most local agencies simply don't carry. That means more ways to say yes, more competitive pricing, and coverage built around how your business actually operates.</p>
+    </div>
+
+    <!-- MARKETS -->
+    <div class="markets-section">
+      <h2>Markets We Have Direct Access To</h2>
+      <p class="markets-sub">More markets means more options &mdash; better pricing through real competition, and coverage for risks a single-carrier agent would have to turn away.</p>
+      <div class="markets-grid">
+        <span class="market-badge primary">Farmers Insurance</span>
+        <span class="market-badge">RPS</span>
+        <span class="market-badge">Johnson &amp; Johnson</span>
+        <span class="market-badge">USLI</span>
+        <span class="market-badge">USAssure</span>
+        <span class="market-badge">BTIS</span>
+        <span class="market-badge">Tapco / CRC</span>
+        <span class="market-badge">Distinguished</span>
+        <span class="market-badge">Hiscox</span>
+        <span class="market-badge">Progressive Commercial</span>
+        <span class="market-badge">And More</span>
+      </div>
+    </div>
+
+    <!-- COVERAGE -->
+    <h2 style="text-align:center;margin-bottom:8px;">What We Cover</h2>
+    <p style="text-align:center;color:var(--mid-gray);font-size:0.92rem;max-width:600px;margin:0 auto 32px;line-height:1.7;">From a Business Owner's Policy for a small shop to specialty coverage for a niche operation &mdash; here's the ground we cover.</p>
+    <div class="coverage-grid-biz">
+      <div class="coverage-card">
+        <span class="coverage-card-icon">🏢</span>
+        <h4>Business Owner's Policy (BOP)</h4>
+        <p>Bundles general liability and commercial property into one policy &mdash; the foundation for most small and mid-size businesses.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">⚖️</span>
+        <h4>General Liability</h4>
+        <p>Protection against third-party claims of bodily injury, property damage, and advertising injury.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">🏗️</span>
+        <h4>Commercial Property</h4>
+        <p>Covers your building, equipment, inventory, and business personal property against covered losses.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">🚚</span>
+        <h4>Commercial Auto</h4>
+        <p>Coverage for vehicles used in your business &mdash; from a single work truck to a full fleet.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">👷</span>
+        <h4>Workers' Compensation</h4>
+        <p>Required in most states once you have employees &mdash; covers medical costs and lost wages after a workplace injury.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">📋</span>
+        <h4>Professional Liability (E&amp;O)</h4>
+        <p>Protects service-based businesses against claims of negligence, errors, or missed deadlines.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">💻</span>
+        <h4>Cyber Liability</h4>
+        <p>Coverage for data breaches, ransomware, and the costs of notifying customers and recovering systems.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">☂️</span>
+        <h4>Excess &amp; Umbrella</h4>
+        <p>Additional liability limits above your underlying policies, for businesses that carry more risk exposure.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">🍸</span>
+        <h4>Liquor Liability &amp; Specialty</h4>
+        <p>Coverage for restaurants, bars, contractors, and other specialty or hard-to-place industries.</p>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <div class="why-section">
+      <div>
+        <h2>Why It Matters Who You Ask</h2>
+        <ul class="why-list">
+          <li>
+            <span class="why-icon">🎯</span>
+            <div><h5>Better Fit</h5><p>Your business gets matched to the carrier that actually understands its risk &mdash; not squeezed into whatever one carrier offers.</p></div>
+          </li>
+          <li>
+            <span class="why-icon">💰</span>
+            <div><h5>Real Competition</h5><p>Multiple markets quoting against each other means pricing that reflects your actual risk, not a rate card.</p></div>
+          </li>
+          <li>
+            <span class="why-icon">🤝</span>
+            <div><h5>One Point of Contact</h5><p>You deal with one agent &mdash; Ryan &mdash; instead of juggling separate relationships for every hard-to-place line of coverage.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-visual">
+        <div class="why-stat">10+</div>
+        <div class="why-stat-label">Carriers &amp; specialty markets in your corner</div>
+      </div>
+    </div>
+
+    <!-- PERSONAL LINES REASSURANCE -->
+    <div class="personal-note">
+      <p>Running a business doesn't mean your personal insurance takes a back seat. Reardon Agency still handles auto, home, life, and umbrella coverage for you and your family &mdash; often alongside your business policy.</p>
+      <a href="products.html" class="btn btn-outline">See Personal Insurance Options &rarr;</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="biz-cta">
+      <h2>Let's Talk About Your Business</h2>
+      <p style="max-width:520px;margin-left:auto;margin-right:auto;">Tell Ryan a bit about your business and he'll shop it across the right markets &mdash; not just one.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-navy">Get a Business Quote &rarr;</a>
+        <a href="https://calendly.com/reardoninsure/30min" target="_blank" class="btn btn-outline" style="border-color:var(--navy);color:var(--navy);">Book a Call</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:flex-end;gap:16px;margin-bottom:16px;">
+          <img src="ryan-headshot.jpg" alt="Ryan Reardon" style="height:72px;width:72px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid rgba(232,185,35,0.4);flex-shrink:0;">
+          <img src="logo.png" alt="Reardon Agency" style="height:72px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.4));">
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">AGENCY</span> LLC</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Auto Insurance</a></li><li><a href="products.html">Home Insurance</a></li><li><a href="products.html">Life Insurance</a></li><li><a href="business-insurance.html">Business Insurance</a></li><li><a href="products.html">Umbrella</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="resources.html">Resources</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="#" onclick="openModal('privacyModal');return false;" style="cursor:pointer;">Privacy Policy</a></li><li><a href="#" onclick="openModal('termsModal');return false;" style="cursor:pointer;">Terms &amp; Conditions</a></li></ul></div>
+      <div class="footer-col"><h5>Connect</h5><ul><li><a href="https://www.facebook.com/ReardonAgency/" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/reardonagency/" target="_blank">Instagram</a></li><li><a href="https://www.linkedin.com/in/ryanjreardon" target="_blank">LinkedIn</a></li><li><a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank">Google Reviews</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
+    </div>
+  </div>
+</footer>
+
+<!-- TERMS MODAL -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+    <h4>Terms &amp; Conditions</h4>
+    <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy.</p>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+    <h4>Privacy Policy</h4>
+    <p>We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeModal(m.id);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
