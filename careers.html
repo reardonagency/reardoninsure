@@ -140,6 +140,21 @@
     @media (max-width: 500px) {
       .perks-grid { grid-template-columns: 1fr; }
     }
+
+    .hiring-section { background: var(--off-white); }
+    .hiring-intro { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+    .hiring-intro p { font-size: 0.98rem; color: var(--text); line-height: 1.8; margin-bottom: 16px; }
+    .hiring-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    .hiring-step { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 28px; text-align: center; }
+    .hiring-step-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--gold-dark); display: block; margin-bottom: 10px; }
+    .hiring-step h4 { font-size: 0.95rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
+    .hiring-step p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.6; margin: 0; }
+    .idealtraits-embed-wrap { background: var(--white); border: 1.5px dashed var(--light-gray); border-radius: var(--radius-lg); padding: 48px; text-align: center; }
+    .idealtraits-embed-wrap p { color: var(--mid-gray); font-size: 0.88rem; }
+
+    @media (max-width: 768px) {
+      .hiring-steps { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -258,6 +273,41 @@
         <h4>Growth Path</h4>
         <p>We're planning to grow to 4 producers by end of 2026. Ground-floor opportunity right now.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE HIRE / IDEALTRAITS -->
+<section class="section hiring-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-label">How We Hire</span>
+      <h2>Built Around Fit, Not Just a Resume</h2>
+    </div>
+    <div class="hiring-intro">
+      <p>A resume tells you what someone has done. It doesn't tell you whether they'll thrive here. That's why we use IdealTraits, a science-based assessment built specifically for insurance agencies, as part of our hiring process.</p>
+      <p>This isn't about disqualifying people or checking a box. It's a two-way tool: it helps us build a team with the right mix of skills and personalities to support each other, and it helps you get an honest, research-backed read on where your own strengths are best put to use &mdash; whether that's here, in a different role than you expected, or somewhere else entirely. The goal is a team and a career path that actually fits, for both sides.</p>
+    </div>
+    <div class="hiring-steps">
+      <div class="hiring-step">
+        <span class="hiring-step-num">01</span>
+        <h4>Apply</h4>
+        <p>Submit your application and basic information &mdash; takes just a few minutes.</p>
+      </div>
+      <div class="hiring-step">
+        <span class="hiring-step-num">02</span>
+        <h4>Take the Assessment</h4>
+        <p>A short, validated personality, cognitive, and video assessment &mdash; not a pass/fail test, a fit profile.</p>
+      </div>
+      <div class="hiring-step">
+        <span class="hiring-step-num">03</span>
+        <h4>Talk It Through</h4>
+        <p>Ryan reviews your results with you directly and talks honestly about where you'd fit best on the team.</p>
+      </div>
+    </div>
+    <div class="idealtraits-embed-wrap">
+      <!-- IdealTraits career page embed goes here once Ryan provides the embed code/link from Settings > Career Page > Career Page Website Embed -->
+      <p>Apply directly through IdealTraits below, or use the form further down this page.</p>
     </div>
   </div>
 </section>

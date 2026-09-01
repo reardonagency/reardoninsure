@@ -21,11 +21,12 @@
     .market-badge.primary { background: var(--navy); color: white; border-color: var(--navy); }
 
     .coverage-grid-biz { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 64px; }
-    .coverage-card { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 26px; transition: all var(--transition); }
+    .coverage-card { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 26px; transition: all var(--transition); display: block; text-decoration: none; }
     .coverage-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-3px); }
     .coverage-card-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
     .coverage-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
     .coverage-card p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.65; margin: 0; }
+    .coverage-card .coverage-link { display: inline-block; margin-top: 12px; font-size: 0.8rem; font-weight: 600; color: var(--gold-dark); }
 
     .why-section { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 64px; }
     .why-section h2 { margin-bottom: 20px; }
@@ -119,51 +120,60 @@
     <h2 style="text-align:center;margin-bottom:8px;">What We Cover</h2>
     <p style="text-align:center;color:var(--mid-gray);font-size:0.92rem;max-width:600px;margin:0 auto 32px;line-height:1.7;">From a Business Owner's Policy for a small shop to specialty coverage for a niche operation &mdash; here's the ground we cover.</p>
     <div class="coverage-grid-biz">
-      <div class="coverage-card">
+      <a class="coverage-card" href="blog-business-insurance-explained.html#bop">
         <span class="coverage-card-icon">🏢</span>
         <h4>Business Owner's Policy (BOP)</h4>
         <p>Bundles general liability and commercial property into one policy &mdash; the foundation for most small and mid-size businesses.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#general-liability">
         <span class="coverage-card-icon">⚖️</span>
         <h4>General Liability</h4>
         <p>Protection against third-party claims of bodily injury, property damage, and advertising injury.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#commercial-property">
         <span class="coverage-card-icon">🏗️</span>
         <h4>Commercial Property</h4>
         <p>Covers your building, equipment, inventory, and business personal property against covered losses.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#commercial-auto">
         <span class="coverage-card-icon">🚚</span>
         <h4>Commercial Auto</h4>
         <p>Coverage for vehicles used in your business &mdash; from a single work truck to a full fleet.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#workers-comp">
         <span class="coverage-card-icon">👷</span>
         <h4>Workers' Compensation</h4>
         <p>Required in most states once you have employees &mdash; covers medical costs and lost wages after a workplace injury.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#professional-liability">
         <span class="coverage-card-icon">📋</span>
         <h4>Professional Liability (E&amp;O)</h4>
         <p>Protects service-based businesses against claims of negligence, errors, or missed deadlines.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#cyber-liability">
         <span class="coverage-card-icon">💻</span>
         <h4>Cyber Liability</h4>
         <p>Coverage for data breaches, ransomware, and the costs of notifying customers and recovering systems.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#excess-umbrella">
         <span class="coverage-card-icon">☂️</span>
         <h4>Excess &amp; Umbrella</h4>
         <p>Additional liability limits above your underlying policies, for businesses that carry more risk exposure.</p>
-      </div>
-      <div class="coverage-card">
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
+      <a class="coverage-card" href="blog-business-insurance-explained.html#liquor-specialty">
         <span class="coverage-card-icon">🍸</span>
         <h4>Liquor Liability &amp; Specialty</h4>
         <p>Coverage for restaurants, bars, contractors, and other specialty or hard-to-place industries.</p>
-      </div>
+        <span class="coverage-link">Learn more &rarr;</span>
+      </a>
     </div>
 
     <!-- WHY -->

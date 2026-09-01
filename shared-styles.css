@@ -408,7 +408,7 @@ footer {
 
 .page-hero-content { position: relative; z-index: 1; }
 .page-hero h1 { color: var(--white); }
-.page-hero .section-subtitle { color: rgba(255,255,255,0.7); }
+.page-hero .section-subtitle { color: rgba(255,255,255,0.7); max-width: 760px; }
 
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {

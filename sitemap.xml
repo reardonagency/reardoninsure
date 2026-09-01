@@ -59,6 +59,12 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://reardoninsure.com/blog-business-insurance-explained.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://reardoninsure.com/blog-hail-season-colorado.html</loc>
     <lastmod>2025-04-01</lastmod>
     <changefreq>yearly</changefreq>
