@@ -33,6 +33,13 @@
     .insurance-callout h3 { color: var(--white); margin-bottom: 6px; font-size: 1.3rem; }
     .insurance-callout p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.92rem; line-height: 1.65; }
     .insurance-callout a { color: var(--gold); }
+    .info-callout { background: var(--off-white); border: 1px solid var(--light-gray); border-radius: var(--radius-lg); padding: 32px 36px; margin-top: 28px; }
+    .info-callout h4 { font-size: 1rem; color: var(--navy); margin-bottom: 10px; }
+    .info-callout p { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-bottom: 12px; }
+    .info-callout .info-disclaimer { font-size: 0.78rem; color: var(--mid-gray); font-style: italic; }
+    .info-callout .info-downloads { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+    .info-callout .info-downloads a { font-size: 0.8rem; font-weight: 600; color: var(--navy); background: var(--white); border: 1px solid var(--light-gray); border-radius: 100px; padding: 7px 16px; text-decoration: none; transition: all var(--transition); }
+    .info-callout .info-downloads a:hover { border-color: var(--gold); background: rgba(232,185,35,0.1); }
     .disclaimer-box { background: var(--off-white); border: 1px solid var(--light-gray); border-radius: var(--radius-md); padding: 28px 32px; margin-top: 56px; }
     .disclaimer-box h5 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px; }
     .disclaimer-box p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.7; margin: 0; }
@@ -49,8 +56,13 @@
     <a href="index.html" class="nav-logo"><img src="logo.png" alt="Reardon Agency" style="height:52px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));"><div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div></a>
     <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
                 <ul class="nav-links" id="navLinks">
-      <li><a href="products.html">Products</a></li>
-      <li><a href="business-insurance.html">Business Insurance</a></li>
+      <li class="nav-dropdown">
+        <a href="products.html">Insurance <span class="nav-caret">&#9662;</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="products.html">Personal Lines</a></li>
+          <li><a href="business-insurance.html">Business Insurance</a></li>
+        </ul>
+      </li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="careers.html">Careers</a></li>
       <li><a href="blog.html">Blog</a></li>
@@ -193,9 +205,14 @@
         </div>
         <div class="resource-card">
         <div class="resource-type">Electrical</div>
-          <h4>Electrician</h4>
-          <p>Licensed electricians for residential and light commercial work &mdash; panel upgrades, EV charger installs, new construction wiring, and service calls. Consistently one of the hardest trades to find a good one.</p>
-          <div class="resource-note">Colorado Springs area &middot; Licensed &amp; insured</div>
+          <h4>Brittany Hall</h4>
+          <p>Electrician, Eagle Eye Electric. Licensed electrical work for residential and light commercial &mdash; panel upgrades, EV charger installs, new construction wiring, and service calls. Consistently one of the hardest trades to find a good one.</p>
+          <div class="resource-note">3472 Research Pkwy, Ste 104-8249, Colorado Springs, CO 80920</div>
+          <div class="resource-contact">
+            <a href="tel:+16613813732" onclick="logReferral('Brittany Hall','Electrician','Phone')">📞 (661) 381-3732</a>
+            <a href="mailto:Britt@eagleeyeelectric.co" onclick="logReferral('Brittany Hall','Electrician','Email')">✉ Email</a>
+            <a href="http://eagleeyeelectric.co" target="_blank" onclick="logReferral('Brittany Hall','Electrician','Website')">🌐 Website</a>
+          </div>
         </div>
         <div class="resource-card">
         <div class="resource-type">HVAC</div>
@@ -211,9 +228,14 @@
         </div>
         <div class="resource-card">
           <div class="resource-type">General Contracting</div>
-          <h4>General Contractor</h4>
-          <p>Full-service contractors for remodels, additions, and new construction. Licensed, insured, and known for clear communication, honest bids, and actually finishing on schedule.</p>
-          <div class="resource-note">Colorado Springs area &middot; Residential &amp; commercial</div>
+          <h4>Beth Alexander-Coons</h4>
+          <p>Builder / General Contractor, Coons Construction. Full-service remodels, additions, and new construction. Licensed, insured, and known for clear communication, honest bids, and actually finishing on schedule.</p>
+          <div class="resource-note">7505 Tudor Road, Colorado Springs, CO 80919</div>
+          <div class="resource-contact">
+            <a href="tel:+17196411339" onclick="logReferral('Beth Alexander-Coons','General Contractor','Phone')">📞 (719) 641-1339</a>
+            <a href="mailto:beth@coons-construction.com" onclick="logReferral('Beth Alexander-Coons','General Contractor','Email')">✉ Email</a>
+            <a href="http://www.coons-construction.com" target="_blank" onclick="logReferral('Beth Alexander-Coons','General Contractor','Website')">🌐 Website</a>
+          </div>
         </div>
         <div class="resource-card">
         <div class="resource-type">Handyman</div>
@@ -257,6 +279,17 @@
           <p>Local and long-distance movers who treat your belongings with care. Good movers are absolutely worth the cost &mdash; bad ones teach that lesson the hard way.</p>
           <div class="resource-note">Colorado Springs &middot; Local &amp; long-distance</div>
         </div>
+      </div>
+
+      <div class="info-callout">
+        <h4>🧱 A Note on SCIP Construction Panels</h4>
+        <p>Coons Construction (our General Contractor referral above) builds with SCIP panels &mdash; Structural Concrete Insulated Panels &mdash; a wall system with notably strong fire, wind, and seismic performance compared to traditional wood-frame construction. If you're building new or considering a rebuild, it's worth knowing this option exists and understanding how it performs.</p>
+        <div class="info-downloads">
+          <a href="scip-master-presentation.pdf" target="_blank">📄 SCIP Overview Presentation</a>
+          <a href="scip-fire-safety-faq.pdf" target="_blank">📄 Fire Safety FAQ</a>
+          <a href="scip-client-faq-guide.pdf" target="_blank">📄 Client FAQ Guide</a>
+        </div>
+        <p class="info-disclaimer">Reardon Agency LLC has no business affiliation with SCIP, TIPs (Total Integrated Panel Systems), or this specific product. These materials are shared purely for your information &mdash; not an endorsement or recommendation of any particular building method.</p>
       </div>
     </div>
 
@@ -353,9 +386,14 @@
         </div>
         <div class="resource-card">
         <div class="resource-type">Advertising</div>
-          <h4>Advertising &amp; Marketing</h4>
-          <p>Broader advertising strategy &mdash; print, digital, radio, and creative services for businesses looking to extend reach beyond organic social media. Good creative shops think about ROI, not just impressions.</p>
-          <div class="resource-note">Colorado Springs &amp; surrounding markets</div>
+          <h4>Brenda Sanchez</h4>
+          <p>Client Acquisition &amp; Retention, Mailbox Marketing Agency. Broader advertising strategy for businesses looking to extend reach and actually retain the clients they win. Thinks about ROI, not just impressions.</p>
+          <div class="resource-note">Colorado Springs, CO</div>
+          <div class="resource-contact">
+            <a href="tel:+17193311525" onclick="logReferral('Brenda Sanchez','Advertising &amp; Marketing','Phone')">📞 (719) 331-1525</a>
+            <a href="mailto:Brenda@MailboxMarketingAgency.com" onclick="logReferral('Brenda Sanchez','Advertising &amp; Marketing','Email')">✉ Email</a>
+            <a href="http://MichaelAndBrenda.com" target="_blank" onclick="logReferral('Brenda Sanchez','Advertising &amp; Marketing','Website')">🌐 Website</a>
+          </div>
         </div>
       </div>
     </div>
@@ -369,9 +407,14 @@
       <div class="resource-grid">
         <div class="resource-card">
         <div class="resource-type">Chiropractic</div>
-          <h4>Chiropractor</h4>
-          <p>Highly recommended for accident recovery, ongoing maintenance care, and general wellness. If you&rsquo;ve been in an auto accident, getting evaluated promptly is important for both your health and any insurance claim you may file.</p>
-          <div class="resource-note">Colorado Springs area</div>
+          <h4>Dr. Caleb White</h4>
+          <p>Chiropractor. Great for accident recovery, ongoing maintenance care, and general wellness. If you&rsquo;ve been in an auto accident, getting evaluated promptly is important for both your health and any insurance claim you may file.</p>
+          <div class="resource-note">595 Chapel Hills Drive, Ste 200, Colorado Springs, CO 80920</div>
+          <div class="resource-contact">
+            <a href="tel:+17195937300" onclick="logReferral('Caleb White','Chiropractor','Phone')">📞 (719) 593-7300</a>
+            <a href="mailto:drcawhite@yahoo.com" onclick="logReferral('Caleb White','Chiropractor','Email')">✉ Email</a>
+            <a href="http://www.nechiropractor.com" target="_blank" onclick="logReferral('Caleb White','Chiropractor','Website')">🌐 Website</a>
+          </div>
         </div>
         <div class="resource-card">
         <div class="resource-type">Physical Therapy</div>
@@ -381,9 +424,14 @@
         </div>
         <div class="resource-card">
         <div class="resource-type">Massage Therapy</div>
-          <h4>Massage Therapist</h4>
-          <p>Licensed massage therapists for therapeutic and relaxation massage. Excellent for stress relief, injury recovery, and ongoing wellness maintenance. Colorado Springs has exceptional practitioners in this space.</p>
-          <div class="resource-note">Colorado Springs area</div>
+          <h4>Colleen Dishmon</h4>
+          <p>Licensed Massage Therapist. Therapeutic and relaxation massage &mdash; excellent for stress relief, injury recovery, and ongoing wellness maintenance.</p>
+          <div class="resource-note">4291 Austin Bluffs Pkwy, Ste 203, Colorado Springs, CO 80918</div>
+          <div class="resource-contact">
+            <a href="tel:+17194475653" onclick="logReferral('Colleen Dishmon','Massage Therapist','Phone')">📞 (719) 447-5653</a>
+            <a href="mailto:dishmonc14@gmail.com" onclick="logReferral('Colleen Dishmon','Massage Therapist','Email')">✉ Email</a>
+            <a href="https://g.co/kgs/caxZwj" target="_blank" onclick="logReferral('Colleen Dishmon','Massage Therapist','Google Listing')">📍 Google Listing</a>
+          </div>
         </div>
         <div class="resource-card">
         <div class="resource-type">Dental</div>

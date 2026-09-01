@@ -18,8 +18,13 @@
     <a href="index.html" class="nav-logo"><img src="logo.png" alt="Reardon Agency" style="height:52px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));"><div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div></a>
     <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
                 <ul class="nav-links" id="navLinks">
-      <li><a href="products.html">Products</a></li>
-      <li><a href="business-insurance.html">Business Insurance</a></li>
+      <li class="nav-dropdown">
+        <a href="products.html">Insurance <span class="nav-caret">&#9662;</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="products.html">Personal Lines</a></li>
+          <li><a href="business-insurance.html">Business Insurance</a></li>
+        </ul>
+      </li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="careers.html">Careers</a></li>
       <li><a href="blog.html">Blog</a></li>
