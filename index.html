@@ -255,6 +255,44 @@
       font-size: 1rem;
     }
 
+    /* ---- SPOTLIGHT BANNER ---- */
+    .spotlight-banner {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2557 60%, #1a3a8f 100%);
+      padding: 56px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M40 40L0 0h80L40 40zm0 0L0 80h80L40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .spotlight-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .spotlight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,185,35,0.15);
+      border: 1px solid rgba(232,185,35,0.3);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .spotlight-inner h2 { color: var(--white); margin-bottom: 12px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .spotlight-inner p { color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 28px; font-size: 1rem; }
+
     /* ---- PRODUCTS ---- */
     .products-grid {
       display: grid;
@@ -607,6 +645,16 @@
   </div>
 </div>
 
+<!-- SPOTLIGHT BANNER — swap badge/h2/p and the modal's h4/p/hidden Campaign+_subject values for each new feature/campaign -->
+<section class="spotlight-banner">
+  <div class="spotlight-inner">
+    <div class="spotlight-badge">❤️ September Spotlight</div>
+    <h2>September Is Life Insurance Awareness Month</h2>
+    <p>Over 100 million Americans say they need more life insurance — or don't have any at all. Whether you're covered through work, weighing term vs. whole life, or just haven't gotten around to it, a five-minute conversation can tell you exactly where you stand.</p>
+    <button type="button" class="btn btn-primary" onclick="document.getElementById('spotlightForm').style.display='block';document.getElementById('spotlightSuccess').style.display='none';openModal('spotlightModal')">Get More Info →</button>
+  </div>
+</section>
+
 <!-- PRODUCTS -->
 <section class="section">
   <div class="container">
@@ -849,7 +897,85 @@ async function handleQuickQuote(e) {
     alert('Something went wrong. Please call us at (719) 204-8190.');
   }
 }
+
+async function handleSpotlightSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('spotlightForm').style.display = 'none';
+      document.getElementById('spotlightSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Send My Questions →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+    }
+  } catch(err) {
+    btn.textContent = 'Send My Questions →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+  }
+}
 </script>
+
+<!-- SPOTLIGHT INFO MODAL -->
+<div class="modal-overlay" id="spotlightModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('spotlightModal')">&times;</button>
+    <div id="spotlightForm">
+      <h4>Life Insurance Awareness Month</h4>
+      <p style="margin-bottom:24px;">Answer a couple quick questions and Ryan will follow up with real numbers — no pressure, no obligation.</p>
+      <form action="https://formspree.io/f/meevzzyr" method="POST" onsubmit="handleSpotlightSubmit(event)">
+        <input type="hidden" name="_subject" value="Spotlight Info Request - Life Insurance Awareness Month">
+        <input type="hidden" name="Campaign" value="September 2026 - Life Insurance Awareness Month">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="Full Name" placeholder="First Last" required>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="Phone" placeholder="(719) 555-0000" required>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="Email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Anything specific you want to know?</label>
+          <textarea name="Message" placeholder="Optional — e.g. term vs. whole life, how much coverage I need, cost..."></textarea>
+        </div>
+        <div class="compliance-box">
+          <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
+          <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+          <p><strong>Terms and Conditions:</strong> By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy below.</p>
+          <p><strong>Privacy Policy:</strong> We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="sms-spotlight" required>
+          <label for="sms-spotlight">I agree to receive text messages from Reardon Agency LLC. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;margin-top:8px;">
+          Send My Questions →
+        </button>
+      </form>
+    </div>
+    <div class="success-message" id="spotlightSuccess" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:3rem;margin-bottom:12px;">✅</div>
+      <h4 style="margin-bottom:8px;">Got It!</h4>
+      <p>Ryan will follow up shortly with real answers. Thanks for reaching out.</p>
+    </div>
+  </div>
+</div>
 
 <!-- TERMS MODAL -->
 <div class="modal-overlay" id="termsModal">
