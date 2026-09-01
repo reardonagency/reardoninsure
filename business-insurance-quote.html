@@ -7,10 +7,13 @@
   <meta name="theme-color" content="#00063b">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get a Business Insurance Quote | Reardon Agency | Colorado Springs</title>
-  <meta name="description" content="Request a business insurance quote in Colorado Springs, CO — artisan contractor, retail/office/service, or workers' compensation. Fill out one form, get a real quote.">
+  <meta name="description" content="Request a business insurance quote in Colorado Springs, CO — artisan contractor, retail/office/service, workers' compensation, or any other business type. Fill out one form, get a real quote.">
   <link rel="stylesheet" href="shared-styles.css">
   <style>
-    .quote-type-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0 48px; }
+    .quote-type-selector { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 40px 0 48px; }
+    .coverage-checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .coverage-checkbox-grid label { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text); cursor: pointer; }
+    .coverage-checkbox-grid input { accent-color: var(--navy-mid); }
     .quote-type-option {
       display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
       padding: 28px 20px; border: 2px solid var(--light-gray); border-radius: var(--radius-md);
@@ -34,6 +37,12 @@
     .radio-row input { accent-color: var(--navy-mid); }
     .success-message { display: none; text-align: center; padding: 48px 0; }
 
+    @media (max-width: 1000px) {
+      .quote-type-selector { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .coverage-checkbox-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       .quote-type-selector { grid-template-columns: 1fr; }
       .quote-form-wrap { padding: 24px; }
@@ -102,6 +111,12 @@
         <span class="quote-type-icon">👷</span>
         <h4>Workers' Compensation</h4>
         <p>Quoting workers' comp for an existing business</p>
+      </label>
+      <label class="quote-type-option">
+        <input type="radio" name="quoteType" value="other" onchange="showQuoteForm('other')">
+        <span class="quote-type-icon">🗂️</span>
+        <h4>Other Business Type</h4>
+        <p>Restaurants, habitational, and everything else not listed above</p>
       </label>
     </div>
 
@@ -633,6 +648,133 @@
         </form>
       </div>
       <div class="success-message" id="workcompSuccess">
+        <div style="font-size:4rem;margin-bottom:16px;">✅</div>
+        <h2>Request Received!</h2>
+        <p style="color:var(--mid-gray);margin-top:12px;">Ryan will review your information and follow up shortly with next steps.</p>
+        <a href="business-insurance.html" class="btn btn-navy" style="margin-top:24px;">Back to Business Insurance</a>
+      </div>
+    </div>
+
+    <!-- ============ OTHER / GENERAL BUSINESS FORM ============ -->
+    <div class="quote-form-wrap" id="form-other">
+      <div id="otherFormBody">
+        <h2 style="margin-bottom:8px;">Business Insurance Quote Request</h2>
+        <p style="color:var(--mid-gray);margin-bottom:8px;font-size:0.9rem;">For any business type not listed above — restaurants, habitational/rental property, and everything else. Tell us about your business and what coverage you're looking for.</p>
+
+        <form action="https://formspree.io/f/meevzzyr" method="POST" onsubmit="handleQuoteSubmit(event, 'otherFormBody', 'otherSuccess')">
+          <input type="hidden" name="_subject" value="Business Quote Request - Other Business Type">
+
+          <div class="form-section-title">Business Information</div>
+          <div class="form-grid">
+            <div class="form-group"><label>Business Name *</label><input type="text" name="Business Name" required></div>
+            <div class="form-group"><label>FEIN</label><input type="text" name="FEIN"></div>
+          </div>
+          <div class="form-group"><label>DBA / Trade Name</label><input type="text" name="DBA/Trade Name"></div>
+          <div class="form-group"><label>Contact Name and Title *</label><input type="text" name="Contact Name and Title" required></div>
+          <div class="form-group"><label>Type of Business / Industry *</label><input type="text" name="Type of Business" placeholder="e.g. restaurant, rental property, salon, gym, daycare, etc." required></div>
+          <div class="form-group">
+            <label>Business Entity Type</label>
+            <div class="radio-row">
+              <label><input type="radio" name="Business Entity Type" value="Individual"> Individual</label>
+              <label><input type="radio" name="Business Entity Type" value="Partnership"> Partnership</label>
+              <label><input type="radio" name="Business Entity Type" value="Corporation"> Corporation</label>
+              <label><input type="radio" name="Business Entity Type" value="LLC"> LLC</label>
+              <label><input type="radio" name="Business Entity Type" value="Joint Venture"> Joint Venture</label>
+              <label><input type="radio" name="Business Entity Type" value="Association"> Association</label>
+              <label><input type="radio" name="Business Entity Type" value="Other"> Other</label>
+            </div>
+          </div>
+          <div class="form-group"><label>Description of Operations *</label><textarea name="Description of Operations" required></textarea></div>
+          <div class="form-grid">
+            <div class="form-group"><label>Years in Business</label><input type="text" name="Years in Business"></div>
+            <div class="form-group"><label>Years of Management Experience in This Industry</label><input type="text" name="Years of Management Experience"></div>
+          </div>
+          <div class="form-group"><label>Business Address *</label><input type="text" name="Business Address" required></div>
+
+          <div class="form-section-title">Building Information</div>
+          <div class="form-grid">
+            <div class="form-group"><label>Year Built</label><input type="text" name="Year Built"></div>
+            <div class="form-group">
+              <label>Fire Sprinkler System</label>
+              <div class="radio-row">
+                <label><input type="radio" name="Fire Sprinkler System" value="Yes"> Yes</label>
+                <label><input type="radio" name="Fire Sprinkler System" value="No"> No</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Construction Type</label>
+            <select name="Construction Type">
+              <option value="">Select...</option>
+              <option>Frame</option>
+              <option>Masonry</option>
+              <option>Non-Combustible</option>
+              <option>Masonry Non-Combustible</option>
+              <option>Modified Fire Resistive</option>
+              <option>Fire Resistive</option>
+            </select>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label>Building Coverage Amount (if Building Owner)</label><input type="text" name="Building Coverage Amount"></div>
+            <div class="form-group"><label>Tenants Improvements &amp; Betterments Coverage (if Tenant)</label><input type="text" name="Tenants Improvements Coverage"></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label>Business Property (Contents) Coverage Amount</label><input type="text" name="Business Property Coverage"></div>
+            <div class="form-group"><label>Location Deductible</label><input type="text" name="Location Deductible"></div>
+          </div>
+          <div class="form-group"><label>Liability Limit</label><input type="text" name="Liability Limit"></div>
+
+          <div class="form-section-title">What Coverage Are You Looking For?</div>
+          <p class="form-hint">Check all that apply — not sure? Check "Not sure" and Ryan will help you figure it out.</p>
+          <div class="coverage-checkbox-grid">
+            <label><input type="checkbox" name="Coverage Interest" value="Business Owner's Policy (BOP)"> Business Owner's Policy (BOP)</label>
+            <label><input type="checkbox" name="Coverage Interest" value="General Liability"> General Liability</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Commercial Property"> Commercial Property</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Commercial Auto"> Commercial Auto</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Workers' Compensation"> Workers' Compensation</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Professional Liability (E&O)"> Professional Liability (E&amp;O)</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Cyber Liability"> Cyber Liability</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Excess/Umbrella"> Excess &amp; Umbrella</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Liquor Liability"> Liquor Liability</label>
+            <label><input type="checkbox" name="Coverage Interest" value="Not Sure"> Not Sure / Ask Ryan</label>
+          </div>
+
+          <div class="form-section-title">Financials</div>
+          <div class="form-grid">
+            <div class="form-group"><label>Number of Full-Time Employees</label><input type="text" name="Number of Full-Time Employees"></div>
+            <div class="form-group"><label>Number of Part-Time Employees</label><input type="text" name="Number of Part-Time Employees"></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label>Annual Payroll</label><input type="text" name="Annual Payroll"></div>
+            <div class="form-group"><label>Total Annual Receipts / Revenue</label><input type="text" name="Total Annual Receipts"></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label>Approximate Renewal Date</label><input type="text" name="Renewal Date"></div>
+            <div class="form-group"><label>Current Carrier Name and Policy #</label><input type="text" name="Current Carrier"></div>
+          </div>
+          <div class="form-group"><label>Loss History</label><textarea name="Loss History"></textarea></div>
+          <div class="form-group"><label>Do You Use Vehicles in the Business? If So, How Many, and How Many Drivers?</label><input type="text" name="Vehicle Notes" placeholder="e.g. 2 vehicles, 2 drivers — or 'none'"></div>
+
+          <div class="form-group" style="margin-top:24px;"><label>Anything Else We Should Know?</label><textarea name="Additional Notes"></textarea></div>
+
+          <div class="form-grid" style="margin-top:8px;">
+            <div class="form-group"><label>Your Phone *</label><input type="tel" name="Phone" required></div>
+            <div class="form-group"><label>Your Email *</label><input type="email" name="email" required></div>
+          </div>
+
+          <div class="compliance-box">
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
+            <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="sms-other" required>
+            <label for="sms-other">I agree to receive calls, texts, and emails from Reardon Agency LLC about this quote request. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">Submit Quote Request &rarr;</button>
+        </form>
+      </div>
+      <div class="success-message" id="otherSuccess">
         <div style="font-size:4rem;margin-bottom:16px;">✅</div>
         <h2>Request Received!</h2>
         <p style="color:var(--mid-gray);margin-top:12px;">Ryan will review your information and follow up shortly with next steps.</p>
