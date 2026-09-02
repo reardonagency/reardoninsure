@@ -245,7 +245,7 @@
       <h2 style="color:#1e5799;">Know Your Numbers Before You Need Them</h2>
       <p style="max-width:520px;margin-left:auto;margin-right:auto;color:var(--text);">BankLiterate breaks down bankability, loan readiness, and financial ratios in plain English &mdash; free tools, no jargon, built for business owners.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://bankliterate.com" target="_blank" class="btn" style="background:#1e5799;color:white;">Visit BankLiterate.com &rarr;</a>
+        <a href="https://bankliterate.com" target="_blank" class="btn" style="background:#1e5799;color:white;" onclick="logReferral('BankLiterate','Business Financial Literacy','Website')">Visit BankLiterate.com &rarr;</a>
       </div>
     </div>
 
@@ -294,6 +294,19 @@
 </div>
 
 <script>
+function logReferral(name, category, method) {
+  fetch('https://formspree.io/f/meevzzyr', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'Referral Click - ' + category + ' - ' + name,
+      'Contact Name': name,
+      'Category': category,
+      'Contact Method': method,
+      'Page': 'Business Insurance'
+    })
+  }).catch(function(){});
+}
 function openModal(id) {
   document.getElementById(id).classList.add('open');
   document.body.style.overflow = 'hidden';
