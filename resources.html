@@ -31,7 +31,8 @@
     .resource-card { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 24px; transition: all var(--transition); position: relative; }
     .resource-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-3px); }
     .resource-type { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); background: rgba(232,185,35,0.1); padding: 3px 10px; border-radius: 100px; display: inline-block; margin-bottom: 10px; }
-    .resource-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
+    .resource-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 2px; font-family: var(--font-body); font-weight: 600; }
+    .resource-biz { font-size: 0.84rem; color: var(--gold-dark); font-weight: 700; margin-bottom: 10px; }
     .resource-card p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.65; margin: 0; }
     .resource-note { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--light-gray); font-size: 0.76rem; color: var(--mid-gray); font-style: italic; }
     .resource-contact { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
@@ -185,7 +186,8 @@
         <div class="resource-card">
         <div class="resource-type">Financial Planning</div>
           <h4>Katie Randall</h4>
-          <p>Financial Advisor, Edward Jones. My single top referral across any category &mdash; insurance, investments, retirement, estate planning, and tax strategy, all working together. If you only use one resource from this entire page, start here.</p>
+          <div class="resource-biz">Edward Jones</div>
+          <p>Financial Advisor. My single top referral across any category &mdash; insurance, investments, retirement, estate planning, and tax strategy, all working together. If you only use one resource from this entire page, start here.</p>
           <div class="resource-note">1920 Vindicator Dr, Ste 112, Colorado Springs, CO 80919</div>
           <div class="resource-contact">
             <a href="tel:+17196226597" onclick="logReferral('Katie Randall','Financial Advisor','Phone')">📞 (719) 622-6597</a>
@@ -195,38 +197,31 @@
         <div class="resource-card">
         <div class="resource-type">Home Financing</div>
           <h4>Brenda Layton</h4>
-          <p>Residential Mortgage, CCM. A responsive mortgage professional who explains what you&rsquo;re signing and delivers on promised timelines. Handles conventional, VA, and FHA financing across Colorado.</p>
+          <div class="resource-biz">CrossCountry Mortgage</div>
+          <p>SVP of Mortgage Lending. A responsive mortgage professional who explains what you&rsquo;re signing and delivers on promised timelines &mdash; conventional, VA, and FHA financing, including programs for active-duty military, veterans, and families in transition.</p>
           <div class="resource-note">12295 Oracle Blvd, Ste 200, Colorado Springs, CO 80921</div>
           <div class="resource-contact">
             <a href="tel:+17196617483" onclick="logReferral('Brenda Layton','Residential Mortgage','Phone')">📞 (719) 661-7483</a>
             <a href="mailto:brenda.layton@ccm.com" onclick="logReferral('Brenda Layton','Residential Mortgage','Email')">✉ Email</a>
-            <a href="http://www.ccm.com/brenda-layton" target="_blank" onclick="logReferral('Brenda Layton','Residential Mortgage','Website')">🌐 Website</a>
+            <a href="https://www.crosscountrymortgage.com/colorado-springs-co-4495/brenda-layton/" target="_blank" onclick="logReferral('Brenda Layton','Residential Mortgage','Website')">🌐 Website</a>
           </div>
         </div>
         <div class="resource-card">
         <div class="resource-type">Real Estate</div>
           <h4>Michelle Bies</h4>
-          <p>Residential Real Estate Agent, Kenney &amp; Company &mdash; The Bies Group. Knows the Colorado Springs market inside and out, from first-time buyers and military relocations to investment properties and move-up buyers.</p>
+          <div class="resource-biz">BHGRE Kenney &amp; Company</div>
+          <p>Residential Real Estate Agent. Knows the Colorado Springs market inside and out, from first-time buyers and military relocations to investment properties and move-up buyers &mdash; recently credited by a client for closing a roughly $2 million purchase in record time.</p>
           <div class="resource-note">2120 N Academy Circle, Ste A, Colorado Springs, CO 80909</div>
           <div class="resource-contact">
             <a href="tel:+17195501515" onclick="logReferral('Michelle Bies','Real Estate Agent','Phone')">📞 (719) 550-1515</a>
             <a href="mailto:michelle.bies@kenneyandcompany.com" onclick="logReferral('Michelle Bies','Real Estate Agent','Email')">✉ Email</a>
-            <a href="http://KenneyandCompany.com/TheBiesGroup" target="_blank" onclick="logReferral('Michelle Bies','Real Estate Agent','Website')">🌐 Website</a>
-          </div>
-        </div>
-        <div class="resource-card">
-        <div class="resource-type">Real Estate</div>
-          <h4>Kim Anderson Grigg</h4>
-          <p>Real Estate Services. Also offers residential cleaning services &mdash; see the Cleaning category below.</p>
-          <div class="resource-note">Colorado Springs, CO</div>
-          <div class="resource-contact">
-            <a href="tel:+17196617363" onclick="logReferral('Kim Anderson Grigg','Real Estate Agent','Phone')">📞 (719) 661-7363</a>
-            <a href="mailto:kimmer5555@myCTL.net" onclick="logReferral('Kim Anderson Grigg','Real Estate Agent','Email')">✉ Email</a>
+            <a href="http://www.kenneyandcompany.com" target="_blank" onclick="logReferral('Michelle Bies','Real Estate Agent','Website')">🌐 Website</a>
           </div>
         </div>
         <div class="resource-card">
         <div class="resource-type">Title &amp; Closing</div>
           <h4>Rich Feasel</h4>
+          <div class="resource-biz">Fidelity National Title</div>
           <p>Title Services. Handles closings smoothly and catches issues before they become problems. Essential for any real estate transaction, residential or commercial.</p>
           <div class="resource-note">1755 Telstar Drive, Ste 101, Colorado Springs, CO 80920</div>
           <div class="resource-contact">
@@ -237,6 +232,7 @@
         <div class="resource-card">
         <div class="resource-type">Banking</div>
           <h4>Anjellah Schaefer</h4>
+          <div class="resource-biz">Pikes Peak National Bank</div>
           <p>Commercial Loan Officer. Strong small business and commercial offerings &mdash; business checking, lines of credit, SBA loans, and relationship banking that means something beyond a 1-800 number.</p>
           <div class="resource-note">4790 North Academy Blvd, Colorado Springs, CO 80918</div>
           <div class="resource-contact">
@@ -253,7 +249,8 @@
         <div class="resource-card">
           <div class="resource-type">Tax &amp; Accounting</div>
           <h4>Jessica Reyes</h4>
-          <p>Certified Public Accountant, Omni Accounting Solutions. Tax preparation and planning for individuals, families, and small businesses &mdash; S-corps, LLCs, self-employed professionals, and growing companies. Works well alongside a financial advisor.</p>
+          <div class="resource-biz">Omni Accounting Solutions</div>
+          <p>Certified Public Accountant. Helps business owners get clear, accurate financial information to make confident decisions &mdash; bookkeeping, tax prep and planning, full-service accounting, and CFO advisory. Her own experience owning a salon shapes how she understands small-business challenges. Works well alongside a financial advisor.</p>
           <div class="resource-note">PO Box 177, Monument, CO 80132</div>
           <div class="resource-contact">
             <a href="tel:+17196790777" onclick="logReferral('Jessica Reyes','CPA','Phone')">📞 (719) 679-0777</a>
@@ -264,7 +261,8 @@
         <div class="resource-card">
           <div class="resource-type">Bookkeeping</div>
           <h4>Lauren Poitras</h4>
-          <p>Bookkeeping, One For The Books LLC. Ongoing bookkeeping for small businesses &mdash; keeping your books clean and current so tax time (and your accountant) isn&rsquo;t a scramble.</p>
+          <div class="resource-biz">One For The Books LLC</div>
+          <p>Bookkeeping, payroll, and QuickBooks ProAdvisor services &mdash; monthly reconciliation and year-end reporting so tax time (and your accountant) isn&rsquo;t a scramble. A verified QuickBooks ProAdvisor with a 5.0 rating.</p>
           <div class="resource-note">Peyton, CO</div>
           <div class="resource-contact">
             <a href="tel:+17193679460" onclick="logReferral('Lauren Poitras','Bookkeeping','Phone')">📞 (719) 367-9460</a>
@@ -275,7 +273,8 @@
         <div class="resource-card">
         <div class="resource-type">Health Coverage</div>
           <h4>AdriAnn Bossie</h4>
-          <p>Health Insurance specialist, Vertex Health. Individual, family, and small group health insurance. Navigating health coverage options is genuinely complex &mdash; having someone in your corner who knows the market saves time and often money.</p>
+          <div class="resource-biz">Vertex Health Insurance</div>
+          <p>Health Insurance Broker. About 15 years of experience helping individuals, employers, and seniors cut through the noise of plan options &mdash; individual/family plans, small-business group coverage, and Medicare, with ongoing enrollment support.</p>
           <div class="resource-note">1271 Kelly Johnson Blvd, Ste 111, Colorado Springs, CO 80920</div>
           <div class="resource-contact">
             <a href="tel:+17194404242" onclick="logReferral('AdriAnn Bossie','Health Insurance','Phone')">📞 (719) 440-4242</a>
@@ -286,7 +285,8 @@
         <div class="resource-card">
         <div class="resource-type">Property</div>
           <h4>Bea Leichliter</h4>
-          <p>Property Management, Livingood. Rental property management for landlords who don&rsquo;t want to field tenant calls themselves. One important note: make sure your landlord insurance policy is active before the first tenant moves in.</p>
+          <div class="resource-biz">Livingood Realty &amp; Property Management</div>
+          <p>Property Management. Covers both real estate sales and property management &mdash; buying, selling, investing, rentals, and tenant placement. One important note: make sure your landlord insurance policy is active before the first tenant moves in.</p>
           <div class="resource-note">1110 N Circle Dr, Ste 1 &amp; 100, Colorado Springs, CO 80909</div>
           <div class="resource-contact">
             <a href="tel:+17192031596" onclick="logReferral('Bea Leichliter','Property Management','Phone')">📞 (719) 203-1596</a>
@@ -307,7 +307,8 @@
         <div class="resource-card">
         <div class="resource-type">Roofing</div>
           <h4>Harrison Clark</h4>
-          <p>Residential Roofing, Triton Roofing. One of the most-requested trades in Colorado Springs &mdash; especially after hail season. Honest assessments, not just chasing whatever insurance will pay. Licensed, local, and accountable.</p>
+          <div class="resource-biz">Triton Roofing &amp; Solar</div>
+          <p>Residential Roofing. U.S. Veteran-owned, 20+ years of experience, 5,000+ completed projects, and a 25-year workmanship warranty &mdash; GAF Master Elite Certified (top 2% of U.S. roofing contractors). Honest assessments, not just chasing whatever insurance will pay.</p>
           <div class="resource-note">5170 N Union Blvd, Colorado Springs, CO 80918</div>
           <div class="resource-contact">
             <a href="tel:+17193602050" onclick="logReferral('Harrison Clark','Roofing','Phone')">📞 (719) 360-2050</a>
@@ -318,7 +319,8 @@
         <div class="resource-card">
         <div class="resource-type">Electrical</div>
           <h4>Brittany Hall</h4>
-          <p>Electrician, Eagle Eye Electric. Licensed electrical work for residential and light commercial &mdash; panel upgrades, EV charger installs, new construction wiring, and service calls. Consistently one of the hardest trades to find a good one.</p>
+          <div class="resource-biz">Eagle Eye Electric</div>
+          <p>Electrician. Founded by master electrician Mark, who earned the &ldquo;Eagle Eye&rdquo; nickname during his apprenticeship for attention to detail. Licensed electrical work for residential and light commercial &mdash; panel upgrades, EV charger installs, new construction wiring, and service calls.</p>
           <div class="resource-note">3472 Research Pkwy, Ste 104-8249, Colorado Springs, CO 80920</div>
           <div class="resource-contact">
             <a href="tel:+16613813732" onclick="logReferral('Brittany Hall','Electrician','Phone')">📞 (661) 381-3732</a>
@@ -341,7 +343,8 @@
         <div class="resource-card">
           <div class="resource-type">General Contracting</div>
           <h4>Beth Alexander-Coons</h4>
-          <p>Builder / General Contractor, Coons Construction. Full-service remodels, additions, and new construction. Licensed, insured, and known for clear communication, honest bids, and actually finishing on schedule.</p>
+          <div class="resource-biz">Coons Construction Inc.</div>
+          <p>Builder / General Contractor. Licensed A-1 General Contractor in the Pikes Peak region with 30+ years of experience &mdash; custom homes, additions, renovations, commercial construction, and SCIP building systems. Known for clear communication, honest bids, and actually finishing on schedule.</p>
           <div class="resource-note">7505 Tudor Road, Colorado Springs, CO 80919</div>
           <div class="resource-contact">
             <a href="tel:+17196411339" onclick="logReferral('Beth Alexander-Coons','General Contractor','Phone')">📞 (719) 641-1339</a>
@@ -362,7 +365,8 @@
         <div class="resource-card">
         <div class="resource-type">Painting</div>
           <h4>Perla Delgadillo</h4>
-          <p>Painting Company, Grace Painting. Interior and exterior painting, finish work, and decorative services. Preps properly, cleans up completely, and stands behind the final product.</p>
+          <div class="resource-biz">Grace Painting</div>
+          <p>Painting Company. Interior and exterior painting, finish work, and decorative services. Preps properly, cleans up completely, and stands behind the final product.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+17194828427" onclick="logReferral('Perla Delgadillo','Painter','Phone')">📞 (719) 482-8427</a>
@@ -372,7 +376,8 @@
         <div class="resource-card">
         <div class="resource-type">Metal Work</div>
           <h4>Jonathan Tanner</h4>
-          <p>Metal Work, Cornerstone Craft. Custom metal fabrication and welding for residential and commercial projects &mdash; railings, gates, structural work, and repairs.</p>
+          <div class="resource-biz">Cornerstone Craft</div>
+          <p>Metal Work. Custom metal fabrication and welding for residential and commercial projects &mdash; railings, gates, structural work, and repairs.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+17196502280" onclick="logReferral('Jonathan Tanner','Metal Work','Phone')">📞 (719) 650-2280</a>
@@ -382,7 +387,8 @@
         <div class="resource-card">
         <div class="resource-type">Landscaping</div>
           <h4>Scott Mitchell</h4>
-          <p>Landscape Services, Get A Grip. Landscaping, lawn care, and tree services for residential and commercial properties. Colorado&rsquo;s altitude and climate require someone who actually knows what grows here and when.</p>
+          <div class="resource-biz">Get A Grip</div>
+          <p>Landscape Services. Landscaping, lawn care, and tree services for residential and commercial properties. Colorado&rsquo;s altitude and climate require someone who actually knows what grows here and when.</p>
           <div class="resource-note">6813 Space Village Ave, Colorado Springs, CO 80915</div>
           <div class="resource-contact">
             <a href="tel:+17199008929" onclick="logReferral('Scott Mitchell','Landscape Services','Phone')">📞 (719) 900-8929</a>
@@ -392,6 +398,7 @@
         <div class="resource-card">
         <div class="resource-type">Cleaning</div>
           <h4>Kim Anderson Grigg</h4>
+          <div class="resource-biz">All About Cleaning Co.</div>
           <p>Residential Cleaning Services. Vetted, professional, and trustworthy enough to be in your home when you&rsquo;re not.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
@@ -414,7 +421,8 @@
         <div class="resource-card">
         <div class="resource-type">Moving</div>
           <h4>Melysa Benedict</h4>
-          <p>Moving Company, 5 Star Moving &amp; Storage. Local and long-distance movers who treat your belongings with care. Good movers are absolutely worth the cost &mdash; bad ones teach that lesson the hard way.</p>
+          <div class="resource-biz">5 Star Moving &amp; Storage</div>
+          <p>Moving Company. Locally owned since 2007 &mdash; residential and commercial moves, long-distance moves as an Interstate Agent for Wheaton World Wide Moving, packing services, and a 20,000 sq ft storage warehouse. One of only three military-approved DoD shippers/packers in Colorado Springs.</p>
           <div class="resource-note">611 Valley Street, Colorado Springs, CO 80915</div>
           <div class="resource-contact">
             <a href="tel:+17192277755" onclick="logReferral('Melysa Benedict','Moving Company','Phone')">📞 (719) 227-7755</a>
@@ -425,7 +433,8 @@
         <div class="resource-card">
         <div class="resource-type">Junk Removal</div>
           <h4>Jonathan Goodman</h4>
-          <p>Junk Removal, Haul Yeah. Fast, no-hassle junk and debris removal for cleanouts, renovations, and anything you just need gone.</p>
+          <div class="resource-biz">Haul Yeah</div>
+          <p>Junk Removal. Fast, no-hassle junk and debris removal for cleanouts, renovations, and anything you just need gone.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+17196482379" onclick="logReferral('Jonathan Goodman','Junk Removal','Phone')">📞 (719) 648-2379</a>
@@ -468,7 +477,8 @@
         <div class="resource-card">
         <div class="resource-type">Hail Repair</div>
           <h4>Mo Kayeni</h4>
-          <p>Auto Hail Repair, Elevated Auto Hail Repair. Paintless dent repair specialists for hail damage &mdash; one of the most relevant services in Colorado. After a major storm, shops book up fast. Serving Denver, Colorado Springs &amp; Cheyenne.</p>
+          <div class="resource-biz">Elevated Hail Repair</div>
+          <p>Auto Hail Repair. Paintless dent repair specialists who handle insurance claims start-to-finish, with deductible assistance, free rental cars, and pickup/drop-off concierge service &mdash; 800+ cars repaired, in-house certified technicians, lifetime warranty. Serving Denver, Colorado Springs &amp; Cheyenne.</p>
           <div class="resource-note">15141 E Fremont Dr Unit 104, Centennial, CO 80112</div>
           <div class="resource-contact">
             <a href="tel:+17206795659" onclick="logReferral('Mo Kayeni','Auto Hail Repair','Phone')">📞 (720) 679-5659</a>
@@ -500,6 +510,7 @@
         <div class="resource-card">
         <div class="resource-type">Personal Injury</div>
           <h4>Ryan Malnar</h4>
+          <div class="resource-biz">Malnar Injury Law &mdash; &ldquo;The Stubborn Attorney&rdquo;</div>
           <p>Personal Injury Attorney. If you&rsquo;ve been in an accident and need legal representation, having a trusted attorney in your corner matters &mdash; especially when dealing with insurance companies on the other side. Works on contingency and fights for fair outcomes.</p>
           <div class="resource-note">6799 Bismark Road, Ste C, Colorado Springs, CO 80922</div>
           <div class="resource-contact">
@@ -522,7 +533,8 @@
         <div class="resource-card">
           <div class="resource-type">Business Broker</div>
           <h4>Derek Jones</h4>
-          <p>Business Broker, EXCO Advisors. For buying or selling a business &mdash; valuation, deal structure, and finding the right buyer or seller without the process falling apart along the way.</p>
+          <div class="resource-biz">EXCO Advisors</div>
+          <p>Business Broker. For buying or selling a business &mdash; valuation, deal structure, and finding the right buyer or seller without the process falling apart along the way.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+17195100679" onclick="logReferral('Derek Jones','Business Broker','Phone')">📞 (719) 510-0679</a>
@@ -542,7 +554,8 @@
         <div class="resource-card">
         <div class="resource-type">Digital Marketing &amp; SEO</div>
           <h4>David Roland</h4>
-          <p>Digital Marketing, Business Bob. An AI-powered solution built specifically to help trades companies reach more clients &mdash; a genuinely different approach for contractors and service businesses looking to grow.</p>
+          <div class="resource-biz">Business Bob</div>
+          <p>Digital Marketing. AI-powered voice automation for local trades businesses &mdash; call answering, review management, scheduling, and CRM integration, positioned as a 24/7 alternative to a human receptionist. A genuinely different approach for contractors and service businesses looking to grow.</p>
           <div class="resource-note">425 N. Wilcox St., Ste 210A, Castle Rock, CO 80104</div>
           <div class="resource-contact">
             <a href="tel:+18774514262" onclick="logReferral('David Roland','Digital Marketing','Phone')">📞 (877) 451-4262</a>
@@ -553,7 +566,8 @@
         <div class="resource-card">
         <div class="resource-type">Social Media</div>
           <h4>Nathan Pearson</h4>
-          <p>Online Marketing, Pearson Branding. Content creation, social media management, and online advertising for businesses that don&rsquo;t have bandwidth to do it in-house. Specializes in authentic, locally-rooted content that builds real trust.</p>
+          <div class="resource-biz">Pearson Branding</div>
+          <p>Online Marketing. &ldquo;AI-Powered. Human-Led. Results-Driven&rdquo; &mdash; media management, strategic planning, website design, and copywriting for businesses that don&rsquo;t have bandwidth to do it in-house. 9 years running, blending AI speed with real human marketing intuition.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+18179957488" onclick="logReferral('Nathan Pearson','Online Marketing','Phone')">📞 (817) 995-7488</a>
@@ -564,7 +578,8 @@
         <div class="resource-card">
         <div class="resource-type">Advertising</div>
           <h4>Brenda Sanchez</h4>
-          <p>Client Acquisition &amp; Retention, Mailbox Marketing Agency. Broader advertising strategy for businesses looking to extend reach and actually retain the clients they win. Thinks about ROI, not just impressions.</p>
+          <div class="resource-biz">Mailbox Marketing Agency</div>
+          <p>Client Acquisition &amp; Retention. Runs Mailbox Power, an all-in-one platform for automated direct mail and gifting &mdash; postcard/greeting-card campaigns, personalized gifts, QR-code engagement tracking, and CRM integration. Thinks about ROI, not just impressions.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+17193311525" onclick="logReferral('Brenda Sanchez','Advertising &amp; Marketing','Phone')">📞 (719) 331-1525</a>
@@ -596,7 +611,8 @@
         <div class="resource-card">
         <div class="resource-type">Physical Therapy</div>
           <h4>Scott Runyon</h4>
-          <p>Physical Therapist, Backcountry Physio. Injury recovery, post-surgery rehab, and performance improvement. Colorado is an active state &mdash; understands active lifestyles and specializes in getting people back to doing what they love.</p>
+          <div class="resource-biz">Backcountry Physical Therapy</div>
+          <p>Physical Therapist. Sports-focused PT specializing in active adults and outdoor athletes &mdash; skiers, trail runners, mountain bikers, and climbers. Strength-first, root-cause approach with one-on-one sessions and medical bike fitting.</p>
           <div class="resource-note">5815 Mark Dabling Blvd, Colorado Springs, CO 80919</div>
           <div class="resource-contact">
             <a href="tel:+17192859670" onclick="logReferral('Scott Runyon','Physical Therapist','Phone')">📞 (719) 285-9670</a>
@@ -618,7 +634,8 @@
         <div class="resource-card">
         <div class="resource-type">Dental</div>
           <h4>Roxy Georgescu</h4>
-          <p>General Dentist. Thorough, honest about what work is actually needed, and good at making the experience as comfortable as possible.</p>
+          <div class="resource-biz">Twin Dental</div>
+          <p>General Dentist. Family and cosmetic dentistry, implants, emergency care, laser dentistry, and periodontal therapy. Thorough, honest about what work is actually needed &mdash; voted Top Dentist by Colorado Springs Style Magazine multiple years running.</p>
           <div class="resource-note">7560 Rangewood Drive, Ste 300, Colorado Springs, CO 80920</div>
           <div class="resource-contact">
             <a href="tel:+17192729009" onclick="logReferral('Roxy Georgescu','Dentist','Phone')">📞 (719) 272-9009</a>
@@ -629,7 +646,8 @@
         <div class="resource-card">
           <div class="resource-type">Fitness</div>
           <h4>Jane Pavalkis</h4>
-          <p>Personal Trainer, Nova Functional Training. Works with clients at all levels &mdash; from post-injury recovery to performance training and weight loss.</p>
+          <div class="resource-biz">Nova Functional Training</div>
+          <p>Personal Trainer. One-on-one and remote coaching, plus a self-directed membership with daily workouts &mdash; &ldquo;train for the life you want to still be living in thirty years.&rdquo; Real coach access, not chatbots, with programming adjusted based on progress.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+13155772427" onclick="logReferral('Jane Pavalkis','Personal Trainer','Phone')">📞 (315) 577-2427</a>
@@ -640,7 +658,8 @@
         <div class="resource-card">
           <div class="resource-type">Weight Management</div>
           <h4>Tamara Davis-Peck</h4>
-          <p>Weight Management, Ascent Trim. Medical weight management support for people who want a real plan and real accountability, not just a generic diet.</p>
+          <div class="resource-biz">Ascent Trim</div>
+          <p>Weight Management. Medical weight management support for people who want a real plan and real accountability, not just a generic diet.</p>
           <div class="resource-note">5426 N Academy, Ste 105, Colorado Springs, CO 80918</div>
           <div class="resource-contact">
             <a href="tel:+17196496905" onclick="logReferral('Tamara Davis-Peck','Weight Management','Phone')">📞 (719) 649-6905</a>
@@ -650,7 +669,8 @@
         <div class="resource-card">
           <div class="resource-type">Coaching</div>
           <h4>Morgan Hildebrand</h4>
-          <p>Conflict Management and Divorce Coach, Holistique By Design. For anyone navigating divorce or high-conflict situations and wanting real support through the process, not just legal paperwork.</p>
+          <div class="resource-biz">Holistique By Design</div>
+          <p>Conflict Management and Divorce Coach. Certified Master Professional Coach and Divorce Certified Coach with 19+ years of experience &mdash; for individuals and families navigating divorce, separation, and co-parenting. Structured, non-judgmental support, available virtually or in-person.</p>
           <div class="resource-note">Colorado Springs, CO</div>
           <div class="resource-contact">
             <a href="tel:+17192044736" onclick="logReferral('Morgan Hildebrand','Divorce Coach','Phone')">📞 (719) 204-4736</a>
@@ -661,7 +681,8 @@
         <div class="resource-card">
           <div class="resource-type">Longevity &amp; Wellness</div>
           <h4>Thom Salo</h4>
-          <p>Health &amp; Wellness Services, Sisu Longevity Studio. A whole-person approach to long-term health and wellness for people who want to invest in how they feel for the long run.</p>
+          <div class="resource-biz">Sisu Longevity Studio</div>
+          <p>Health &amp; Wellness Services. Contrast therapy, float therapy, halotherapy, compression therapy, red light and PEMF therapy, hyperbaric oxygen, and an anti-gravity treadmill &mdash; plus an eight-test baseline assessment with six-month retesting. Focused on extending healthspan, not just lifespan.</p>
           <div class="resource-note">10855 Hidden Pool Heights, Colorado Springs, CO 80908</div>
           <div class="resource-contact">
             <a href="tel:+17179610805" onclick="logReferral('Thom Salo','Longevity & Wellness','Phone')">📞 (717) 961-0805</a>
@@ -716,7 +737,8 @@
         <div class="resource-card">
           <div class="resource-type">Author &amp; Writing</div>
           <h4>Kay Rowe</h4>
-          <p>Author &amp; Freelance Writer, Embrace Life LLC. For book projects, freelance writing, and content that needs a real writer&rsquo;s touch rather than something generic.</p>
+          <div class="resource-biz">Embrace Life LLC</div>
+          <p>Author &amp; Freelance Writer / Writing Coach. Her work centers on fostering critical thinking and personal growth through writing, coaching, and speaking. For book projects, freelance writing, and content that needs a real writer&rsquo;s touch rather than something generic.</p>
           <div class="resource-note">Peyton, CO</div>
           <div class="resource-contact">
             <a href="tel:+14026805220" onclick="logReferral('Kay Rowe','Author &amp; Freelance Writer','Phone')">📞 (402) 680-5220</a>
