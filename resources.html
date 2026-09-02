@@ -97,6 +97,36 @@
     @media (max-width: 700px) {
       .resources-nav-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
     }
+
+    .resource-spotlight {
+      display: none;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .resource-spotlight::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M40 40L0 0h80L40 40zm0 0L0 80h80L40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .resource-spotlight-inner { position: relative; z-index: 2; }
+    .spotlight-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); background: rgba(232,185,35,0.15); border: 1px solid rgba(232,185,35,0.3);
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 16px;
+    }
+    #spotlightCategory {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold-dark); background: rgba(232,185,35,0.1); padding: 3px 10px; border-radius: 100px; margin-bottom: 10px;
+    }
+    .resource-spotlight h3 { color: var(--white); font-size: 1.3rem; margin: 0 0 2px; }
+    #spotlightBiz { color: var(--gold); font-weight: 700; font-size: 0.92rem; margin-bottom: 12px; }
+    #spotlightBlurb { color: rgba(255,255,255,0.75); line-height: 1.7; font-size: 0.94rem; margin-bottom: 20px; max-width: 640px; }
+    .resource-card:target { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(232,185,35,0.3); }
   </style>
 </head>
 <body>
@@ -152,6 +182,16 @@
 
 <section class="section">
   <div class="container">
+    <div class="resource-spotlight" id="resourceSpotlight">
+      <div class="resource-spotlight-inner">
+        <div class="spotlight-tag">⭐ This Week's Spotlight</div>
+        <div id="spotlightCategory"></div>
+        <h3 id="spotlightName"></h3>
+        <div id="spotlightBiz"></div>
+        <p id="spotlightBlurb"></p>
+        <a href="#" id="spotlightLink" class="btn btn-primary" onclick="document.getElementById('resourceSearch').value='';filterResources();">View Full Listing &amp; Contact Info &rarr;</a>
+      </div>
+    </div>
 
     <div class="resources-intro">
       <p>Over the years &mdash; growing up in Littleton, going to school at CSU Fort Collins, building a business in Colorado Springs, and staying active in professional networks including BNI &mdash; I&rsquo;ve built relationships with a lot of outstanding people. The professionals on this page are ones I&rsquo;ve personally worked with, referred clients to, or know well enough to stand behind. I don&rsquo;t list anyone I wouldn&rsquo;t send my own family to.</p>
@@ -183,7 +223,7 @@
         <div><h2>Home Buying &amp; Financial Services</h2><p>The professionals you need when buying, financing, or planning your financial future</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card">
+        <div class="resource-card" id="person-katie-randall">
         <div class="resource-type">Financial Planning</div>
           <h4>Katie Randall</h4>
           <div class="resource-biz">Edward Jones</div>
@@ -194,7 +234,7 @@
             <a href="mailto:Katie.randall@edwardjones.com" onclick="logReferral('Katie Randall','Financial Advisor','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-brenda-layton">
         <div class="resource-type">Home Financing</div>
           <h4>Brenda Layton</h4>
           <div class="resource-biz">CrossCountry Mortgage</div>
@@ -206,7 +246,7 @@
             <a href="https://www.crosscountrymortgage.com/colorado-springs-co-4495/brenda-layton/" target="_blank" onclick="logReferral('Brenda Layton','Residential Mortgage','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-michelle-bies">
         <div class="resource-type">Real Estate</div>
           <h4>Michelle Bies</h4>
           <div class="resource-biz">BHGRE Kenney &amp; Company</div>
@@ -218,7 +258,7 @@
             <a href="http://www.kenneyandcompany.com" target="_blank" onclick="logReferral('Michelle Bies','Real Estate Agent','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-rich-feasel">
         <div class="resource-type">Title &amp; Closing</div>
           <h4>Rich Feasel</h4>
           <div class="resource-biz">Fidelity National Title</div>
@@ -229,7 +269,7 @@
             <a href="mailto:rich.feasel@fnf.com" onclick="logReferral('Rich Feasel','Title Services','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-anjellah-schaefer">
         <div class="resource-type">Banking</div>
           <h4>Anjellah Schaefer</h4>
           <div class="resource-biz">Pikes Peak National Bank</div>
@@ -246,7 +286,7 @@
           <p>Consistently the most in-demand professional referral I get. If you have life insurance but no estate plan &mdash; wills, trusts, beneficiary designations &mdash; the picture isn&rsquo;t complete. These attorneys specialize in getting that right.</p>
           <div class="resource-note">Colorado Springs &middot; Individuals &amp; families</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-jessica-reyes">
           <div class="resource-type">Tax &amp; Accounting</div>
           <h4>Jessica Reyes</h4>
           <div class="resource-biz">Omni Accounting Solutions</div>
@@ -258,7 +298,7 @@
             <a href="https://omniaccountingsolutions.com/" target="_blank" onclick="logReferral('Jessica Reyes','CPA','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-lauren-poitras">
           <div class="resource-type">Bookkeeping</div>
           <h4>Lauren Poitras</h4>
           <div class="resource-biz">One For The Books LLC</div>
@@ -270,7 +310,7 @@
             <a href="http://oneforthebooksllc.com" target="_blank" onclick="logReferral('Lauren Poitras','Bookkeeping','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-adriann-bossie">
         <div class="resource-type">Health Coverage</div>
           <h4>AdriAnn Bossie</h4>
           <div class="resource-biz">Vertex Health Insurance</div>
@@ -282,7 +322,7 @@
             <a href="https://vertex.health/" target="_blank" onclick="logReferral('AdriAnn Bossie','Health Insurance','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-bea-leichliter">
         <div class="resource-type">Property</div>
           <h4>Bea Leichliter</h4>
           <div class="resource-biz">Livingood Realty &amp; Property Management</div>
@@ -304,7 +344,7 @@
         <div><h2>Home Services &amp; Skilled Trades</h2><p>Licensed, reliable contractors and home service professionals &mdash; among the most requested referrals I get</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card">
+        <div class="resource-card" id="person-harrison-clark">
         <div class="resource-type">Roofing</div>
           <h4>Harrison Clark</h4>
           <div class="resource-biz">Triton Roofing &amp; Solar</div>
@@ -316,7 +356,7 @@
             <a href="http://www.tritonroofing.com" target="_blank" onclick="logReferral('Harrison Clark','Roofing','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-brittany-hall">
         <div class="resource-type">Electrical</div>
           <h4>Brittany Hall</h4>
           <div class="resource-biz">Eagle Eye Electric</div>
@@ -340,7 +380,7 @@
           <p>Residential and commercial plumbing from emergency repairs to full remodels. Another highly requested trade. Ask me for a specific referral based on what you need.</p>
           <div class="resource-note">Colorado Springs area &middot; Emergency available</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-beth-alexander-coons">
           <div class="resource-type">General Contracting</div>
           <h4>Beth Alexander-Coons</h4>
           <div class="resource-biz">Coons Construction Inc.</div>
@@ -352,7 +392,7 @@
             <a href="http://www.coons-construction.com" target="_blank" onclick="logReferral('Beth Alexander-Coons','General Contractor','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-matthew-mcaninch">
         <div class="resource-type">Handyman</div>
           <h4>Matthew McAninch</h4>
           <p>Handyman. Reliable for the jobs that don&rsquo;t require a full contractor &mdash; repairs, installations, small projects, and punch-list items. A good handyman is harder to find than people expect.</p>
@@ -362,7 +402,7 @@
             <a href="mailto:Handymanmm360@gmail.com" onclick="logReferral('Matthew McAninch','Handyman','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-perla-delgadillo">
         <div class="resource-type">Painting</div>
           <h4>Perla Delgadillo</h4>
           <div class="resource-biz">Grace Painting</div>
@@ -373,7 +413,7 @@
             <a href="mailto:grace_painting74@hotmail.com" onclick="logReferral('Perla Delgadillo','Painter','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-jonathan-tanner">
         <div class="resource-type">Metal Work</div>
           <h4>Jonathan Tanner</h4>
           <div class="resource-biz">Cornerstone Craft</div>
@@ -384,7 +424,7 @@
             <a href="mailto:jtanner@cornerstonecraft.co" onclick="logReferral('Jonathan Tanner','Metal Work','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-scott-mitchell">
         <div class="resource-type">Landscaping</div>
           <h4>Scott Mitchell</h4>
           <div class="resource-biz">Get A Grip</div>
@@ -395,7 +435,7 @@
             <a href="mailto:Scott.mitchell@getagripservice.com" onclick="logReferral('Scott Mitchell','Landscape Services','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-kim-anderson-grigg">
         <div class="resource-type">Cleaning</div>
           <h4>Kim Anderson Grigg</h4>
           <div class="resource-biz">All About Cleaning Co.</div>
@@ -418,7 +458,7 @@
           <p>Thorough inspectors who tell you exactly what they find &mdash; not just what you want to hear. Essential for any purchase, and worth it before listing a property as well.</p>
           <div class="resource-note">Pikes Peak region</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-melysa-benedict">
         <div class="resource-type">Moving</div>
           <h4>Melysa Benedict</h4>
           <div class="resource-biz">5 Star Moving &amp; Storage</div>
@@ -430,7 +470,7 @@
             <a href="http://5starmovingandstorage.com" target="_blank" onclick="logReferral('Melysa Benedict','Moving Company','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-jonathan-goodman">
         <div class="resource-type">Junk Removal</div>
           <h4>Jonathan Goodman</h4>
           <div class="resource-biz">Haul Yeah</div>
@@ -474,7 +514,7 @@
           <p>Honest car dealerships and sales professionals I&rsquo;ve personally worked with. Buying a car should feel straightforward &mdash; these folks make it that way.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-mo-kayeni">
         <div class="resource-type">Hail Repair</div>
           <h4>Mo Kayeni</h4>
           <div class="resource-biz">Elevated Hail Repair</div>
@@ -507,7 +547,7 @@
         <div><h2>Legal &amp; Professional Services</h2><p>Attorneys and business professionals who handle the serious stuff</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card">
+        <div class="resource-card" id="person-ryan-malnar">
         <div class="resource-type">Personal Injury</div>
           <h4>Ryan Malnar</h4>
           <div class="resource-biz">Malnar Injury Law &mdash; &ldquo;The Stubborn Attorney&rdquo;</div>
@@ -532,7 +572,7 @@
           <p>Reliable notary services for legal documents, real estate transactions, and financial paperwork. Mobile notary appointments available when needed.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-derek-jones">
           <div class="resource-type">Business Broker</div>
           <h4>Derek Jones</h4>
           <div class="resource-biz">EXCO Advisors</div>
@@ -553,7 +593,7 @@
         <div><h2>Marketing &amp; Business Growth</h2><p>Professionals who help businesses get found, grow, and operate more effectively</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card">
+        <div class="resource-card" id="person-david-roland">
         <div class="resource-type">Digital Marketing &amp; SEO</div>
           <h4>David Roland</h4>
           <div class="resource-biz">Business Bob</div>
@@ -565,7 +605,7 @@
             <a href="https://BusinessBob.co" target="_blank" onclick="logReferral('David Roland','Digital Marketing','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-nathan-pearson">
         <div class="resource-type">Social Media</div>
           <h4>Nathan Pearson</h4>
           <div class="resource-biz">Pearson Branding</div>
@@ -577,7 +617,7 @@
             <a href="http://www.pearsonbranding.com" target="_blank" onclick="logReferral('Nathan Pearson','Online Marketing','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-brenda-sanchez">
         <div class="resource-type">Advertising</div>
           <h4>Brenda Sanchez</h4>
           <div class="resource-biz">Mailbox Marketing Agency</div>
@@ -599,7 +639,7 @@
         <div><h2>Health &amp; Wellness</h2><p>Healthcare and wellness professionals who take a whole-person approach</p></div>
       </div>
       <div class="resource-grid">
-        <div class="resource-card">
+        <div class="resource-card" id="person-caleb-white">
         <div class="resource-type">Chiropractic</div>
           <h4>Dr. Caleb White</h4>
           <div class="resource-biz">Curis Functional Health</div>
@@ -612,7 +652,7 @@
             <a href="https://www.google.com/maps/place/Curis+Functional+Health/@38.9598895,-104.7856272,939m/data=!3m2!1e3!4b1!4m6!3m5!1s0x87134c259f3ef1a5:0x7c47e978d9b4cb84!8m2!3d38.9598895!4d-104.7856272!16s%2Fg%2F1hjgq14b7" target="_blank" onclick="logReferral('Caleb White','Chiropractor','Google Listing')">📍 Google Listing</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-scott-runyon">
         <div class="resource-type">Physical Therapy</div>
           <h4>Scott Runyon</h4>
           <div class="resource-biz">Backcountry Physical Therapy</div>
@@ -624,7 +664,7 @@
             <a href="https://backcountry.physio/" target="_blank" onclick="logReferral('Scott Runyon','Physical Therapist','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-colleen-dishmon">
         <div class="resource-type">Massage Therapy</div>
           <h4>Colleen Dishmon</h4>
           <p>Licensed Massage Therapist. Therapeutic and relaxation massage &mdash; excellent for stress relief, injury recovery, and ongoing wellness maintenance.</p>
@@ -635,7 +675,7 @@
             <a href="https://g.co/kgs/caxZwj" target="_blank" onclick="logReferral('Colleen Dishmon','Massage Therapist','Google Listing')">📍 Google Listing</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-roxy-georgescu">
         <div class="resource-type">Dental</div>
           <h4>Roxy Georgescu</h4>
           <div class="resource-biz">Twin Dental</div>
@@ -647,7 +687,7 @@
             <a href="http://www.roxydds.com" target="_blank" onclick="logReferral('Roxy Georgescu','Dentist','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-jane-pavalkis">
           <div class="resource-type">Fitness</div>
           <h4>Jane Pavalkis</h4>
           <div class="resource-biz">Nova Functional Training</div>
@@ -659,7 +699,7 @@
             <a href="http://www.novafunctionaltraining.com" target="_blank" onclick="logReferral('Jane Pavalkis','Personal Trainer','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-tamara-davis-peck">
           <div class="resource-type">Weight Management</div>
           <h4>Tamara Davis-Peck</h4>
           <div class="resource-biz">Ascent Trim</div>
@@ -670,7 +710,7 @@
             <a href="mailto:Tamara@ascenttrim.com" onclick="logReferral('Tamara Davis-Peck','Weight Management','Email')">✉ Email</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-morgan-hildebrand">
           <div class="resource-type">Coaching</div>
           <h4>Morgan Hildebrand</h4>
           <div class="resource-biz">Holistique By Design</div>
@@ -682,7 +722,7 @@
             <a href="https://www.holistiquebydesign.com/" target="_blank" onclick="logReferral('Morgan Hildebrand','Divorce Coach','Website')">🌐 Website</a>
           </div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-thom-salo">
           <div class="resource-type">Longevity &amp; Wellness</div>
           <h4>Thom Salo</h4>
           <div class="resource-biz">Sisu Longevity Studio</div>
@@ -722,7 +762,7 @@
           <p>Event planning professionals for weddings, corporate events, and special occasions. The Pikes Peak region has incredible venues &mdash; these planners know them, know the vendors, and know how to execute without drama.</p>
           <div class="resource-note">Colorado Springs &amp; Pikes Peak region</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-mitzi-morris">
         <div class="resource-type">Hair &amp; Style</div>
           <h4>Mitzi Morris</h4>
           <p>Hair Stylist. Talented in the Colorado Springs area for cuts, color, and styling. A great stylist is one of those referrals people guard carefully &mdash; I&rsquo;m comfortable sharing this one.</p>
@@ -738,7 +778,7 @@
           <p>Local florists for events, weddings, and everyday arrangements. Supporting local flower shops means fresher product, better customization, and someone who actually cares about the result.</p>
           <div class="resource-note">Colorado Springs area</div>
         </div>
-        <div class="resource-card">
+        <div class="resource-card" id="person-kay-rowe">
           <div class="resource-type">Author &amp; Writing</div>
           <h4>Kay Rowe</h4>
           <div class="resource-biz">Embrace Life LLC</div>
@@ -844,6 +884,7 @@ function closeModal(id){
   el.style.display='none';
   document.body.style.overflow='';
 }
+var resourceSearchScrollTimer = null;
 function filterResources(){
   var q = document.getElementById('resourceSearch').value.toLowerCase().trim();
   var totalVisible = 0;
@@ -858,6 +899,14 @@ function filterResources(){
   });
   document.getElementById('resourceSearchCount').textContent = q ? (totalVisible + (totalVisible === 1 ? ' match' : ' matches')) : '';
   document.getElementById('resourcesNoResults').style.display = (q && totalVisible === 0) ? 'block' : 'none';
+
+  clearTimeout(resourceSearchScrollTimer);
+  if (q && totalVisible > 0) {
+    resourceSearchScrollTimer = setTimeout(function(){
+      var firstMatch = document.querySelector('.resource-card:not([style*="display: none"])');
+      if (firstMatch) firstMatch.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 550);
+  }
 }
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){
@@ -865,6 +914,38 @@ document.addEventListener('keydown',function(e){
     closeModal('termsModal');
   }
 });
+
+var SPOTLIGHT_IDS = [
+  'person-katie-randall','person-brenda-layton','person-michelle-bies','person-rich-feasel',
+  'person-anjellah-schaefer','person-jessica-reyes','person-lauren-poitras','person-adriann-bossie',
+  'person-bea-leichliter','person-harrison-clark','person-brittany-hall','person-beth-alexander-coons',
+  'person-matthew-mcaninch','person-perla-delgadillo','person-jonathan-tanner','person-scott-mitchell',
+  'person-kim-anderson-grigg','person-melysa-benedict','person-jonathan-goodman','person-mo-kayeni',
+  'person-ryan-malnar','person-derek-jones','person-david-roland','person-nathan-pearson',
+  'person-brenda-sanchez','person-caleb-white','person-scott-runyon','person-colleen-dishmon',
+  'person-roxy-georgescu','person-jane-pavalkis','person-tamara-davis-peck','person-morgan-hildebrand',
+  'person-thom-salo','person-mitzi-morris','person-kay-rowe'
+];
+function initResourceSpotlight(){
+  if (!SPOTLIGHT_IDS.length) return;
+  var weekIndex = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+  var id = SPOTLIGHT_IDS[weekIndex % SPOTLIGHT_IDS.length];
+  var card = document.getElementById(id);
+  if (!card) return;
+  var name = card.querySelector('h4');
+  var biz = card.querySelector('.resource-biz');
+  var category = card.querySelector('.resource-type');
+  var blurb = card.querySelector('p');
+  document.getElementById('spotlightName').textContent = name ? name.textContent : '';
+  var bizEl = document.getElementById('spotlightBiz');
+  if (biz) { bizEl.textContent = biz.textContent; bizEl.style.display = ''; }
+  else { bizEl.style.display = 'none'; }
+  document.getElementById('spotlightCategory').textContent = category ? category.textContent : '';
+  document.getElementById('spotlightBlurb').textContent = blurb ? blurb.textContent : '';
+  document.getElementById('spotlightLink').href = '#' + id;
+  document.getElementById('resourceSpotlight').style.display = 'block';
+}
+initResourceSpotlight();
 </script>
 <!-- COMPASS: Find What You Need -->
 <style>
