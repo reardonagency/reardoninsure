@@ -364,5 +364,138 @@ async function handleContactSubmit(e) {
 </script>
 
 
+<!-- COMPASS: Find What You Need -->
+<style>
+.compass-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: 2000;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: var(--gold); border: 2px solid rgba(232,185,35,0.4);
+  font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease;
+}
+.compass-fab:hover { transform: scale(1.08); }
+.compass-overlay { display: none; position: fixed; inset: 0; background: rgba(10,22,40,0.35); z-index: 1998; }
+.compass-overlay.open { display: block; }
+.compass-panel {
+  display: none; position: fixed; bottom: 92px; right: 24px; z-index: 1999;
+  width: min(360px, calc(100vw - 48px)); background: var(--white);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); padding: 20px;
+  border: 1px solid var(--light-gray);
+}
+.compass-panel.open { display: block; }
+.compass-panel-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; gap: 12px; }
+.compass-panel-header strong { color: var(--navy); font-size: 0.98rem; display: block; }
+.compass-panel-sub { font-size: 0.76rem; color: var(--mid-gray); }
+.compass-close { background: none; border: none; font-size: 1.3rem; color: var(--mid-gray); cursor: pointer; line-height: 1; }
+.compass-input {
+  width: 100%; padding: 11px 14px; border: 1.5px solid var(--light-gray); border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.9rem; margin-bottom: 12px;
+}
+.compass-input:focus { outline: none; border-color: var(--navy-mid); box-shadow: 0 0 0 3px rgba(26,58,143,0.1); }
+.compass-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.compass-chip {
+  font-size: 0.76rem; font-weight: 600; color: var(--navy); background: var(--off-white);
+  border: 1px solid var(--light-gray); border-radius: 100px; padding: 6px 12px; cursor: pointer;
+}
+.compass-chip:hover { border-color: var(--gold); background: rgba(232,185,35,0.1); }
+.compass-results { max-height: 260px; overflow-y: auto; }
+.compass-result {
+  display: block; padding: 10px 12px; border-radius: var(--radius-sm); text-decoration: none;
+  margin-bottom: 6px; border: 1px solid transparent;
+}
+.compass-result:hover, .compass-result.active { background: var(--off-white); border-color: var(--light-gray); }
+.compass-result-title { font-size: 0.86rem; font-weight: 600; color: var(--navy); }
+.compass-result-desc { font-size: 0.76rem; color: var(--mid-gray); margin-top: 2px; }
+.compass-no-results { font-size: 0.82rem; color: var(--mid-gray); padding: 12px 4px; }
+@media (max-width: 480px) {
+  .compass-fab { bottom: 16px; right: 16px; width: 50px; height: 50px; font-size: 1.3rem; }
+  .compass-panel { right: 16px; left: 16px; width: auto; bottom: 78px; }
+}
+</style>
+<div class="compass-overlay" id="compassOverlay" onclick="compassToggle()"></div>
+<div class="compass-panel" id="compassPanel">
+  <div class="compass-panel-header">
+    <div>
+      <strong>Find What You Need</strong><br>
+      <span class="compass-panel-sub">Site guide &middot; jumps you to the right page</span>
+    </div>
+    <button type="button" class="compass-close" onclick="compassToggle()" aria-label="Close">&times;</button>
+  </div>
+  <input type="text" id="compassInput" class="compass-input" placeholder="e.g. &quot;get a quote&quot; or &quot;careers&quot;" oninput="compassSearch()" onkeydown="compassKeydown(event)">
+  <div class="compass-chips">
+    <button type="button" class="compass-chip" onclick="compassGo('get-a-quote.html')">Get a Quote</button>
+    <button type="button" class="compass-chip" onclick="compassGo('business-insurance.html')">Business Insurance</button>
+    <button type="button" class="compass-chip" onclick="compassGo('careers.html')">Careers</button>
+    <button type="button" class="compass-chip" onclick="compassGo('resources.html')">Resources</button>
+  </div>
+  <div class="compass-results" id="compassResults"></div>
+</div>
+<button type="button" class="compass-fab" id="compassFab" aria-label="Find what you need" onclick="compassToggle()">🧭</button>
+<script>
+var COMPASS_INDEX = [
+  {title:'Home', url:'index.html', desc:'Homepage overview', keywords:'home overview main'},
+  {title:'Get a Quote', url:'get-a-quote.html', desc:'Every quote path in one place', keywords:'quote get a quote free quote start'},
+  {title:'Personal Lines (Home, Auto, Umbrella)', url:'personal-lines.html', desc:'Home, auto, and umbrella coverage', keywords:'home auto umbrella personal lines car house'},
+  {title:'Life Insurance', url:'life-insurance.html', desc:'Term, whole, universal life options', keywords:'life insurance term whole universal final expense'},
+  {title:'Business Insurance', url:'business-insurance.html', desc:'Coverage for business owners', keywords:'business insurance commercial liability workers comp bop'},
+  {title:'Business Insurance Quote', url:'business-insurance-quote.html', desc:'Get a business insurance quote', keywords:'business quote artisan contractor retail office workers comp'},
+  {title:'Home / Auto / Life Quote Form', url:'quote.html', desc:'Request a personal insurance quote', keywords:'quote form home auto life request'},
+  {title:'Resources', url:'resources.html', desc:'Ryan\'s trusted network of local professionals', keywords:'resources network referral realtor lender contractor plumber electrician attorney cpa cleaning'},
+  {title:'Careers', url:'careers.html', desc:'Job openings at Reardon Agency', keywords:'careers jobs hiring apply employment work here'},
+  {title:'Blog', url:'blog.html', desc:'Insurance articles and guides', keywords:'blog articles guides learn'},
+  {title:'Socials', url:'photos.html', desc:'Follow along on Instagram, Facebook, LinkedIn', keywords:'socials photos instagram facebook linkedin follow feed'},
+  {title:'About Ryan', url:'about.html', desc:'Meet your local agent', keywords:'about ryan reardon agent bio'},
+  {title:'Contact', url:'contact.html', desc:'Call, text, or message Ryan directly', keywords:'contact phone email call message reach'},
+  {title:'Sola Wind & Hail (Products)', url:'products.html', desc:'Specialty wind & hail coverage via Sola', keywords:'sola wind hail specialty products'},
+  {title:'Umbrella Policy Guide', url:'blog-umbrella-policy.html', desc:'Why an umbrella policy matters', keywords:'umbrella policy extra liability'},
+  {title:'Term vs. Whole Life', url:'blog-term-vs-whole-life.html', desc:'Comparing life insurance types', keywords:'term whole life insurance compare'},
+  {title:'Uninsured Drivers', url:'blog-uninsured-drivers.html', desc:'The Colorado uninsured driver problem', keywords:'uninsured drivers colorado auto'},
+  {title:'Hail Season Colorado', url:'blog-hail-season-colorado.html', desc:'What to watch for on home & auto', keywords:'hail season colorado storm damage'},
+  {title:'Replacement Cost', url:'blog-replacement-cost.html', desc:'What replacement cost means for home coverage', keywords:'replacement cost home insurance'},
+  {title:'Annual Insurance Review', url:'blog-annual-review.html', desc:'How to review your coverage every year', keywords:'annual review checklist policy'},
+  {title:'Commercial Coverage Gaps', url:'blog-commercial-coverage-gaps.html', desc:'Coverage gaps costing small businesses money', keywords:'commercial coverage gaps business'}
+];
+var compassOpenState = false;
+function compassToggle(){
+  compassOpenState = !compassOpenState;
+  document.getElementById('compassPanel').classList.toggle('open', compassOpenState);
+  document.getElementById('compassOverlay').classList.toggle('open', compassOpenState);
+  if (compassOpenState) {
+    document.getElementById('compassInput').focus();
+    compassSearch();
+  }
+}
+function compassGo(url){ window.location.href = url; }
+function compassSearch(){
+  var q = document.getElementById('compassInput').value.toLowerCase().trim();
+  var results = document.getElementById('compassResults');
+  var list;
+  if (q) {
+    list = COMPASS_INDEX.filter(function(item){
+      return item.title.toLowerCase().indexOf(q) !== -1 || item.keywords.indexOf(q) !== -1 || item.desc.toLowerCase().indexOf(q) !== -1;
+    });
+  } else {
+    list = COMPASS_INDEX.slice(0, 6);
+  }
+  if (list.length === 0) {
+    results.innerHTML = '<div class="compass-no-results">No matches &mdash; <a href="contact.html">contact Ryan directly</a>.</div>';
+    return;
+  }
+  results.innerHTML = list.slice(0, 6).map(function(item, i){
+    return '<a href="' + item.url + '" class="compass-result' + (i === 0 ? ' active' : '') + '"><div class="compass-result-title">' + item.title + '</div><div class="compass-result-desc">' + item.desc + '</div></a>';
+  }).join('');
+}
+function compassKeydown(e){
+  if (e.key === 'Enter') {
+    var first = document.querySelector('.compass-result');
+    if (first) window.location.href = first.getAttribute('href');
+  } else if (e.key === 'Escape') {
+    compassToggle();
+  }
+}
+</script>
+
 </body>
 </html>
