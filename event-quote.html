@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1F7J94M8TK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1F7J94M8TK');
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <meta name="theme-color" content="#00063b">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EVENT PAGE — reused for every booth/event. To reuse for a new event, just update: the <title> below, the badge text + <h1> in the hero, and the hidden "Event Name" field in the form. Everything else (URL, QR code, form fields) stays the same. -->
+  <title>Fall Dump and Donate Event | Reardon Agency</title>
+  <meta name="description" content="Reardon Agency at the Fall Dump and Donate Event — enter your info for a free, no-obligation insurance quote.">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .event-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,185,35,0.15); border: 1px solid rgba(232,185,35,0.3);
+      color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 7px 16px; border-radius: 100px; margin-bottom: 20px;
+    }
+    .event-form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--light-gray);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .event-coverage-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .event-coverage-option {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px; border: 1.5px solid var(--light-gray); border-radius: var(--radius-sm);
+      cursor: pointer; transition: all var(--transition);
+      font-size: 0.92rem; font-weight: 500; color: var(--text);
+    }
+    .event-coverage-option:has(input:checked) {
+      border-color: var(--navy-mid); background: rgba(26,58,143,0.04); color: var(--navy);
+    }
+    .event-coverage-option input { accent-color: var(--navy-mid); width: 18px; height: 18px; }
+    .success-message { display: none; text-align: center; padding: 48px 24px; }
+    .success-message .success-icon { font-size: 4rem; margin-bottom: 16px; }
+    @media (max-width: 600px) {
+      .event-form-card { padding: 24px; }
+      .event-coverage-types { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Reardon Agency" style="height:52px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
+      <div class="nav-logo-text">REARDON <span style="color:#e8b923">AGENCY</span></div>
+    </a>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+        <ul class="nav-links" id="navLinks">
+      <li class="nav-dropdown">
+        <a href="products.html">Insurance <span class="nav-caret">&#9662;</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="personal-lines.html">Personal Lines</a></li>
+          <li><a href="life-insurance.html">Life Insurance</a></li>
+          <li><a href="business-insurance.html">Business Insurance</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="photos.html">Socials</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="get-a-quote.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="event-badge">🎪 Special Event</div>
+    <h1>Fall Dump and Donate Event</h1>
+    <p class="section-subtitle">Enter your info below and Ryan will personally follow up with your free, no-obligation quote.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="event-form-card">
+      <div id="eventForm">
+        <form action="https://formspree.io/f/meevzzyr" method="POST" onsubmit="return handleEventSubmit(event)">
+          <input type="hidden" name="_subject" value="🎪 EVENT LEAD - Fall Dump and Donate Event">
+          <input type="hidden" name="Event Name" value="Fall Dump and Donate Event">
+
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="Full Name" placeholder="First and Last Name" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Date of Birth *</label>
+              <input type="date" name="Date of Birth" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" name="Phone" placeholder="(719) 555-0000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Address *</label>
+            <input type="text" name="Address" placeholder="123 Main St, Colorado Springs, CO 80903" required>
+          </div>
+
+          <div class="form-section-title" style="margin-top:28px;">What Would You Like a Quote For?</div>
+          <p style="font-size:0.85rem;color:var(--mid-gray);margin-bottom:14px;">Select at least one.</p>
+          <div class="event-coverage-types" id="eventCoverageTypes">
+            <label class="event-coverage-option">
+              <input type="checkbox" name="Coverage - Home" value="Home"> 🏠 Home
+            </label>
+            <label class="event-coverage-option">
+              <input type="checkbox" name="Coverage - Auto" value="Auto"> 🚗 Auto
+            </label>
+            <label class="event-coverage-option">
+              <input type="checkbox" name="Coverage - Umbrella" value="Umbrella"> ☂️ Umbrella
+            </label>
+            <label class="event-coverage-option">
+              <input type="checkbox" name="Coverage - Life" value="Life"> ❤️ Life
+            </label>
+            <label class="event-coverage-option">
+              <input type="checkbox" name="Coverage - Business" value="Business"> 🏢 Business
+            </label>
+          </div>
+
+          <div class="compliance-box">
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
+            <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+            <p><strong>Terms and Conditions:</strong> By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy below.</p>
+            <p><strong>Privacy Policy:</strong> We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:8px;margin-top:14px;">Credit-Based Insurance Score Authorization</p>
+            <p>By checking this box, you authorize Reardon Agency LLC and its insurance carrier partners (including Farmers Insurance) to obtain a consumer report and/or credit-based insurance score about you, as permitted by the Fair Credit Reporting Act (FCRA) and applicable state law, for the purpose of preparing an accurate insurance quote and determining your eligibility, coverage, and premium. This is not the same as a full credit check and does not affect your credit score.</p>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="sms-consent-event" required>
+            <label for="sms-consent-event">I agree to receive text messages from Reardon Agency LLC at the phone number provided. Message &amp; data rates may apply. Reply STOP to opt out at any time. I have reviewed the Privacy Policy and Terms &amp; Conditions. *</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="privacy-consent-event" required>
+            <label for="privacy-consent-event">I consent to Reardon Agency LLC collecting and using my personal information to prepare an insurance quote and contact me about insurance products and services. *</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="credit-consent-event" required>
+            <label for="credit-consent-event">I authorize Reardon Agency LLC to obtain a consumer report / credit-based insurance score as described above. *</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:1rem;margin-top:8px;">
+            Submit My Info →
+          </button>
+
+          <p style="font-size:0.75rem;color:var(--mid-gray);text-align:center;margin-top:16px;">No obligation. Ryan will personally follow up soon.</p>
+        </form>
+      </div>
+
+      <div class="success-message" id="eventSuccessMessage">
+        <div class="success-icon">✅</div>
+        <h2>Thanks — You're All Set!</h2>
+        <p style="font-size:1.05rem;color:var(--mid-gray);margin-top:12px;">Ryan will personally follow up with your free quote. Keep an eye on your phone and email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:flex-end;gap:16px;margin-bottom:16px;">
+          <img src="ryan-headshot.jpg" alt="Ryan Reardon" style="height:72px;width:72px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid rgba(232,185,35,0.4);flex-shrink:0;">
+          <img src="logo.png" alt="Reardon Agency" style="height:72px;width:auto;mix-blend-mode:lighten;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.4));">
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">AGENCY</span> LLC</div>
+        <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="products.html">Auto Insurance</a></li>
+          <li><a href="products.html">Home Insurance</a></li>
+          <li><a href="products.html">Life Insurance</a></li>
+          <li><a href="products.html">Commercial</a></li>
+          <li><a href="products.html">Umbrella</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Agency</h5>
+        <ul>
+          <li><a href="about.html">About Ryan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#" onclick="openModal('privacyModal');return false;" style="cursor:pointer;">Privacy Policy</a></li>
+          <li><a href="#" onclick="openModal('termsModal');return false;" style="cursor:pointer;">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Reardon Agency LLC. All rights reserved. Reardon Agency LLC is an independent contractor agency of Farmers Insurance.</p>
+      <p>Agency License #920206 &nbsp;|&nbsp; NPN: 21766210</p>
+    </div>
+  </div>
+</footer>
+
+<!-- TERMS MODAL -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+    <h4>Terms &amp; Conditions</h4>
+    <p>By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy.</p>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+    <h4>Privacy Policy</h4>
+    <p>We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeModal(m.id);
+    });
+  }
+});
+async function handleEventSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+
+  var anyCoverage = form.querySelectorAll('#eventCoverageTypes input[type="checkbox"]:checked').length > 0;
+  if (!anyCoverage) {
+    alert('Please select at least one type of coverage you\'d like a quote for.');
+    return false;
+  }
+
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('eventForm').style.display = 'none';
+      document.getElementById('eventSuccessMessage').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.textContent = 'Submit My Info →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+    }
+  } catch(err) {
+    btn.textContent = 'Submit My Info →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+  }
+  return false;
+}
+</script>
+
+</body>
+</html>
