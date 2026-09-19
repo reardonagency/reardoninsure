@@ -185,6 +185,10 @@
         <div class="success-icon">✅</div>
         <h2>Thanks — You're All Set!</h2>
         <p style="font-size:1.05rem;color:var(--mid-gray);margin-top:12px;">Ryan will personally follow up with your free quote. Keep an eye on your phone and email.</p>
+        <p style="font-size:0.85rem;color:var(--mid-gray);margin-top:16px;">Taking you back to the homepage in a few seconds&hellip;</p>
+        <div style="margin-top:24px;">
+          <a href="index.html" class="btn btn-navy">Back to Home Now →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -297,6 +301,7 @@ async function handleEventSubmit(e) {
       document.getElementById('eventForm').style.display = 'none';
       document.getElementById('eventSuccessMessage').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(function(){ window.location.href = 'index.html'; }, 6000);
     } else {
       btn.textContent = 'Submit My Info →';
       btn.disabled = false;
