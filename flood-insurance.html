@@ -15,46 +15,46 @@
   <link rel="apple-touch-icon" href="logo.png">
   <meta name="theme-color" content="#00063b">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Socials | Reardon Agency | Colorado Springs</title>
-  <meta name="description" content="Follow Reardon Agency for a look at the team, community involvement, and life around the Colorado Springs office.">
+  <title>Flood Insurance in Colorado Springs | Reardon Agency</title>
+  <meta name="description" content="Flood insurance in Colorado Springs, CO — NFIP through Farmers plus private carriers like Neptune, shopped for the best price. Residential, commercial, and HOA flood coverage available.">
   <link rel="stylesheet" href="shared-styles.css">
   <style>
-    .photos-intro { max-width: 680px; margin: 0 auto 40px; text-align: center; }
-    .photos-intro p { font-size: 1rem; color: var(--text); line-height: 1.8; }
-    .photos-feed-wrap { min-height: 0; }
-    .photos-follow { text-align: center; margin-bottom: 32px; }
-    .photos-follow-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .biz-intro { max-width: 780px; margin: 0 auto 56px; text-align: center; }
+    .biz-intro p { font-size: 1.02rem; color: var(--text); line-height: 1.8; margin-bottom: 16px; }
 
-    .socials-layout { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 28px; align-items: start; }
-    .photo-wall { display: flex; flex-direction: column; gap: 22px; }
-    .photo-wall img {
-      width: 100%; display: block; border-radius: 6px; border: 6px solid var(--white);
-      box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 4/3;
-    }
-    .photo-wall.wall-left img:nth-child(1) { transform: rotate(-3deg); }
-    .photo-wall.wall-left img:nth-child(2) { transform: rotate(2deg); }
-    .photo-wall.wall-left img:nth-child(3) { transform: rotate(-2deg); }
-    .photo-wall.wall-left img:nth-child(4) { transform: rotate(3deg); }
-    .photo-wall.wall-left img:nth-child(5) { transform: rotate(-2deg); }
-    .photo-wall.wall-left img:nth-child(6) { transform: rotate(3deg); }
-    .photo-wall.wall-left img:nth-child(7) { transform: rotate(-3deg); }
-    .photo-wall.wall-left img:nth-child(8) { transform: rotate(2deg); }
-    .photo-wall.wall-right img:nth-child(1) { transform: rotate(3deg); }
-    .photo-wall.wall-right img:nth-child(2) { transform: rotate(-2deg); }
-    .photo-wall.wall-right img:nth-child(3) { transform: rotate(2deg); }
-    .photo-wall.wall-right img:nth-child(4) { transform: rotate(-3deg); }
-    .photo-wall.wall-right img:nth-child(5) { transform: rotate(2deg); }
-    .photo-wall.wall-right img:nth-child(7) { transform: rotate(3deg); }
-    .photo-wall.wall-right img:nth-child(8) { transform: rotate(-2deg); }
-    .photo-wall.wall-right img:nth-child(6) { transform: rotate(-2deg); }
+    .coverage-grid-biz { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 64px; }
+    .coverage-card { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: var(--radius-md); padding: 26px; transition: all var(--transition); display: block; text-decoration: none; }
+    .coverage-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .coverage-card-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
+    .coverage-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: var(--font-body); font-weight: 600; }
+    .coverage-card p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.65; margin: 0; }
+    .coverage-card .coverage-link { display: inline-block; margin-top: 12px; font-size: 0.8rem; font-weight: 600; color: var(--gold-dark); }
 
-    @media (max-width: 1000px) {
-      .socials-layout { grid-template-columns: 1fr; }
-      .photo-wall { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-      .photo-wall img { width: calc(50% - 11px); aspect-ratio: 4/3; }
+    .why-section { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 64px; }
+    .why-section h2 { margin-bottom: 20px; }
+    .why-list { list-style: none; }
+    .why-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .why-list li .why-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .why-list li h5 { font-size: 0.95rem; color: var(--navy); margin-bottom: 4px; font-family: var(--font-body); font-weight: 600; }
+    .why-list li p { font-size: 0.86rem; color: var(--mid-gray); line-height: 1.6; margin: 0; }
+    .why-visual { background: linear-gradient(160deg, var(--navy) 0%, var(--dark) 100%); border-radius: var(--radius-lg); padding: 48px; text-align: center; }
+    .why-visual .why-stat { font-family: var(--font-display); font-size: 2.6rem; color: var(--gold); font-weight: 700; line-height: 1.2; }
+    .why-visual .why-stat-label { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 8px; }
+
+    .personal-note { background: var(--off-white); border: 1px solid var(--light-gray); border-radius: var(--radius-md); padding: 32px 36px; text-align: center; margin-bottom: 64px; }
+    .personal-note p { color: var(--mid-gray); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px; }
+
+    .biz-cta { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); border-radius: var(--radius-lg); padding: 56px; text-align: center; }
+    .biz-cta h2 { color: var(--navy); font-size: 2rem; margin-bottom: 12px; }
+    .biz-cta p { color: rgba(15,37,87,0.75); margin-bottom: 32px; }
+
+    @media (max-width: 900px) {
+      .why-section { grid-template-columns: 1fr; }
+      .coverage-grid-biz { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 500px) {
-      .photo-wall img { width: 100%; }
+    @media (max-width: 600px) {
+      .coverage-grid-biz { grid-template-columns: 1fr; }
+      .biz-cta { padding: 36px 24px; }
     }
   </style>
 </head>
@@ -76,7 +76,7 @@
           <li><a href="personal-lines.html">Personal Lines</a></li>
           <li><a href="life-insurance.html">Life Insurance</a></li>
           <li><a href="business-insurance.html">Business Insurance</a></li>
-        <li><a href="flood-insurance.html">Flood Insurance</a></li>
+          <li><a href="flood-insurance.html">Flood Insurance</a></li>
         </ul>
       </li>
       <li><a href="resources.html">Resources</a></li>
@@ -92,63 +92,84 @@
 
 <section class="page-hero">
   <div class="container page-hero-content">
-    <span class="section-label">Follow Along &middot; Colorado Springs</span>
-    <h1>Socials</h1>
-    <p class="section-subtitle">The team out in the community, a few industry recognitions along the way, and the everyday moments behind the agency — the stuff that doesn't fit in a policy PDF.</p>
+    <span class="section-label">Farmers Insurance &middot; Colorado Springs</span>
+    <h1>Flood Insurance — Shopped Across Multiple Carriers</h1>
+    <p class="section-subtitle">Standard homeowners insurance never covers flood damage. Ryan writes flood coverage through NFIP (via Farmers) and private carriers like Neptune — residential, commercial, and HOA — and shops pricing across all of them to find the best fit.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
 
-    <div class="photos-intro">
-      <p>We post regularly on Instagram, Facebook, and LinkedIn — the feed below pulls straight from Instagram and updates automatically.</p>
+    <div class="biz-intro">
+      <p>Most homeowners find out the hard way: a standard home insurance policy does not cover flood damage, full stop. It's a separate policy — and most people assume they don't need it because they don't live near a river or in a mapped flood zone. In Colorado, that assumption causes real problems, since flash flooding and sudden, intense storms can affect homes well outside any official flood zone.</p>
+      <p>Ryan writes flood coverage through the National Flood Insurance Program (NFIP) via Farmers, plus private-market carriers like Neptune and others — and shops pricing across them rather than defaulting to just one option. Coverage is available for individual homes, commercial properties, and HOAs.</p>
     </div>
 
-    <div class="socials-layout">
-
-      <!-- LEFT PHOTO WALL -->
-      <div class="photo-wall wall-left">
-        <img src="social-1.jpg" alt="Reardon Agency team at a recognition event">
-        <img src="social-3.jpg" alt="Ryan Reardon at a community event" style="object-position:top;">
-        <img src="social-5.jpg" alt="Ryan Reardon out with friends">
-        <img src="social-7.jpg" alt="Reardon Agency">
-        <img src="social-9.jpg" alt="Farmers Insurance District Awards Night ceremony">
-        <img src="social-12.jpg" alt="Ryan Reardon and Scott Anderson at a BNI meeting" style="object-position:top;">
-        <img src="social-13.jpg" alt="Ryan Reardon at the Territory Days Farmers booth">
-        <img src="social-15.jpg" alt="A community member winning a gas gift card at a Reardon Agency booth">
+    <!-- COVERAGE -->
+    <h2 style="text-align:center;margin-bottom:8px;">Flood Coverage Options</h2>
+    <p style="text-align:center;color:var(--mid-gray);font-size:0.92rem;max-width:600px;margin:0 auto 32px;line-height:1.7;">Three ways to get covered, shopped and compared so you're not just stuck with whatever one carrier offers.</p>
+    <div class="coverage-grid-biz">
+      <div class="coverage-card">
+        <span class="coverage-card-icon">🏠</span>
+        <h4>NFIP via Farmers</h4>
+        <p>The federal flood program, written through Farmers. The standard, well-established option for most residential properties.</p>
       </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">💧</span>
+        <h4>Private Market (Neptune &amp; More)</h4>
+        <p>Private flood carriers often beat NFIP on price, and sometimes offer broader coverage. Ryan shops multiple markets so you're not limited to one option.</p>
+      </div>
+      <div class="coverage-card">
+        <span class="coverage-card-icon">🏢</span>
+        <h4>Commercial &amp; HOA Flood</h4>
+        <p>Flood coverage for commercial buildings and homeowners associations — something many agencies don't offer at all.</p>
+      </div>
+    </div>
 
-      <!-- CENTER: FEED -->
+    <!-- WHY -->
+    <div class="why-section">
       <div>
-        <div class="photos-follow">
-          <div class="photos-follow-buttons">
-            <a href="https://www.instagram.com/reardonagency/" target="_blank" class="btn btn-primary">Follow on Instagram →</a>
-            <a href="https://www.facebook.com/ReardonAgency/" target="_blank" class="btn btn-navy">Follow on Facebook →</a>
-            <a href="https://www.linkedin.com/in/ryanjreardon" target="_blank" class="btn btn-navy">Follow on LinkedIn →</a>
-          </div>
-        </div>
-
-        <!-- SOCIAL FEED EMBED -->
-        <div class="photos-feed-wrap">
-          <!-- Elfsight Social Feed | Untitled Social Feed -->
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div class="elfsight-app-b8a32cae-f710-4f54-b758-4f862512b420" data-elfsight-app-lazy></div>
-        </div>
+        <h2>Why This Isn't Optional to Think About</h2>
+        <ul class="why-list">
+          <li>
+            <span class="why-icon">🏡</span>
+            <div><h5>Your Home Policy Doesn't Cover It</h5><p>Flood is explicitly excluded from standard homeowners and most commercial property policies. It's always a separate policy.</p></div>
+          </li>
+          <li>
+            <span class="why-icon">📍</span>
+            <div><h5>You Don't Have to Be in a Mapped Flood Zone</h5><p>A large share of flood claims nationally come from outside high-risk flood zones — flash flooding doesn't check the map first.</p></div>
+          </li>
+          <li>
+            <span class="why-icon">🏔️</span>
+            <div><h5>Colorado-Specific Risk</h5><p>Sudden, intense storms, mountain runoff, and burn-scar flooding after wildfires (where burned terrain can no longer absorb water) all raise flood risk here in ways many residents don't expect.</p></div>
+          </li>
+          <li>
+            <span class="why-icon">💰</span>
+            <div><h5>Price Competition Matters</h5><p>Shopping NFIP against private carriers like Neptune can turn up meaningfully different pricing for similar coverage — it's worth comparing rather than assuming one option is cheapest.</p></div>
+          </li>
+        </ul>
       </div>
-
-      <!-- RIGHT PHOTO WALL -->
-      <div class="photo-wall wall-right">
-        <img src="social-2.jpg" alt="Territory Days community event">
-        <img src="social-4.jpg" alt="Ryan Reardon out golfing">
-        <img src="social-6.jpg" alt="Ryan Reardon with friends">
-        <img src="social-8.jpg" alt="Reardon Agency team at Topper Club" style="object-position:top;">
-        <img src="social-10.jpg" alt="Reardon Agency team at District Awards Night">
-        <img src="social-11.jpg" alt="Reardon Agency team, Spring 2026" style="object-position:top;">
-        <img src="social-14.jpg" alt="A customer winning a gift card at the Reardon Agency office">
-        <img src="social-16.jpg" alt="Reardon Agency at a golf tournament">
+      <div class="why-visual">
+        <div class="why-stat">NFIP + Private</div>
+        <div class="why-stat-label">Shopped side by side — residential, commercial &amp; HOA</div>
       </div>
+    </div>
 
+    <!-- CROSS-SELL NOTE -->
+    <div class="personal-note">
+      <p>Flood coverage works best alongside the rest of your policy picture. If you haven't reviewed your home, auto, or umbrella coverage recently, it's worth doing both at once.</p>
+      <a href="personal-lines.html" class="btn btn-outline" style="border-color:var(--navy);color:var(--navy);">See Home, Auto &amp; Umbrella Options &rarr;</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="biz-cta">
+      <h2>Let's Find Out What You Actually Need</h2>
+      <p style="max-width:520px;margin-left:auto;margin-right:auto;">A quick conversation tells you whether you're at real risk, and what NFIP vs. private coverage would actually cost.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="get-a-quote.html" class="btn btn-navy">Get a Flood Quote &rarr;</a>
+        <a href="https://calendly.com/reardoninsure/30min" target="_blank" class="btn btn-outline" style="border-color:var(--navy);color:var(--navy);">Book a Call</a>
+      </div>
     </div>
 
   </div>
@@ -165,8 +186,8 @@
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:white;">REARDON <span style="color:#e8b923">AGENCY</span> LLC</div>
         <p>Protecting Colorado Springs families and businesses with personalized Farmers Insurance coverage.</p>
       </div>
-      <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Auto</a></li><li><a href="products.html">Home</a></li><li><a href="products.html">Life</a></li><li><a href="business-insurance.html">Business Insurance</a></li></ul></div>
-      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="photos.html">Socials</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="personal-lines.html">Home &amp; Auto</a></li><li><a href="life-insurance.html">Life Insurance</a></li><li><a href="business-insurance.html">Business Insurance</a></li><li><a href="flood-insurance.html">Flood Insurance</a></li><li><a href="products.html">All Products</a></li></ul></div>
+      <div class="footer-col"><h5>Agency</h5><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="resources.html">Resources</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h5>Legal</h5><ul><li><a href="#" onclick="openModal('privacyModal');return false;" style="cursor:pointer;">Privacy Policy</a></li><li><a href="#" onclick="openModal('termsModal');return false;" style="cursor:pointer;">Terms &amp; Conditions</a></li></ul></div>
       <div class="footer-col"><h5>Connect</h5><ul><li><a href="https://www.facebook.com/ReardonAgency/" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/reardonagency/" target="_blank">Instagram</a></li><li><a href="https://www.linkedin.com/in/ryanjreardon" target="_blank">LinkedIn</a></li><li><a href="https://share.google/J7KemBPiwQ5EY9ncg" target="_blank">Google Reviews</a></li></ul></div>
     </div>
@@ -204,13 +225,11 @@ function closeModal(id) {
   document.getElementById(id).classList.remove('open');
   document.body.style.overflow = '';
 }
-// Close on overlay click
 document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) closeModal(overlay.id);
   });
 });
-// Close on Escape
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
