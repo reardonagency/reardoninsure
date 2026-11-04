@@ -1,10 +1,13 @@
 /* ============================================================
    THANKSGIVING THEME (seasonal overlay)
    Loaded LAST on every page. It only overrides colors and adds
-   falling leaves; nothing in shared-styles.css is edited.
+   falling leaves, a squirrel and a pumpkin; nothing in
+   shared-styles.css is edited.
    To restore the normal look: remove the one
    <link ... themes/thanksgiving/theme.css> line from each page,
    or restore the git tag "pre-thanksgiving-theme".
+   Art: branch = OpenClipart (CC0); leaves, squirrel, pumpkin =
+   "Autumn icon set clipart" (CC0) via Wikimedia Commons.
    ============================================================ */
 
 :root {
@@ -70,64 +73,75 @@ body .cta-band p { color: rgba(74,31,18,0.75); }
   border-radius: 999px;
 }
 
-/* ---- Autumn branch in the hero corner (OpenClipart, Public Domain / CC0) ---- */
+/* ---- Autumn branch with a squirrel perched on it, top-right of every hero.
+        Added as an extra background layer on top of each hero's own pattern
+        (the pattern is restated here unchanged). ---- */
+.page-hero::before {
+  background-image:
+    url("hero-branch.png"),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero::before {
+  background-image:
+    url("hero-branch.png"),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M40 40L0 0h80L40 40zm0 0L0 80h80L40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.page-hero::before,
+.hero::before {
+  background-repeat: no-repeat, repeat;
+  background-position: right -16px top 76px, 0 0;
+  background-size: min(48vw, 460px) auto, auto;
+}
+
+/* ---- Pumpkin sitting on the floor of every hero ---- */
 .hero::after,
 .page-hero::after {
   content: "";
   position: absolute;
-  top: 84px;
-  right: -16px;
-  width: min(48vw, 460px);
-  height: 144px;
-  background: url("autumn-branch.svg") no-repeat right center / contain;
-  filter: brightness(1.55) saturate(1.1);
-  opacity: 0.5;
+  right: 9%;
+  bottom: 0;
+  width: 84px;
+  height: 74px;
+  background: url("pumpkin.png") no-repeat center bottom / contain;
   pointer-events: none;
   z-index: 0;
 }
+
 @media (max-width: 600px) {
-  .hero::after, .page-hero::after { width: 240px; height: 80px; top: 76px; opacity: 0.38; }
+  .page-hero::before,
+  .hero::before { background-position: right -10px top 74px, 0 0; background-size: 300px auto, auto; }
+  .hero::after,
+  .page-hero::after { right: 5%; width: 60px; height: 53px; }
 }
 
-/* ---- Squirrel and pumpkin sitting on the footer edge (art: Autumn icon set clipart, CC0 via Wikimedia Commons) ---- */
-footer { position: relative; }
-footer::before,
-footer::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  margin-bottom: -1px;
-  z-index: 2;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: contain;
-}
-footer::before { right: 9%; width: 92px; height: 99px; background-image: url("squirrel.png"); }
-footer::after  { left: 7%;  width: 96px; height: 85px; background-image: url("pumpkin.png"); }
-@media (max-width: 600px) {
-  footer::before { right: 6%; width: 66px; height: 71px; }
-  footer::after  { left: 5%;  width: 70px; height: 62px; }
-}
-
-/* ---- Pumpkin tucked into the corner of the homepage spotlight ---- */
-.hero ~ .spotlight-banner::after {
-  content: "";
-  position: absolute;
-  top: -14px;
-  right: 18px;
-  width: 112px;
-  height: 99px;
-  background: url("pumpkin.png") no-repeat center / contain;
-  transform: rotate(12deg);
-  z-index: 1;
-  pointer-events: none;
-}
-@media (max-width: 600px) {
-  .hero ~ .spotlight-banner::after { width: 64px; height: 57px; top: -10px; right: 6px; }
+/* ---- Homepage on desktop: the quote form covers the top-right corner, so the
+        squirrel and pumpkin perch on the top edge of the quote form instead.
+        (On phones and tablets the form is hidden, so the branch/pumpkin above are used.) ---- */
+@media (min-width: 901px) {
+  .hero::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M40 40L0 0h80L40 40zm0 0L0 80h80L40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto;
+  }
+  .hero::after { display: none; }
+  .hero-card { position: relative; }
+  .hero-card::before,
+  .hero-card::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: -1px;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+  }
+  .hero-card::before { right: 28px; width: 74px; height: 80px; background-image: url("squirrel.png"); }
+  .hero-card::after  { left: 28px;  width: 82px; height: 73px; background-image: url("pumpkin.png"); }
 }
 
-/* ---- Falling leaves (two layers, pure CSS, never block clicks; maple + oak leaves from the same CC0 icon set) ---- */
+/* ---- Falling leaves (two layers, pure CSS, never block clicks) ---- */
 body::before,
 body::after {
   content: "";
@@ -159,6 +173,29 @@ body::after {
 }
 @keyframes tg-fall-a { to { transform: translate3d(480px, 820px, 0); } }
 @keyframes tg-fall-b { to { transform: translate3d(360px, 600px, 0); } }
+
+/* ---- Page content sits ABOVE the leaves, so leaves pass behind every box and never cover words.
+        (Leaves stay visible against page and hero backgrounds.) ---- */
+body .container,
+body .hero-content,
+body .page-hero-content,
+body .spotlight-inner,
+body .spotlight-stats,
+body .spotlight-myths,
+body .trust-bar > *,
+body .cta-band-inner {
+  position: relative;
+  z-index: 901;
+}
+/* Boxes that were see-through get solid colors so leaves are fully hidden behind them */
+body .myth-card,
+body .credential-card,
+body .perk-card,
+body .hero-card,
+body .about-value,
+body .sola-benefit { background-color: #3f2016; }
+body .callout-box { background-color: #fef8ef; }
+body .warning-box { background-color: #fef4f4; }
 
 @media (max-width: 600px) {
   body::after { display: none; }
