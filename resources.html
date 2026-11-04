@@ -948,12 +948,15 @@ var SPOTLIGHT_IDS = [
   'person-ryan-malnar','person-derek-jones','person-david-roland','person-nathan-pearson',
   'person-brenda-sanchez','person-angie-burkett','person-caleb-white','person-scott-runyon','person-colleen-dishmon',
   'person-roxy-georgescu','person-jane-pavalkis','person-tamara-davis-peck','person-morgan-hildebrand',
-  'person-thom-salo','person-mitzi-morris','person-kay-rowe','person-jessica-hockensmith'
+  'person-thom-salo','person-mitzi-morris','person-kay-rowe'
 ];
+// Featured every month: this person is the spotlight during the first 7 days of each month.
+var MONTHLY_FEATURE_ID = 'person-jessica-hockensmith';
 function initResourceSpotlight(){
   if (!SPOTLIGHT_IDS.length) return;
   var weekIndex = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
   var id = SPOTLIGHT_IDS[weekIndex % SPOTLIGHT_IDS.length];
+  if (MONTHLY_FEATURE_ID && new Date().getDate() <= 7) id = MONTHLY_FEATURE_ID;
   var card = document.getElementById(id);
   if (!card) return;
   var name = card.querySelector('h4');
