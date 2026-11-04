@@ -65,6 +65,52 @@
       .markets-section { padding: 28px 20px; }
       .biz-cta { padding: 36px 24px; }
     }
+
+    /* ---- CYBERSECURITY SECTION (dark stats + myth/fact band) ---- */
+    .spotlight-banner {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2557 60%, #1a3a8f 100%);
+      padding: 56px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M40 40L0 0h80L40 40zm0 0L0 80h80L40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cyber-section { border-radius: var(--radius-lg); margin-bottom: 64px; scroll-margin-top: 96px; }
+    .spotlight-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; text-align: center; }
+    .spotlight-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,185,35,0.15); border: 1px solid rgba(232,185,35,0.3);
+      color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 999px; margin-bottom: 20px;
+    }
+    .spotlight-inner h2 { color: var(--white); margin-bottom: 12px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .spotlight-inner p { color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 28px; font-size: 1rem; }
+    .spotlight-stats {
+      position: relative; z-index: 2; max-width: 900px; margin: 44px auto 0;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .spotlight-stat { text-align: center; }
+    .spotlight-stat-num { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--gold); display: block; margin-bottom: 6px; }
+    .spotlight-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.45; }
+    .spotlight-myths { position: relative; z-index: 2; max-width: 900px; margin: 48px auto 0; }
+    .spotlight-myths h3 { color: var(--white); text-align: center; font-size: 1.25rem; margin-bottom: 24px; }
+    .myth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .myth-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-md); padding: 22px; }
+    .myth-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
+    .myth-tag.myth-tag-myth { background: rgba(239,68,68,0.15); color: #fca5a5; }
+    .myth-tag.myth-tag-fact { background: rgba(232,185,35,0.15); color: var(--gold); margin-top: 14px; }
+    .myth-card .myth-text { color: rgba(255,255,255,0.5); font-size: 0.87rem; line-height: 1.5; margin: 8px 0 0; text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.3); }
+    .myth-card .fact-text { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.6; margin: 8px 0 0; }
+    .spotlight-source { text-align: center; font-size: 0.74rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-top: 28px; max-width: 640px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 700px) {
+      .spotlight-stats { grid-template-columns: 1fr 1fr; }
+      .myth-grid { grid-template-columns: 1fr; }
+    }
   </style>
   <link rel="stylesheet" href="themes/thanksgiving/theme.css"> <!-- THANKSGIVING THEME: delete this line to restore the normal look -->
 </head>
@@ -201,6 +247,76 @@
       </a>
     </div>
 
+    <!-- CYBERSECURITY -->
+    <section class="spotlight-banner cyber-section" id="cybersecurity">
+      <div class="spotlight-inner">
+        <div class="spotlight-badge">🛡️ Cybersecurity</div>
+        <h2>Cyber Risk Is a Business Risk</h2>
+        <p>A single phishing email, stolen password, or ransomware attack can shut a small business down for days. A standard business owner's policy has no cyber coverage built in, so it's worth knowing where you stand before something happens.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('spotlightForm').style.display='block';document.getElementById('spotlightSuccess').style.display='none';openModal('spotlightModal')">Get More Info →</button>
+          <a href="tel:+17192048190" class="btn" style="border:2px solid rgba(255,255,255,0.4);color:var(--white);background:transparent;">📞 Call (719) 204-8190</a>
+        </div>
+        <p style="margin:22px 0 0;font-size:0.9rem;"><a href="blog-business-insurance-explained.html#cyber-liability" style="color:var(--gold);text-decoration:underline;">Read: what a cyber liability policy actually covers &rarr;</a></p>
+      </div>
+
+      <div class="spotlight-stats">
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-num">$12.5B+</span>
+          <span class="spotlight-stat-label">in losses reported to the FBI from internet crime in 2023</span>
+        </div>
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-num">880K+</span>
+          <span class="spotlight-stat-label">internet crime complaints filed with the FBI in 2023, a record</span>
+        </div>
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-num">$2.9B</span>
+          <span class="spotlight-stat-label">lost to business email compromise scams in 2023</span>
+        </div>
+        <div class="spotlight-stat">
+          <span class="spotlight-stat-num">1M+</span>
+          <span class="spotlight-stat-label">identity theft reports filed with the FTC in 2023</span>
+        </div>
+      </div>
+
+      <div class="spotlight-myths">
+        <h3>Myth vs. Fact</h3>
+        <div class="myth-grid">
+          <div class="myth-card">
+            <span class="myth-tag myth-tag-myth">Myth</span>
+            <p class="myth-text">We're too small for hackers to bother with.</p>
+            <span class="myth-tag myth-tag-fact">Fact</span>
+            <p class="fact-text">Small businesses are often easier targets than large companies, because they rarely have a dedicated security team or an incident response plan.</p>
+          </div>
+          <div class="myth-card">
+            <span class="myth-tag myth-tag-myth">Myth</span>
+            <p class="myth-text">Our business policy already covers a data breach.</p>
+            <span class="myth-tag myth-tag-fact">Fact</span>
+            <p class="fact-text">A standard BOP has no cyber coverage built in. Breach response, ransomware, and regulatory costs generally need a separate cyber liability policy.</p>
+          </div>
+          <div class="myth-card">
+            <span class="myth-tag myth-tag-myth">Myth</span>
+            <p class="myth-text">If money gets stolen, our bank will make us whole.</p>
+            <span class="myth-tag myth-tag-fact">Fact</span>
+            <p class="fact-text">Losses from scams like a spoofed invoice or a fake wire request can be hard to recover, and the cleanup costs land on the business.</p>
+          </div>
+          <div class="myth-card">
+            <span class="myth-tag myth-tag-myth">Myth</span>
+            <p class="myth-text">Cyber coverage is too expensive for a small business.</p>
+            <span class="myth-tag myth-tag-fact">Fact</span>
+            <p class="fact-text">Cyber liability coverage has become more affordable for small businesses in recent years, and a quote is the only way to know what yours would cost.</p>
+          </div>
+          <div class="myth-card" style="grid-column:1/-1;">
+            <span class="myth-tag myth-tag-myth">Myth</span>
+            <p class="myth-text">With antivirus software and good passwords, we don't need insurance.</p>
+            <span class="myth-tag myth-tag-fact">Fact</span>
+            <p class="fact-text">Good security habits lower your risk but don't eliminate it. Insurance is what pays for notifying customers, restoring systems, and legal and regulatory expenses when something still gets through.</p>
+          </div>
+        </div>
+        <p class="spotlight-source">Sources: FBI Internet Crime Complaint Center (IC3) 2023 Internet Crime Report; Federal Trade Commission Consumer Sentinel Network Data Book 2023.</p>
+      </div>
+    </section>
+
     <!-- WHY -->
     <div class="why-section">
       <div>
@@ -296,7 +412,88 @@
   </div>
 </div>
 
+<!-- CYBERSECURITY INFO MODAL -->
+<div class="modal-overlay" id="spotlightModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('spotlightModal')">&times;</button>
+    <div id="spotlightForm">
+      <h4>Cybersecurity Questions</h4>
+      <p style="margin-bottom:24px;">Answer a couple quick questions and Ryan will follow up on what cyber coverage would look like for your business — no pressure, no obligation.</p>
+      <form action="https://formspree.io/f/meevzzyr" method="POST" onsubmit="handleSpotlightSubmit(event)">
+        <input type="hidden" name="_subject" value="Cybersecurity Info Request (Business Insurance page)">
+        <input type="hidden" name="Campaign" value="Business Insurance Page - Cybersecurity">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="Full Name" placeholder="First Last" required>
+        </div>
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" name="Business Name" placeholder="Optional">
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="Phone" placeholder="(719) 555-0000" required>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="Email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Anything specific you want to know?</label>
+          <textarea name="Message" placeholder="Optional — e.g. what a cyber policy covers, ransomware, how much coverage I need..."></textarea>
+        </div>
+        <div class="compliance-box">
+          <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Acceptance</p>
+          <p>By clicking Submit, you consent to receiving calls, texts, and emails from REARDON AGENCY.</p>
+          <p><strong>Terms and Conditions:</strong> By providing your mobile phone number and checking this box you consent to receive SMS/MMS messages from REARDON AGENCY related to schedule reminders, policy updates, document deadlines and new insurance quotes. Message frequency may vary. Standard message and data rates may apply depending on your carrier. You may opt out of receiving text messages at any time by replying with &ldquo;STOP&rdquo; to any text message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending text messages to your number. If you need assistance or have questions about our text service, reply with &ldquo;HELP&rdquo; to any text message you receive, or contact our customer support team at (719) 204-8190. Your phone number will be handled in accordance with our Privacy Policy below.</p>
+          <p><strong>Privacy Policy:</strong> We do not pass any individual&rsquo;s consent to receive text messages from REARDON AGENCY to any third party. We do not share phone numbers with third parties for the purpose of allowing those third parties to send messages. No mobile opt-in data will be shared with third parties.</p>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="sms-spotlight" required>
+          <label for="sms-spotlight">I agree to receive text messages from Reardon Agency LLC. Message &amp; data rates may apply. Reply STOP to opt out. *</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;margin-top:8px;">
+          Send My Questions →
+        </button>
+      </form>
+    </div>
+    <div class="success-message" id="spotlightSuccess" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:3rem;margin-bottom:12px;">✅</div>
+      <h4 style="margin-bottom:8px;">Got It!</h4>
+      <p>Ryan will follow up shortly with real answers. Thanks for reaching out.</p>
+    </div>
+  </div>
+</div>
+
 <script>
+async function handleSpotlightSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('spotlightForm').style.display = 'none';
+      document.getElementById('spotlightSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Send My Questions →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+    }
+  } catch(err) {
+    btn.textContent = 'Send My Questions →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us at (719) 204-8190.');
+  }
+}
 function logReferral(name, category, method) {
   fetch('https://formspree.io/f/meevzzyr', {
     method: 'POST',
@@ -412,6 +609,7 @@ var COMPASS_INDEX = [
   {title:'Business Insurance', url:'business-insurance.html', desc:'Coverage for business owners', keywords:'business insurance commercial liability workers comp bop'},
   {title:'Business Insurance Quote', url:'business-insurance-quote.html', desc:'Get a business insurance quote', keywords:'business quote artisan contractor retail office workers comp'},
   {title:'Flood Insurance', url:'flood-insurance.html', desc:'NFIP and private flood coverage, residential, commercial & HOA', keywords:'flood insurance nfip neptune commercial hoa flood zone'},
+  {title:'Cybersecurity', url:'business-insurance.html#cybersecurity', desc:'Cyber risk facts and myths for business owners', keywords:'cyber cybersecurity data breach ransomware phishing hacking cyber liability identity theft'},
   {title:'Home / Auto / Life Quote Form', url:'quote.html', desc:'Request a personal insurance quote', keywords:'quote form home auto life request'},
   {title:'Resources', url:'resources.html', desc:'Ryan\'s trusted network of local professionals', keywords:'resources network referral realtor lender contractor plumber electrician attorney cpa cleaning'},
   {title:'Careers', url:'careers.html', desc:'Job openings at Reardon Agency', keywords:'careers jobs hiring apply employment work here'},
