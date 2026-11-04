@@ -89,7 +89,45 @@ body .cta-band p { color: rgba(74,31,18,0.75); }
   .hero::after, .page-hero::after { width: 240px; height: 80px; top: 76px; opacity: 0.38; }
 }
 
-/* ---- Falling leaves (two layers, pure CSS, never block clicks) ---- */
+/* ---- Squirrel and pumpkin sitting on the footer edge (art: Autumn icon set clipart, CC0 via Wikimedia Commons) ---- */
+footer { position: relative; }
+footer::before,
+footer::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -1px;
+  z-index: 2;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+}
+footer::before { right: 9%; width: 92px; height: 99px; background-image: url("squirrel.png"); }
+footer::after  { left: 7%;  width: 96px; height: 85px; background-image: url("pumpkin.png"); }
+@media (max-width: 600px) {
+  footer::before { right: 6%; width: 66px; height: 71px; }
+  footer::after  { left: 5%;  width: 70px; height: 62px; }
+}
+
+/* ---- Pumpkin tucked into the corner of the homepage spotlight ---- */
+.hero ~ .spotlight-banner::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  width: 112px;
+  height: 99px;
+  background: url("pumpkin.png") no-repeat center / contain;
+  transform: rotate(12deg);
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .hero ~ .spotlight-banner::after { width: 64px; height: 57px; top: -10px; right: 6px; }
+}
+
+/* ---- Falling leaves (two layers, pure CSS, never block clicks; maple + oak leaves from the same CC0 icon set) ---- */
 body::before,
 body::after {
   content: "";
@@ -100,28 +138,31 @@ body::after {
   will-change: transform;
 }
 body::before {
-  background-image: url("leaves-a.svg");
-  background-size: 360px 640px;
-  width: calc(100vw + 360px);
-  height: calc(100vh + 640px);
-  left: -360px;
-  top: -640px;
-  animation: tg-fall-a 80s linear infinite;
+  background-image: url("leaves-a.png");
+  background-size: 480px 820px;
+  width: calc(100vw + 480px);
+  height: calc(100vh + 820px);
+  left: -480px;
+  top: -820px;
+  opacity: 0.85;
+  animation: tg-fall-a 95s linear infinite;
 }
 body::after {
-  background-image: url("leaves-b.svg");
-  background-size: 280px 480px;
-  width: calc(100vw + 280px);
-  height: calc(100vh + 480px);
-  left: -280px;
-  top: -480px;
-  animation: tg-fall-b 52s linear infinite;
+  background-image: url("leaves-b.png");
+  background-size: 360px 600px;
+  width: calc(100vw + 360px);
+  height: calc(100vh + 600px);
+  left: -360px;
+  top: -600px;
+  opacity: 0.55;
+  animation: tg-fall-b 62s linear infinite;
 }
-@keyframes tg-fall-a { to { transform: translate3d(360px, 640px, 0); } }
-@keyframes tg-fall-b { to { transform: translate3d(280px, 480px, 0); } }
+@keyframes tg-fall-a { to { transform: translate3d(480px, 820px, 0); } }
+@keyframes tg-fall-b { to { transform: translate3d(360px, 600px, 0); } }
 
 @media (max-width: 600px) {
   body::after { display: none; }
+  body::before { opacity: 0.7; }
   .hero h1::before { font-size: 0.7rem; letter-spacing: 0.05em; }
 }
 @media (prefers-reduced-motion: reduce) {
